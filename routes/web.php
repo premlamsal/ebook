@@ -23,4 +23,15 @@ Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/
 
 Route::get('/category', 'SnippController@Category')->name('category');
 
-Route::get('/convert', 'SnippController@convert')->name('convert');
+//Route::get('/convert', 'SnippController@convert')->name('convert');
+
+//prem routes
+
+Route::get('/customer/readbook/{bookname}', 'SnippController@ShowReadPage')->name('/customer/readbook');
+
+Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
+
+
+
+
+
