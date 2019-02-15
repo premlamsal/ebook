@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Auth;
+use App\MyBook;
+use App\Book;
 class SnippController extends Controller
 {
     /**
@@ -92,46 +95,6 @@ class SnippController extends Controller
        return view('Category',compact('Category'));
     }
 
-    public function convert(){
-       
-    }
-    public function ShowReadPage($bookname,Request $request){
-
-            if($bookname){
-                
-            //  if ($request->session()->has('page_no')) {
-            //     //  $request->session()->put('page_no', 1);
-            // }
-            // else{
-                
-                session(['page_no' => 1]);
-
-            // }
-            $page_no = $request->session()->get('page_no');
-
-            $bookname=$bookname;
-
-            $filePath="uploads/".$bookname.".pdf";
-            $saveImagePath="uploads/test.jpg";
-            $pathToPdf=$filePath;
-            $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
-            $pdf->setPage(1);
-            $pdf->saveImage($saveImagePath);
-
-
-    
-            return view('customer.readbook')->with('page_no',$page_no);
-
-            }
-
-            else{
-                print_r("Not set Dude");
-            }
-
-    }
-    public function fetchBookFirstPage(){
-
-    }
     public function fetchBook(Request $request){
 
         $page_no=$request->page_no;
@@ -155,19 +118,19 @@ class SnippController extends Controller
          
             session(['page_no' => $page_no]);
             
-            $filePath="uploads/file.pdf";
+            $page_no = $request->session()->get('page_no');
+            $bookFile=$request->session()->get('bookFile');
+            $pathToPdf="uploads/".$bookFile;
             $saveImagePath="uploads/test.jpg";
-            $pathToPdf=$filePath;
             $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
             $page_no=$page_no;
             $pdf->setPage($page_no);
             $pdf->saveImage($saveImagePath);
             $imageGETURL=asset('uploads');
-           // $output="done dude";
-          
             return response([
                 'session_page_no' => $page_no,
-                'url'=>$url
+                'url'=>$url,
+                'file'=>$bookFile
             ]);
         }
         

@@ -44,6 +44,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .no-padding {
   padding: 0;
 }
@@ -217,7 +218,37 @@ img {
     top: -15px;
   }
 }
-
+  .button{
+    position: relative;
+  }
+  .btn-prev{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+  }
+.btn-next{
+    position: absolute;
+    top: 500px;
+    right: 50px;
+  }
+  .showItem img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .showItem{
+    width: 765px; 
+    box-shadow: 1px 1px 1px 1px;
+  }
+.loadingbeam {
+    position: fixed;
+    top: 45%;
+  
+    left: 46%;
+}
+  .loadingbeam img{
+     max-width: 100%;
+    max-height: 100%;
+  }
 #aa-header {
   display: inline;
   float: left;

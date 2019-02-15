@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use URL;
+use App\MyBook;
+use App\Book;
+use DB;
 
 
 class CustomerController extends Controller
@@ -16,8 +19,20 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $userName=Auth::user()->name;
-        return view('customer.index')->with('userName',$userName);
+        if (isset(Auth::user()->id)) {
+            $user_id=Auth::user()->id;
+            $userName=Auth::user()->name;
+            //$my_books=MyBook::where('user_id',$user_id)->get();
+            $my_books= Book::join('my_books','my_books.book_id','books.id')
+            ->where('my_books.user_id',$user_id)
+            ->select('books.*')
+            ->get();
+            return view('customer.index')->with(['userName'=>$userName,'my_books'=>$my_books]);
+            }
+            else{
+                print_r("Please Login!!!");
+         }
+
     }
 
     public function readBook()
@@ -91,4 +106,52 @@ class CustomerController extends Controller
     {
         //
     }
+
+
+    public function ShowReadPage($book_id,Request $request){
+        if(isset(Auth::user()->id)){
+            if($book_id){
+              $user_id=Auth::user()->id;
+              $fetch = MyBook::where(['user_id'=>$user_id,'book_id'=>$book_id]);
+                if ($fetch) {
+                   $bookFile=Book::find($book_id);
+                   
+                    //  if ($request->session()->has('page_no')) {
+                    //     //  $request->session()->put('page_no', 1);
+                    // }
+                    // else{
+                        session(['page_no' => 1]);
+                    // }
+                    $bookFile=$bookFile->file;
+                    session(['bookFile' => $bookFile]);
+                    $page_no = $request->session()->get('page_no');
+                    $filePath="uploads/".$bookFile;
+                    $saveImagePath="uploads/test.jpg";
+                    $pathToPdf=$filePath;
+                    $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
+
+                   // $pdf->setResolution(100);
+
+                    $pdf->setPage(1);
+                    $pdf->saveImage($saveImagePath);
+                    return view('customer.readbook')->with('page_no',$page_no);
+                    }
+                    else{
+                       return abort(404);
+                    
+               }
+
+            }
+
+            else{
+               return abort(404);
+            }
+        }
+        else{
+            print_r("Please Login");
+        }
+    }
+   
+
+
 }

@@ -15,7 +15,9 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-                           
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Category<span class="caret"></span></a>
+                <ul class="dropdown-menu sm-nowrap">
               @foreach($Category as $item)
                   <li>
                       <a href="{{$item->url}}">{{$item->category_name}}
@@ -32,8 +34,11 @@
                       @endif
                   </li>
               @endforeach
+                </ul>
+              </li>
+             <li><a href="#">About Us</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+           </div><!--/.nav-collapse -->
         </div>
       </div>       
     </div>

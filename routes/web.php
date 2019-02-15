@@ -18,18 +18,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Route::get('/convert', 'SnippController@convert')->name('convert');
+
+//prem routes
+//profile customer
+
 Route::get('/customer/profile','CustomerController@index')->name('/customer/profile');
 Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/readbook');
 
 Route::get('/category', 'SnippController@Category')->name('category');
 
-//Route::get('/convert', 'SnippController@convert')->name('convert');
+//readbooks
 
-//prem routes
+Route::get('/customer/readbook/', function(){
+	return redirect('/');
+});
 
-Route::get('/customer/readbook/{bookname}', 'SnippController@ShowReadPage')->name('/customer/readbook');
-
+Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
 Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
+//prem routes
 
 
 
