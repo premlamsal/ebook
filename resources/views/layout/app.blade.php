@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Daily Shop | Home</title>
+    <title>{{ config('app.name', 'Online Book Store') }}</title>
     
     <!-- Font awesome -->
     <link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet">
@@ -126,13 +126,8 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();" style="border: 0px;">
-                                                 <i class="fa fa-sign-out"></i>
+                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
-                                </a>
-                                <a class="dropdown-item" href="/customer/profile" style="border: 0px;"><i class="fa fa-user"></i>
-                                  Customer Panel
-                                  
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -225,6 +220,27 @@
 @include('partials.nav')
 @yield('PageContent')
 
+
+
+
+  <!-- Subscribe section -->
+  <section id="aa-subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-subscribe-area">
+            <h3>Subscribe our newsletter </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+            <form action="" class="aa-subscribe-form">
+              <input type="email" name="" id="" placeholder="Enter your Email">
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / Subscribe section -->
 
   <!-- footer -->  
   <footer id="aa-footer">
@@ -364,6 +380,7 @@
           <h4>Register Now. </h4>
           <form class="aa-login-form" action="{{action('AccountController@store')}}" method="POST">
                @csrf
+               <input type="hidden" name="getUserType" value="customer">
               <label for="">Full Name<span>*</span></label>
               <input type="text" name="name" placeholder="Your Full Name">
             <label for="">Email address<span>*</span></label>
@@ -384,7 +401,6 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src= "{{URL::asset('js/bootstrap.js')}}"></script>  
@@ -404,8 +420,5 @@
   <script type="text/javascript" src="{{URL::asset('js/nouislider.js')}}"></script>
   <!-- Custom js -->
   <script src="{{URL::asset('js/custom.js')}}"></script> 
-
-
-  @yield('PageScripts')
   </body>
 </html>

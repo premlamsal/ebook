@@ -101,8 +101,8 @@ padding-left: 10px;
 		</div>
 		<div class="float-menu">
 			<ul>
-				<li><a href="#" class="home"><i class="fa fa-home"></i></a></li>
-				<li><a href="#" class="mybooks"><i class="fa fa-book"></i></a></li>
+				<li><a href="{{route('home')}}" class="home"><i class="fa fa-home"></i></a></li>
+				<li><a href="{{route('/customer/profile')}}" class="mybooks"><i class="fa fa-book"></i></a></li>
 			</ul>
 		</div>
 </div>

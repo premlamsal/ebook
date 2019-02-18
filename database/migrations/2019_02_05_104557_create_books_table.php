@@ -31,8 +31,6 @@ class CreateBooksTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->Text('tags');
-            $table->unsignedInteger('review_id');
-            $table->foreign('review_id')->references('id')->on('reviews');
             $table->timestamps();
             
         });

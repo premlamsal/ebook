@@ -13,6 +13,7 @@
         "imal-h/pdf-box": "^1.2",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.4.0",
         "spatie/pdf-to-image": "^1.8"
     },
     "require-dev": {
@@ -40,6 +41,7 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+
         ]
     },
     "autoload-dev": {

@@ -130,7 +130,6 @@ class SnippController extends Controller
             return response([
                 'session_page_no' => $page_no,
                 'url'=>$url,
-                'file'=>$bookFile
             ]);
         }
         
