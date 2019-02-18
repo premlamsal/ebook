@@ -114,32 +114,40 @@ class CustomerController extends Controller
               $user_id=Auth::user()->id;
               $fetch = MyBook::where(['user_id'=>$user_id,'book_id'=>$book_id]);
                 if ($fetch) {
+
                    $bookFile=Book::find($book_id);
-                   
-                    //  if ($request->session()->has('page_no')) {
-                    //     //  $request->session()->put('page_no', 1);
-                    // }
-                    // else{
-                        session(['page_no' => 1]);
-                    // }
-                    $bookFile=$bookFile->file;
-                    session(['bookFile' => $bookFile]);
-                    $page_no = $request->session()->get('page_no');
-                    $filePath="uploads/".$bookFile;
-                    $saveImagePath="uploads/test.jpg";
-                    $pathToPdf=$filePath;
-                    $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
+                               if($bookFile){
+              
+                                //  if ($request->session()->has('page_no')) {
+                                //     //  $request->session()->put('page_no', 1);
+                                // }
+                                // else{
+                                    session(['page_no' => 1]);
+                                // }
+                                $bookFile=$bookFile->file;
+                               
+                                session(['bookFile' => $bookFile]);
+                                $page_no = $request->session()->get('page_no');
+                                $filePath="uploads/".$bookFile;
+                                $saveImagePath="uploads/test.jpg";
+                                $pathToPdf=$filePath;
+                                $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
 
-                   // $pdf->setResolution(100);
+                               // $pdf->setResolution(100);
 
-                    $pdf->setPage(1);
-                    $pdf->saveImage($saveImagePath);
-                    return view('customer.readbook')->with('page_no',$page_no);
-                    }
+                                $pdf->setPage(1);
+                                $pdf->saveImage($saveImagePath);
+                                return view('customer.readbook')->with('page_no',$page_no);
+
+                               }
+                               else{
+                                     return abort(404);
+                               }
+                 
+                             }
                     else{
                        return abort(404);
-                    
-               }
+                      }
 
             }
 
