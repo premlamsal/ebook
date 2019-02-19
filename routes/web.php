@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@index'] );
+Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
 Route::resource('/RegisterAccount','AccountController');
 Auth::routes();
@@ -78,6 +78,17 @@ Route::get('/admin/viewCategory',['as'=>'admin/viewCategory','uses'=>'AdminContr
 Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminController@addCategory']);
 
 //end of bishal routes
+
+
+//pralhad
+Route::resource('/blog','BlogController');
+Route::post('admin/addSlider',['as'=>'admin/addSlider', 'uses'=>'SliderController@store']);
+
+Route::get('admin/Slider',['as'=>'admin/Slider', 'uses'=>'SliderController@index']);
+Route::get('admin/Slider/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'SliderController@destroy']);
+Route::get('admin/Testimonial',['as'=>'admin/Testimonial', 'uses'=>'TestimonialController@index']);
+ Route::post('admin/addTestimonial',['as'=>'admin/addTestimonail', 'uses'=>'TestimonialController@store']);
+ Route::get('admin/Testimonial/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'TestimonialController@destroy']);
 
 
 

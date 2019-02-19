@@ -15,7 +15,7 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="#">Home</a></li>
+              <li><a href="{{route('home')}}" class="active">Home</a></li>
               <li><a href="#">Category<span class="caret"></span></a>
                 <ul class="dropdown-menu sm-nowrap">
               @foreach($Category as $item)
