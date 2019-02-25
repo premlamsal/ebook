@@ -94,6 +94,7 @@ class SnippController extends Controller
 
        return view('Category',compact('Category'));
     }
+   
 
     public function fetchBook(Request $request){
 
@@ -120,7 +121,7 @@ class SnippController extends Controller
             
             $page_no = $request->session()->get('page_no');
             $bookFile=$request->session()->get('bookFile');
-            $pathToPdf="uploads/".$bookFile;
+            $pathToPdf="storage/Book_pdf/".$bookFile;
             $saveImagePath="uploads/test.jpg";
             $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
             $page_no=$page_no;

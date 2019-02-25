@@ -106,6 +106,11 @@ class CustomerController extends Controller
     {
         //
     }
+    public function viewBook($book_id,Request $request){
+
+        print_r($book_id);
+
+    }
 
 
     public function ShowReadPage($book_id,Request $request){
@@ -124,11 +129,12 @@ class CustomerController extends Controller
                                 // else{
                                     session(['page_no' => 1]);
                                 // }
-                                $bookFile=$bookFile->file;
+                                $bookFile=$bookFile->book_file;
                                
                                 session(['bookFile' => $bookFile]);
                                 $page_no = $request->session()->get('page_no');
-                                $filePath="uploads/".$bookFile;
+                                $filePath="storage/Book_pdf/".$bookFile;
+                              
                                 $saveImagePath="uploads/test.jpg";
                                 $pathToPdf=$filePath;
                                 $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
