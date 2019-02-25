@@ -481,7 +481,7 @@
                         <div class="aa-latest-blog-single">
                           <figure class="aa-blog-img">     
                              {{-- iamge dynamic --}}
-                            <a href="/blog/{{$item->id}}"><img src="{{$item->blog_image}}" alt="img"></a>  
+                            <a href="/blog/{{$item->id}}"><img src="{{'img/blogImages/'.$item->blog_image}}" alt="img"></a>  
                               <figcaption class="aa-blog-img-caption">
                               <span href="/blog/{{$item->id}}"><i class="fa fa-clock-o"></i>{{$item->created_at}}</span>
                             </figcaption>                          
