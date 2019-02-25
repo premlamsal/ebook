@@ -20,7 +20,7 @@
                           </div>
                         </div>
                         <figure class="aa-blog-img">
-                          <a href="#"><img src="{{$blog->blog_image}}" alt="blog"></a>
+                          <a href="#"><img src="../img/blogImages/{{$blog->blog_image}}" alt="blog"></a>
                         </figure>
                         <p>{!!$blog->blog_body!!}</p>
                          <div class="blog-single-bottom">
@@ -64,21 +64,21 @@
                       
                       <div class="aa-sidebar-widget">
                             <h3>Recent Post</h3>
-                            {{-- <div class="aa-recently-views">
-                              <ul>
+                            <div class="aa-recently-views">
+                               <ul>
                                     @if (count($blogs)>0)
                                     @foreach ($blogs as $item)
                                         <li>
-                                            <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                                            <a class="aa-cartbox-img" href="#"><img src="../img/blogImages/{{$item->blog_image}}" alt="img"></a>
                                             <div class="aa-cartbox-info">
                                               <h4><a href="">{{$item->blog_title}}</a></h4>
                                               <p>{{$item->created_at}}</p>
                                             </div>                    
                                           </li>
                                     @endforeach
-                                @endif --}}
+                                @endif
                                                                        
-                              </ul>
+                              </ul> 
                             </div>                            
                         </div>
                     </aside>

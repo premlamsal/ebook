@@ -18,7 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('blog_title');
             $table->string('blog_image');
             $table->Text('blog_body');
-            $table->string('featured');
+            $table->string('featured')->nullable();
             $table->timestamps();
         });
     }

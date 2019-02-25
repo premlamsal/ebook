@@ -32,10 +32,11 @@ Route::get('/category', 'SnippController@Category')->name('category');
 Route::get('/customer/readbook/', function(){
 	return redirect('/');
 });
-
+//for imagemagick rendering start
 Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
 
-Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
+// Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
+
 //end of prem routes
 
 
@@ -89,6 +90,15 @@ Route::get('admin/Slider/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'SliderCo
 Route::get('admin/Testimonial',['as'=>'admin/Testimonial', 'uses'=>'TestimonialController@index']);
  Route::post('admin/addTestimonial',['as'=>'admin/addTestimonail', 'uses'=>'TestimonialController@store']);
  Route::get('admin/Testimonial/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'TestimonialController@destroy']);
+//blog admin part
+ Route::get('admin/addBlog',['as'=>'admin/addBlog', 'uses'=>'BlogController@addBlog']);
+Route::get('admin/editBlog/{id}',['as'=>'admin/editBlog', 'uses'=>'BlogController@editBlog']);
+Route::post('admin/storeBlog',['as'=>'admin/storeBlog', 'uses'=>'BlogController@store']);
+Route::put('admin/updateBlog/{id}',['as'=>'admin/updateBlog', 'uses'=>'BlogController@updateBlog']);
+Route::get('admin/showBlog',['as'=>'admin/showBlog', 'uses'=>'BlogController@showAdmin']);
+Route::get('admin/destroyBlog/{id}',['as'=>'admin/destroyBlog', 'uses'=>'BlogController@destroyBlog']);
+
+//end of pralhad routes
 
 
 

@@ -35,7 +35,7 @@
                           
                      <li>
                       <figure>
-                        <a class="aa-product-img" href="#"><img src="{{URL::asset('img').'/'.$my_book->image}}" alt="polo shirt img"></a>
+                        <a class="aa-product-img" href="#"><img src="{{URL::asset('storage/Book_image').'/'.$my_book->image}}" alt="polo shirt img"></a>
                         <a class="aa-add-card-btn"href="{{route('/customer/readbook/',['book_id'=>$my_book->id])}}"><span class="fa fa-eye"></span>Read Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>
@@ -91,7 +91,7 @@
                           
                      <li>
                       <figure>
-                        <a class="aa-product-img" href="#"><img src="{{URL::asset('img').'/'.$my_book->image}}" alt="polo shirt img"></a>
+                        <a class="aa-product-img" href="#"><img src="{{URL::asset('storage/Book_image').'/'.$my_book->image}}" alt="polo shirt img"></a>
                         <a class="aa-add-card-btn"href="{{route('/customer/readbook/',['book_id'=>$my_book->id])}}"><span class="fa fa-eye"></span>Read Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>

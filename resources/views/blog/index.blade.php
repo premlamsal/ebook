@@ -6,17 +6,17 @@
             <div class="col-md-12">
               <div class="aa-blog-archive-area aa-blog-archive-2">
                 <div class="row">
-                  <div class="col-md-9">
+                  <div class="col-md-12">
                     <div class="aa-blog-content">
                       <div class="row">
                         @if (count($blogs)>0)
                         @foreach ($blogs as $item)
                             
                        
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-3 col-sm-3">
                           <article class="aa-latest-blog-single">
                             <figure class="aa-blog-img">                    
-                              <a href="/blog/{{$item->id}}"><img alt="img" src="{{$item->blog_image}}"></a>  
+                              <a href="/blog/{{$item->id}}"><img alt="img" src="img/blogImages/{{$item->blog_image}}"></a>  
                                 <figcaption class="aa-blog-img-caption">
                                 
                                 <span href="#"><i class="fa fa-clock-o"></i>{{$item->created_at}}</span>
@@ -24,7 +24,7 @@
                             </figure>
                             <div class="aa-blog-info">
                               <h3 class="aa-blog-title"><a href="/blog/{{$item->id}}">{{$item->blog_title}}</a></h3>
-                              <p>{{ str_limit($item->blog_body, 250) }}</p> 
+                              <p>{!! str_limit($item->blog_body, 250) !!}</p> 
                               <a class="aa-read-mor-btn" href="/blog/{{$item->id}}">Read more <span class="fa fa-long-arrow-right"></span></a>
                             </div>
                           </article>
@@ -58,7 +58,7 @@
                       </nav>
                     </div> --}}
                   </div>
-                  <div class="col-md-3">
+                  {{-- <div class="col-md-3">
                     <aside class="aa-blog-sidebar">
                       <div class="aa-sidebar-widget">
                         <h3>Recent Post</h3>
@@ -89,7 +89,7 @@
                         </div>                            
                       </div>
                     </aside>
-                  </div>
+                  </div> --}}
                 </div>
                
               </div>

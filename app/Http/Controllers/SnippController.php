@@ -96,44 +96,44 @@ class SnippController extends Controller
     }
    
 
-    public function fetchBook(Request $request){
+    // public function fetchBook(Request $request){
 
-        $page_no=$request->page_no;
-        $action=$request->action;
+    //     $page_no=$request->page_no;
+    //     $action=$request->action;
             
-            $url=asset('uploads/test.jpg?');
-            if($action){
+    //         $url=asset('uploads/test.jpg?');
+    //         if($action){
 
-                switch ($action) {
-                    case 'prev':
-                      $page_no=$page_no-1;
-                        break;
-                    case 'next':
-                       $page_no=$page_no+1;
-                        break;
+    //             switch ($action) {
+    //                 case 'prev':
+    //                   $page_no=$page_no-1;
+    //                     break;
+    //                 case 'next':
+    //                    $page_no=$page_no+1;
+    //                     break;
                     
-                    default:
+    //                 default:
                       
-                        break;
-                }
+    //                     break;
+    //             }
          
-            session(['page_no' => $page_no]);
+    //         session(['page_no' => $page_no]);
             
-            $page_no = $request->session()->get('page_no');
-            $bookFile=$request->session()->get('bookFile');
-            $pathToPdf="storage/Book_pdf/".$bookFile;
-            $saveImagePath="uploads/test.jpg";
-            $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
-            $page_no=$page_no;
-            $pdf->setPage($page_no);
-            $pdf->saveImage($saveImagePath);
-            $imageGETURL=asset('uploads');
-            return response([
-                'session_page_no' => $page_no,
-                'url'=>$url,
-            ]);
-        }
+    //         $page_no = $request->session()->get('page_no');
+    //         $bookFile=$request->session()->get('bookFile');
+    //         $pathToPdf="storage/Book_pdf/".$bookFile;
+    //         $saveImagePath="uploads/test.jpg";
+    //         $pdf = new \Spatie\PdfToImage\Pdf($pathToPdf);
+    //         $page_no=$page_no;
+    //         $pdf->setPage($page_no);
+    //         $pdf->saveImage($saveImagePath);
+    //         $imageGETURL=asset('uploads');
+    //         return response([
+    //             'session_page_no' => $page_no,
+    //             'url'=>$url,
+    //         ]);
+    //     }
         
-    }
+    // }
 
 }
