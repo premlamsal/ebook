@@ -117,8 +117,8 @@ class CustomerController extends Controller
         if(isset(Auth::user()->id)){
             if($book_id){
               $user_id=Auth::user()->id;
-              $fetch = MyBook::where(['user_id'=>$user_id,'book_id'=>$book_id]);
-                if ($fetch) {
+               $fetch = MyBook::where(['user_id'=>$user_id,'book_id'=>$book_id])->get();
+                if ($fetch->first()) {
 
                    $bookFile=Book::find($book_id);
                                if($bookFile){
