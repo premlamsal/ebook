@@ -481,22 +481,22 @@
                         <div class="aa-latest-blog-single">
                           <figure class="aa-blog-img">     
                              {{-- iamge dynamic --}}
-                            <a href="/blog/{{$item->id}}"><img src="{{'img/blogImages/'.$item->blog_image}}" alt="img"></a>  
+                            <a href="blog/{{$item->id}}"><img src="{{'img/blogImages/'.$item->blog_image}}" alt="img"></a>  
                               <figcaption class="aa-blog-img-caption">
-                              <span href="/blog/{{$item->id}}"><i class="fa fa-clock-o"></i>{{$item->created_at}}</span>
+                              <span href="blog/{{$item->id}}"><i class="fa fa-clock-o"></i>{{$item->created_at}}</span>
                             </figcaption>                          
                           </figure>
                           <div class="aa-blog-info">
                             {{-- Blog title dynamic --}}
-                            <h3 class="aa-blog-title"><a href="/blog/{{$item->id}}">{{$item->blog_title}}</a></h3>
+                            <h3 class="aa-blog-title"><a href="blog/{{$item->id}}">{{$item->blog_title}}</a></h3>
                             {{-- Blog Body --}}
                             <p>{{ str_limit($item->blog_body, 250) }}</p>
                             {{-- <p>{{$item->blog_body}}</p>  --}}
-                            <a href="/blog/{{$item->id}}" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>
+                            <a href="blog/{{$item->id}}" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>
                           </div>
                         </div>
                       </div>
-                         
+                    
                       @endforeach
                      
               @endif
