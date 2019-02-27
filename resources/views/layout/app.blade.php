@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
+     <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Online Book Store') }}</title>
     
     <!-- Font awesome -->
@@ -26,6 +28,7 @@
 
     <!-- Main style sheet -->
     <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">    
+    <link href="{{URL::asset('css/rating.css')}}" rel="stylesheet">    
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Font -->
@@ -225,25 +228,6 @@
 
 
 
-  <!-- Subscribe section -->
-  <section id="aa-subscribe">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-subscribe-area">
-            <h3>Subscribe our newsletter </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
-            <form action="" class="aa-subscribe-form">
-              <input type="email" name="" id="" placeholder="Enter your Email">
-              <input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Subscribe section -->
-
   <!-- footer -->  
   <footer id="aa-footer">
     <!-- footer bottom -->
@@ -403,6 +387,53 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
+  
+
+                  <!-- quick view modal -->                  
+                  <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">                      
+                        <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <div class="row">
+                            <!-- Modal view slider -->
+                            <div class="col-md-6 col-sm-6 col-xs-12">                              
+                              <div class="aa-product-view-slider">                                
+                                <div class="simpleLens-gallery-container" id="demo-1">
+                                  <div class="simpleLens-container">
+                                      <div class="simpleLens-big-image-container">
+                                          <a class="simpleLens-lens-image">
+                                              <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image" id="popup_image">
+                                          </a>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Modal view content -->
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <div class="aa-product-view-content">
+                                <h3 class="popup_title">T-Shirt</h3>
+                                <div class="aa-price-block">
+                                  <span class="aa-product-view-price popup_price">$34.99</span>
+                                  <p class="aa-product-avilability">Avilable<!-- : <span>In stock</span></p> -->
+                                </div>
+                                <p class="popup_abstract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis animi, veritatis quae repudiandae quod nulla porro quidem, itaque quis quaerat!</p>
+                                  <p class="aa-prod-category">
+                                    Category: <a href="#" class="categoryName">Polo T-Shirt</a>
+                                  </p>
+                               
+                                <div class="aa-prod-view-bottom">
+                                  <a href="#" class="aa-add-to-cart-btn" id="popupBuyBoook"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                                  <a href="#" class="aa-add-to-cart-btn" id="popupViewDetails">View Details</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>                        
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- / quick view modal -->           
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src= "{{URL::asset('js/bootstrap.js')}}"></script>  
@@ -422,5 +453,60 @@
   <script type="text/javascript" src="{{URL::asset('js/nouislider.js')}}"></script>
   <!-- Custom js -->
   <script src="{{URL::asset('js/custom.js')}}"></script> 
+<script>
+        $(document).ready(function(){
+         $('.popup').click(function(e) {
+         var getId=$(this).attr('id');
+        
+               $.ajax({
+                        type : 'post',
+                        url : '{{url("fetchBookDataPopup")}}',
+                        data:{'getId':getId},
+                        success:function(result){
+                        popup_title=result.popup_title
+                        popup_image=result.popup_image
+                        popup_price=result.popup_price
+                        popup_abstract=result.popup_abstract
+                        publicURL=result.publicURL
+                        categoryName=result.categoryName
+                        //dynamic image to popupbox
+                        $('#popup_image').attr('src',popup_image);
+                        //dynamic title to popupbx
+                        $('.popup_title').html(popup_title);
+                        $('.popup_price').html("Rs."+popup_price);
+                        $('.popup_abstract').html(popup_abstract);
+                        $('.categoryName').html(categoryName);
+                        //dymanic link to buy or viewbook
+                        $('#popupViewDetails').attr('href','');
+                        $('#popupBuyBoook').attr('href','');
+                        $('#popupViewDetails').attr('href',publicURL+'/book/'+getId);
+                        $('#popupBuyBoook').attr('href',publicURL+'/buy/'+getId);
+                        
+                        }
+
+
+                    });
+
+          $('#quick-view-modal').modal('toggle');
+          return false;
+
+         });
+
+      
+       
+
+
+      });      
+     
+        </script>
+        <script type="text/javascript">
+         $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+             
+        </script>
+  
   </body>
 </html>

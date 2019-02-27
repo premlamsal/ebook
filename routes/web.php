@@ -35,6 +35,12 @@ Route::get('/customer/readbook/', function(){
 //for imagemagick rendering start
 Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
 
+Route::post('fetchBookDataPopup', ['as'=> 'fetchBookDataPopup', 'uses'=>'SnippController@fetchBookDataPopup'] );
+
+Route::get('/book/{id}', ['as'=> '/book/{id}', 'uses'=>'PagesController@showBookDetails'] );
+
+Route::post('/reviewStore', ['as'=> 'reviewStore', 'uses'=>'SnippController@reviewStore'] );
+
 // Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
 
 //end of prem routes
@@ -83,6 +89,8 @@ Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminControl
 
 //pralhad
 Route::resource('/blog','BlogController');
+
+
 Route::post('admin/addSlider',['as'=>'admin/addSlider', 'uses'=>'SliderController@store']);
 
 Route::get('admin/Slider',['as'=>'admin/Slider', 'uses'=>'SliderController@index']);

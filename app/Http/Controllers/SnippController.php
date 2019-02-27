@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use Auth;
+use URL;
 use App\MyBook;
 use App\Book;
+use App\Review;
+use App\User;
 class SnippController extends Controller
 {
     /**
@@ -94,6 +97,56 @@ class SnippController extends Controller
 
        return view('Category',compact('Category'));
     }
+
+    public function fetchBookDataPopup(Request $request){
+            $publicURL=URL::to('/storage/Book_image');
+            $publicURL=$publicURL.'/';
+            $publicURLHome=URL::to('/');
+            //get book id from ajax call
+            $book_id=$request->getId;
+            //searching for book of id
+            $fetchBookData=Book::find($book_id);
+            $bookCategoryId=$fetchBookData->category_id;
+            $categoryName=Category::find($bookCategoryId)->value('category_name');
+            //assingn fetched data to the variable one by one
+            $popup_id=$fetchBookData->id;
+            $popup_image=$fetchBookData->image;
+            $popup_image=$publicURL.$popup_image;
+            $popup_title=$fetchBookData->author;
+            $popup_price=$fetchBookData->price;
+            $popup_abstract=$fetchBookData->abstract;
+            //return repsone to the ajax call with data
+             return response([
+                'popup_image' =>$popup_image,
+                'popup_title'=>$popup_title,
+                'popup_price'=>$popup_price,
+                'popup_abstract'=>$popup_abstract,
+                'publicURL'=>$publicURLHome,
+                'categoryName'=>$categoryName,
+            ]);
+
+    }
+    public function reviewStore(Request $request){
+            $request->validate([
+            'rating'=>'required',
+            'review_body'=>'required',
+         ]);
+
+         $userId= Auth::user()->id;
+         $username=User::find($userId)->value('name');
+         $Review = Review::create([
+              'user_id'=>$userId,
+              'title'=>$username,
+              'rating' => $request->get('rating'),
+              'body' => $request->get('review_body'),
+              'book_id'=>$request->get('book_id')
+
+          ]);
+          
+            return redirect('/book/'.$request->get('book_id'));
+    }
+
+
    
 
     // public function fetchBook(Request $request){
