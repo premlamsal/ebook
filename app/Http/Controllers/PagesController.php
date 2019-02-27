@@ -31,8 +31,7 @@ class PagesController extends Controller
     }
 
     public function showBookDetails(Request $request){
-          // retriving userId
-          $userId= Auth::user()->id;
+         
 
           $book_id=$request->id;
           $book=Book::find($book_id);
@@ -42,13 +41,24 @@ class PagesController extends Controller
 
           $rating_no=Review::where('book_id',$book_id)->get();
           $reviews_rating=Review::where('book_id',$book_id)->sum('rating');
-          $isReviewd=Review::where('book_id',$book_id)->where('user_id',$userId)->get();
-          if(count($isReviewd)>0){
-            $isReviewdDone=1;
+
+          if(Auth::user()){
+              $userId= Auth::user()->id;
+            $isReviewd=Review::where('book_id',$book_id)->where('user_id',$userId)->get();
+
+            if(count($isReviewd)>0){
+              $isReviewdDone=1;
+            }
+            else{
+               $isReviewdDone=0;
+            }
           }
           else{
              $isReviewdDone=0;
           }
+         
+
+
           $rating_no=count($rating_no);
           if($rating_no>0){
             $finalRating=$reviews_rating/$rating_no;
