@@ -112,7 +112,8 @@ class SnippController extends Controller
             $popup_id=$fetchBookData->id;
             $popup_image=$fetchBookData->image;
             $popup_image=$publicURL.$popup_image;
-            $popup_title=$fetchBookData->author;
+            $popup_title=$fetchBookData->title;
+            $popup_author=$fetchBookData->author;
             $popup_price=$fetchBookData->price;
             $popup_abstract=$fetchBookData->abstract;
             //return repsone to the ajax call with data
@@ -120,6 +121,7 @@ class SnippController extends Controller
                 'popup_image' =>$popup_image,
                 'popup_title'=>$popup_title,
                 'popup_price'=>$popup_price,
+                'popup_author'=>$popup_author,
                 'popup_abstract'=>$popup_abstract,
                 'publicURL'=>$publicURLHome,
                 'categoryName'=>$categoryName,

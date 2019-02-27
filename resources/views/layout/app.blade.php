@@ -418,9 +418,12 @@
                                   <span class="aa-product-view-price popup_price">$34.99</span>
                                   <p class="aa-product-avilability">Avilable<!-- : <span>In stock</span></p> -->
                                 </div>
-                                <p class="popup_abstract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis animi, veritatis quae repudiandae quod nulla porro quidem, itaque quis quaerat!</p>
+                                <p class="popup_abstract"></p>
                                   <p class="aa-prod-category">
-                                    Category: <a href="#" class="categoryName">Polo T-Shirt</a>
+                                    Category: <a href="#" class="categoryName">Category</a>
+                                  </p>
+                                  <p class="authors">
+                                    Author/s: <a href="#" class="popup_author">Auhor</a>
                                   </p>
                                
                                 <div class="aa-prod-view-bottom">
@@ -466,6 +469,7 @@
                         popup_title=result.popup_title
                         popup_image=result.popup_image
                         popup_price=result.popup_price
+                        popup_author=result.popup_author
                         popup_abstract=result.popup_abstract
                         publicURL=result.publicURL
                         categoryName=result.categoryName
@@ -473,9 +477,13 @@
                         $('#popup_image').attr('src',popup_image);
                         //dynamic title to popupbx
                         $('.popup_title').html(popup_title);
+
                         $('.popup_price').html("Rs."+popup_price);
                         $('.popup_abstract').html(popup_abstract);
                         $('.categoryName').html(categoryName);
+                        $('.popup_author').html(popup_author);
+                        
+
                         //dymanic link to buy or viewbook
                         $('#popupViewDetails').attr('href','');
                         $('#popupBuyBoook').attr('href','');
