@@ -45,7 +45,7 @@
                       <div class="aa-product-hvr-content">
                       
                      
-                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$my_book->id}}"><span class="fa fa-search"><span class="fa fa-search"></span></a>                            
+                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$my_book->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
                     <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->
