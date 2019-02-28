@@ -29,6 +29,17 @@ class PagesController extends Controller
         $blogs= Blog::orderBy('created_at','desc')->limit(3)->get();
         return view('pages.index')->with(['blogs'=>$blogs,'popularBooks'=>$popularBooks,'latestBooks'=>$latestBooks,'moreBooks'=>$moreBooks,'sliders'=>$sliders,'testimonials'=>$testimonials]);
     }
+    public function showBuyPage(Request $request){
+
+             $getId=$request->id;
+             $book=Book::find($getId);
+             $url=URL('/');
+
+
+             return view('pages.buybook')->with(['book'=>$book,'url'=>$url]);
+
+
+    }
 
     public function showBookDetails(Request $request){
          

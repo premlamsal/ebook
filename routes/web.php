@@ -41,10 +41,15 @@ Route::get('/book/{id}', ['as'=> '/book/{id}', 'uses'=>'PagesController@showBook
 
 Route::post('/reviewStore', ['as'=> 'reviewStore', 'uses'=>'SnippController@reviewStore'] );
 
+Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPage'] );
+
+//payment verification
+Route::post('verifyPayment', ['as'=> 'verifyPayment', 'uses'=>'PaymentController@verifyPayment'] );
+
 // Route::post('/customer/readbook/fetch', 'SnippController@fetchBook')->name('/customer/readbook/fetch');
 
 //end of prem routes
-
+Route::get('/testjson', ['as'=> 'testjson', 'uses'=>'SnippController@testJson'] );
 
 
 

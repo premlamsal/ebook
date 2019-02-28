@@ -147,6 +147,19 @@ class SnippController extends Controller
           
             return redirect('/book/'.$request->get('book_id'));
     }
+    public function testJson(){
+
+
+        
+        $arrayName = array('amount' => 20000,'status'=>'Ok done' );
+
+        $arrayName = json_encode($arrayName);
+         dd($arrayName);
+        $newdata=json_decode($arrayName);
+         print_r($newdata->amount);
+
+
+    }
 
 
    

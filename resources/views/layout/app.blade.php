@@ -34,6 +34,10 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+    <!-- khalti api source -->
+    <script src="https://khalti.com/static/khalti-checkout.js"></script>
+    <!-- khalti api source -->
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -515,6 +519,7 @@
         });
              
         </script>
+        @yield('PageScripts')
   
   </body>
 </html>

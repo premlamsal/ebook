@@ -17,11 +17,12 @@ class CreateMyBooksTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->unsigned();
             $table->unsignedInteger('book_id')->unsigned();
-            $table->unsignedInteger('transaction_id')->unsigned();
+            $table->string('trans_idx');
+            $table->string('trans_amount');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('transaction_id')->references('id')->on('transactions');
+            
             
         });
     }
