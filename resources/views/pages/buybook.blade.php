@@ -68,9 +68,8 @@
                         url : '{{url("verifyPayment")}}',
                         data:{'payload':payload,'book_id':book_id},
                         success:function(result){
-                        popup_title=result.popup_title
-                   
-                        
+                        message=result.message
+                          alert(message);
                         }
 
 

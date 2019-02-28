@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Auth;
 
 class PaymenetController extends Controller
 {
@@ -59,39 +60,46 @@ class PaymenetController extends Controller
         }
         else{
             //accessing json one by one
-            $idx=$verResponse->idx;
-            //get trasncation type and name
-            $type_idx=$verResponse->type['idx'];
-            $type_name=$verResponse->type['type_name'];
+            $trans_idx=$verResponse->idx;
+            // //get trasncation type and name
+            // $type_idx=$verResponse->type['idx'];
+            // $type_name=$verResponse->type['type_name'];
 
-            //get transcation state i.e completed or not
-            $state_idx=$verResponse->state['idx'];
-            $state_name=$verResponse->state['name'];
-            $state_template=$verResponse->state['template'];
+            // //get transcation state i.e completed or not
+            // $state_idx=$verResponse->state['idx'];
+            // $state_name=$verResponse->state['name'];
+            // $state_template=$verResponse->state['template'];
 
-            //get amount, fee_amount,date,ebanker datas
-            $amount=$verResponse->amount;
-            $fee_amount=$verResponse->fee_amount;
-            $refunded=$verResponse->refunded;
-            $created_on=$verResponse->created_on;
-            $ebanker=$verResponse->ebanker;
+            // //get amount, fee_amount,date,ebanker datas
+            $trans_amount=$verResponse->amount;
+            $user_id= Auth::user()->id;
+            // $fee_amount=$verResponse->fee_amount;
+            // $refunded=$verResponse->refunded;
+            // $created_on=$verResponse->created_on;
+            // $ebanker=$verResponse->ebanker;
 
-            //get user details
-            $user_idx=$verResponse->user['idx'];
-            $user_name=$verResponse->user['name'];
-            $user_mobile=$verResponse->user['mobile'];
+            // //get user details
+            // $user_idx=$verResponse->user['idx'];
+            // $user_name=$verResponse->user['name'];
+            // $user_mobile=$verResponse->user['mobile'];
 
-            //get merchant details
-            $merchant_idx=$verResponse->merchant['idx'];
-            $merchant_name=$verResponse->merchant['name'];
-            $merchant_mobile=$verResponse->merchant['mobile'];
+            // //get merchant details
+            // $merchant_idx=$verResponse->merchant['idx'];
+            // $merchant_name=$verResponse->merchant['name'];
+            // $merchant_mobile=$verResponse->merchant['mobile'];
            
             //will store sucess repsone to the database for futher use.
+            $MyBook=new MyBook;
+            $MyBook->user_id=$user_id;
+            $MyBook->book_id=$book_id;
+            $MyBook->trans_idx=$trans_idx;
+            $MyBook->trans_amount=$trans_amount;
+            $MyBook->save();
 
-
-
-
-             print_r("Thanks for Buying this Boook");
+            $message="All OK";
+              return response([
+                'message' =>$message,
+            ]);
         }
        
     }
