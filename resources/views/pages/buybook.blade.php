@@ -71,11 +71,7 @@
                         message=result.message
                           alert(message);
                         }
-
-
                     });
-
-
  }
 </script>
 @endsection

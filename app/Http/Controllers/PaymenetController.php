@@ -96,7 +96,7 @@ class PaymenetController extends Controller
             $MyBook->trans_amount=$trans_amount;
             $MyBook->save();
 
-            $message="All OK";
+            $message="All OK!! You have purchased a Book";
               return response([
                 'message' =>$message,
             ]);
