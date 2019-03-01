@@ -26,9 +26,7 @@
 @endsection
 @section('PageScripts')
 <script type="text/javascript">
- var price="{{$book->price}}"*100;
  var book_id="{{$book->id}}";
- var error2;
  price=1000;
  var config = {
             // replace the publicKey with yours
@@ -36,7 +34,7 @@
             "productIdentity": "{{$book->id}}",
             "productName": "{{$book->title}}",
             "productUrl": "{{$url}}/book/{{$book->id}}",
-            "amount":price,
+            "amount":"{{$book->price}}"*100,
             "eventHandler": {
                 onSuccess (payload) {
                     // hit merchant api for initiating verfication
