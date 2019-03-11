@@ -43,6 +43,10 @@ Route::post('/reviewStore', ['as'=> 'reviewStore', 'uses'=>'SnippController@revi
 
 Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPage'] );
 
+Route::get('/category/{category_name}', ['as'=> '/category/{category_name}', 'uses'=>'PagesController@showCategory'] );
+
+Route::get('/category/{category_name}/{sub_category_name}', ['as'=> '/category/{category_name}/sub_category_name', 'uses'=>'PagesController@showSubCategory'] );
+
 //payment verification
 Route::post('verifyPayment', ['as'=> 'verifyPayment', 'uses'=>'PaymentController@verifyPayment'] );
 

@@ -19,6 +19,8 @@ class CreateBooksTable extends Migration
             $table->Text('abstract');
             $table->string('isbn');
             $table->integer('page_no');
+            $table->string('category');
+            $table->string('sub_category');
             $table->string('tagline');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');

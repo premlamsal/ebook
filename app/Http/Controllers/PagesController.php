@@ -40,6 +40,25 @@ class PagesController extends Controller
 
 
     }
+    public function showCategory(Request $request){
+
+      $cat_name=$request->category_name;
+      $book=Book::whereCategory($cat_name)->get();
+    
+
+    }
+     public function showSubCategory(Request $request){
+
+
+     
+      $cat_name=$request->category_name;
+      $sub_cat_name=$request->sub_category_name;
+     
+      $book=Book::where('category',$cat_name)->where('sub_category',$sub_cat_name)->get();
+   
+
+
+    }
 
     public function showBookDetails(Request $request){
          
