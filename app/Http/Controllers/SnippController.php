@@ -106,8 +106,9 @@ class SnippController extends Controller
             $book_id=$request->getId;
             //searching for book of id
             $fetchBookData=Book::find($book_id);
-            $bookCategoryId=$fetchBookData->category_id;
-            $categoryName=Category::find($bookCategoryId)->value('category_name');
+            $categoryName=$fetchBookData->category;
+            $sub_categoryName=$fetchBookData->sub_category;
+            // $categoryName=Category::find($bookCategoryId)->value('category_name');
             //assingn fetched data to the variable one by one
             $popup_id=$fetchBookData->id;
             $popup_image=$fetchBookData->image;

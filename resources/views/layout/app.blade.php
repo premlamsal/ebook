@@ -417,9 +417,9 @@
                             <!-- Modal view content -->
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <div class="aa-product-view-content">
-                                <h3 class="popup_title">T-Shirt</h3>
+                                <h3 class="popup_title">Loading..Book Name</h3>
                                 <div class="aa-price-block">
-                                  <span class="aa-product-view-price popup_price">$34.99</span>
+                                  <span class="aa-product-view-price popup_price">Loading..Book Pricec</span>
                                   <p class="aa-product-avilability">Avilable<!-- : <span>In stock</span></p> -->
                                 </div>
                                 <p class="popup_abstract"></p>

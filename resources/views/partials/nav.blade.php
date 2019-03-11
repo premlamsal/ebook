@@ -20,7 +20,7 @@
                 <ul class="dropdown-menu sm-nowrap">
               @foreach($Category as $item)
                   <li>
-                      <a href="category/{{$item->category_name}}">{{$item->category_name}}
+                      <a href="/category/{{$item->category_name}}">{{$item->category_name}}
                         @if($item->subcategory->count()>0)
                           <span class="caret"></span>     
                         @endif
@@ -28,7 +28,7 @@
                       @if ($item->subcategory->count()) 
                           <ul class="dropdown-menu">
                           @foreach ($item->subcategory as $subitem)
-                              <li><a href="category/{{$item->category_name}}/{{$subitem->subcategory_name}}">{{$subitem->subcategory_name}}</a></li>
+                              <li><a href="/category/{{$item->category_name}}/{{$subitem->subcategory_name}}">{{$subitem->subcategory_name}}</a></li>
                           @endforeach
                           </ul>
                       @endif

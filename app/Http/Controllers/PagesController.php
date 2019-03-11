@@ -14,10 +14,10 @@ class PagesController extends Controller
 {
     public function home(){
 
-        //sliders
-        $sliders=Slider::all();
-        //testimonial
-        $testimonials=Testimonial::all();
+      //sliders
+      $sliders=Slider::all();
+      //testimonial
+      $testimonials=Testimonial::all();
     	//popular book retrival
     	$popularBooks=Book::orderBy('views', 'desc')->limit(8)->get();
     	//lastet book retrival
@@ -43,20 +43,20 @@ class PagesController extends Controller
     public function showCategory(Request $request){
 
       $cat_name=$request->category_name;
-      $book=Book::whereCategory($cat_name)->get();
+      $sub_cat_name="";
+      $book=Book::whereCategory($cat_name)->paginate();
+      return view('pages.showCategory')->with(['books'=>$book,'cat_name'=>$cat_name,'sub_cat_name'=>$sub_cat_name]);
     
 
     }
      public function showSubCategory(Request $request){
 
-
-     
       $cat_name=$request->category_name;
       $sub_cat_name=$request->sub_category_name;
      
-      $book=Book::where('category',$cat_name)->where('sub_category',$sub_cat_name)->get();
+      $book=Book::where('category',$cat_name)->where('sub_category',$sub_cat_name)->paginate();
    
-
+      return view('pages.showCategory')->with(['books'=>$book,'cat_name'=>$cat_name,'sub_cat_name'=>$sub_cat_name]);
 
     }
 
