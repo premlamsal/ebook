@@ -88,6 +88,23 @@
             </div>
            
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-fw fa-folder"></i>
+              <span>About</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              {{-- <h6 class="dropdown-header" >Category Screens:</h6> --}}
+              <a class="dropdown-item" href="aboutEdit/1" >Edit About</a>
+              <a class="dropdown-item" href="{{route('admin/staffs')}}" >add Staff</a>
+            </div>
+           
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="  writer"  role="button"  aria-haspopup="true" aria-expanded="false">
+                <span>Top Writers</span>
+              </a>             
+            </li>
       </ul>
 
       <div id="content-wrapper">

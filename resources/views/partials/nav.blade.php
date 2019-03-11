@@ -36,7 +36,8 @@
               @endforeach
                 </ul>
               </li>
-             <li><a href="#">About Us</a></li>
+             <li><a href="/about">About Us</a></li>
+             <li><a href="/contact">Contact Us</a></li>
             </ul>
            </div><!--/.nav-collapse -->
         </div>

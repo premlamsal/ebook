@@ -13,7 +13,9 @@
 
 Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
+
 Route::resource('/RegisterAccount','AccountController');
+
 Auth::routes();
 
 //Route::get('/convert', 'SnippController@convert')->name('convert');
@@ -110,10 +112,21 @@ Route::post('admin/storeBlog',['as'=>'admin/storeBlog', 'uses'=>'BlogController@
 Route::put('admin/updateBlog/{id}',['as'=>'admin/updateBlog', 'uses'=>'BlogController@updateBlog']);
 Route::get('admin/showBlog',['as'=>'admin/showBlog', 'uses'=>'BlogController@showAdmin']);
 Route::get('admin/destroyBlog/{id}',['as'=>'admin/destroyBlog', 'uses'=>'BlogController@destroyBlog']);
+//about route
+Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
+Route::get('admin/about',['as'=>'admin/about', 'uses'=>'AboutController@index']);
+Route::get('admin/aboutEdit/{id}',['as'=>'admin/aboutEdit', 'uses'=>'AboutController@edit']);
+Route::put('admin/update/{id}',['as'=>'admin/update', 'uses'=>'AboutController@update']);
+//about staffs route
+// Route::resource('admin/staffs','StaffController');
+Route::get('admin/staffs', ['as'=> 'admin/staffs', 'uses'=>'StaffController@index'] );
+Route::Post('admin/addStaffs', ['as'=> 'admin/addStaffs', 'uses'=>'StaffController@store'] );
+Route::get('admin/destroyStaffs/{id}', ['as'=> 'admin/destroyStaffs', 'uses'=>'StaffController@destroy'] );
+Route::get('admin/EditStaffs/{id}',['as'=>'admin/EditStaff', 'uses'=>'StaffController@edit']);
+Route::put('admin/UpdateStaffs/{id}',['as'=>'admin/UpdateStaff', 'uses'=>'StaffController@update']);
+//writer slider
+Route::get('admin/writer', ['as'=> 'admin/writer', 'uses'=>'WriterController@index'] );
+Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterController@store'] );
+Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
 //end of pralhad routes
-
-
-
-
-

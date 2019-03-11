@@ -67,10 +67,8 @@
       <label for="tags">Tags</label>
         <input type="text" class="form-control " id="tags"  name="tags" value="{{$book->tags}}">
    </div>
-  
    <div class="form-group row">
       <button type="submit" class="btn btn-outline-success">Submit</button>
    </div>
- 
 </div>
 @endsection

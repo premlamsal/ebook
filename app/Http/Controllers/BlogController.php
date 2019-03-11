@@ -69,7 +69,6 @@ public function addBlog(){
 
         $blog= Blog::find($id);
         $blogs= Blog::orderBy('created_at','desc')->get();
-         
         return view('blog.show')->with(['blog'=>$blog, 'blogs'=>$blogs]);
         
        

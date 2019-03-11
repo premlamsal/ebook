@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/slick.css')}}">
     <!-- price picker slider -->
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/nouislider.css')}}">
+    {{-- ourteam css --}}
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/ourteam.css')}}">
     <!-- Theme color -->
     <link id="switcher" href="{{URL::asset('css/theme-color/default-theme.css')}}" rel="stylesheet">
     <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
@@ -47,7 +49,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   
+<style>
 
+</style>
   </head>
   <body> 
    <!-- wpf loader Two -->

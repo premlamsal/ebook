@@ -9,7 +9,10 @@ use App\Slider;
 use App\Testimonial;
 use App\Review;
 use Auth;
+use App\About;
 use App\Category;
+use DB;
+use App\Writer;
 class PagesController extends Controller
 {
     public function home(){
@@ -25,9 +28,10 @@ class PagesController extends Controller
     	//more books retrival
     	$moreBooks=Book::inRandomOrder()->get();
     	//blog retrival
-
         $blogs= Blog::orderBy('created_at','desc')->limit(3)->get();
-        return view('pages.index')->with(['blogs'=>$blogs,'popularBooks'=>$popularBooks,'latestBooks'=>$latestBooks,'moreBooks'=>$moreBooks,'sliders'=>$sliders,'testimonials'=>$testimonials]);
+        //writer retrieve
+        $writer=Writer::all();
+        return view('pages.index')->with(['blogs'=>$blogs,'popularBooks'=>$popularBooks,'latestBooks'=>$latestBooks,'moreBooks'=>$moreBooks,'sliders'=>$sliders,'testimonials'=>$testimonials,'writer'=>$writer]);
     }
     public function showBuyPage(Request $request){
 
@@ -40,6 +44,22 @@ class PagesController extends Controller
 
 
     }
+
+    public function about()
+    {
+      $about=About::all();
+      $admin=DB::select('SELECT * FROM staff where staff_type="ADMINISTRATION AND FINANCE" ' );
+      $marketing=DB::select('SELECT * FROM staff where staff_type="MARKETING" ' );
+      
+      $COMPUTER=DB::select('SELECT * FROM staff where staff_type="COMPUTER DESK" ' );
+    
+      $distribution=DB::select('SELECT * FROM staff where staff_type="  DISTRIBUTION COUNTER" ' );
+      return view('pages.about')->with(['abouts'=>$about, 'admin'=>$admin, 'marketing'=>$marketing, 'computer'=>$COMPUTER, 'DISTRIBUTION'=>$distribution ]);
+
+    }
+
+
+ 
 
     public function showBookDetails(Request $request){
          
