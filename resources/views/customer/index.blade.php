@@ -35,17 +35,14 @@
                           
                      <li>
                       <figure>
-                          <a class="aa-product-img popup" href="javascript:void(0)" id="{{$my_book->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$my_book->image}}" alt="polo shirt img"></a>
+                          <a class="aa-product-img"><img src="{{URL::asset('storage/Book_image').'/'.$my_book->image}}" alt="polo shirt img"></a>
                         <a class="aa-add-card-btn"href="{{route('/customer/readbook/',['book_id'=>$my_book->id])}}"><span class="fa fa-eye"></span>Read Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>
                           <span class="aa-product-price">{{$my_book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
                         </figcaption>
                       </figure>                     
-                      <div class="aa-product-hvr-content">
-                      
-                     
-                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$my_book->id}}"><span class="fa fa-search"></span></a>                            
+                      <div class="aa-product-hvr-content">                            
                       </div>
                      
                     <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->
