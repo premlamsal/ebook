@@ -100,7 +100,7 @@
                     </div>
                     <p>{{ str_limit($book->abstract, 250) }}</p>
                       <p class="aa-prod-category">
-                        Category: <a href="#">{{$CategoryName}}</a>
+                        Category: <a href="#">{{$book->category}}</a>
                       </p>
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="#">Buy</a>

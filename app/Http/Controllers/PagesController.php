@@ -65,8 +65,8 @@ class PagesController extends Controller
 
           $book_id=$request->id;
           $book=Book::find($book_id);
-          $bookCategoryId=$book->category_id;
-          $categoryName=Category::find($bookCategoryId)->value('category_name');
+          // $bookCategoryId=$book->category_id;
+          // $categoryName=$book->category;
           $reviews=Review::where('book_id',$book_id)->get();
 
           $rating_no=Review::where('book_id',$book_id)->get();
@@ -104,7 +104,7 @@ class PagesController extends Controller
          
           $relatedBooks=Book::all()->where('category_id',$category_id)->where('id','!=',$book_id);
           if($book){
-             return view('pages.showbookdetails')->with(['book'=>$book,'reviews'=>$reviews,'relatedBooks'=>$relatedBooks,'finalRating'=>$finalRating,'isReviewdDone'=>$isReviewdDone,'CategoryName'=>$categoryName]);
+             return view('pages.showbookdetails')->with(['book'=>$book,'reviews'=>$reviews,'relatedBooks'=>$relatedBooks,'finalRating'=>$finalRating,'isReviewdDone'=>$isReviewdDone]);
           }
           else{
              return abort(404);
