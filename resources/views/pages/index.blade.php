@@ -127,7 +127,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$popularBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$popularBook->image}}" alt="{{$popularBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$popularBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$popularBook->title}}</a></h4>
                           <span class="aa-product-price">{{$popularBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -145,7 +145,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a>
+                  <!-- <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / popular product category -->        
               </div>
@@ -181,7 +181,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$latestBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$latestBook->image}}" alt="{{$latestBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$latestBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$latestBook->title}}</a></h4>
                           <span class="aa-product-price">{{$latestBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -199,7 +199,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all<span class="fa fa-long-arrow-right"></span></a>
+                 <!--  <a class="aa-browse-btn" href="#">Browse all<span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / Latest product category -->
            
@@ -237,7 +237,7 @@
                      <li>
                       <figure>
                          <a class="aa-product-img popup" href="javascript:void(0)" id="{{$moreBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$moreBook->image}}" alt="{{$moreBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$moreBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$moreBook->title}}</a></h4>
                           <span class="aa-product-price">{{$moreBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -255,7 +255,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a>
+              <!--     <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / Latest product category -->
            

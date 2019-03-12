@@ -103,7 +103,7 @@
                         Category: <a href="#">{{$book->category}}</a>
                       </p>
                     <div class="aa-prod-view-bottom">
-                      <a class="aa-add-to-cart-btn" href="#">Buy</a>
+                      <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
                       <a class="aa-add-to-cart-btn" href="#">Wishlist</a>
              
                     </div>
@@ -251,7 +251,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$relatedBook->image}}" alt="{{$relatedBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add to Cart</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$relatedBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$relatedBook->title}}</a></h4>
                           <span class="aa-product-price">{{$relatedBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
