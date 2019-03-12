@@ -135,7 +135,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="/buy/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
+                        <a href="/book/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$popularBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
@@ -189,7 +189,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="/buy/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
+                        <a href="/book/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                      <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$latestBook->id}}"><span class="fa fa-search"></span></a>                              
                       </div>
                      
@@ -295,8 +295,8 @@
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
-                <span class="fa fa-truck"></span>
-                <h4>FREE SHIPPING</h4>
+                <span class="fa fa-eye"></span>
+                <h4>Online Reading</h4>
                 <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
               </div>
             </div>
