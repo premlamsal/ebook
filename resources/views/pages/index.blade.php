@@ -135,7 +135,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="/buy/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$popularBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
@@ -189,7 +189,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        
+                        <a href="/buy/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                      <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$latestBook->id}}"><span class="fa fa-search"></span></a>                              
                       </div>
                      
@@ -245,7 +245,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="/book/{{$moreBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                       <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$moreBook->id}}"><span class="fa fa-search"></span></a>                                
                       </div>
                      
