@@ -211,8 +211,8 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                <form action="/search" method="GET">
+                  <input type="text" name="query" id="" placeholder="Search by Name or Category">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>

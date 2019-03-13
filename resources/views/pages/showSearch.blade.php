@@ -8,10 +8,10 @@
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Category</h2>
+        <h2>Search</h2>
         <ol class="breadcrumb">
          <!--  <li><a href="index.html">Home</a></li>   -->       
-          <li class="active">{{$cat_name}}/{{$sub_cat_name}}</li>
+          <li class="active">{{$query}}</li>
         </ol>
       </div>
      </div>
@@ -28,7 +28,7 @@
             <div class="aa-product-catg-head">
               <div class="aa-product-catg-head-left">
                
-                  <label for="">Books by Category</label>
+                  <label for="">Seach Results</label>
              
               </div>
               <div class="aa-product-catg-head-right">
@@ -39,7 +39,8 @@
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
                 <!-- start single product item -->
-                 @foreach($books as $book)
+                @if($searchBooks->first())
+                 @foreach($searchBooks as $book)
                           
                      <li>
                       <figure>
@@ -61,6 +62,9 @@
                     </li>
                   @endforeach
                 <!-- start single product item --> 
+                @else
+                  <div style="margin-left: 35px; margin-bottom: 20px;">Nothing Found. Try another Query</div>
+                @endif
         </div>
        
       </div>

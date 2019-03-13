@@ -60,6 +60,14 @@ class PagesController extends Controller
 
     }
 
+    public function search(Request $request){
+
+      $query=$request->get('query');
+      $searchBooks=Book::where('title','like','%'.$query.'%')->orWhere('category','like','%'.$query.'%')->get();
+      return view('pages.showSearch')->with(['searchBooks'=>$searchBooks,'query'=>$query]);
+
+    }
+
     public function showBookDetails(Request $request){
          
 

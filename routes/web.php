@@ -47,6 +47,8 @@ Route::get('/category/{category_name}', ['as'=> '/category/{category_name}', 'us
 
 Route::get('/category/{category_name}/{sub_category_name}', ['as'=> '/category/{category_name}/sub_category_name', 'uses'=>'PagesController@showSubCategory'] );
 
+Route::get('/search', ['as'=> '/search', 'uses'=>'PagesController@search'] );
+
 //payment verification
 Route::post('verifyPayment', ['as'=> 'verifyPayment', 'uses'=>'PaymentController@verifyPayment'] );
 
