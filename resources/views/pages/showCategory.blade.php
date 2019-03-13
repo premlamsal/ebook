@@ -44,7 +44,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$book->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$book->image}}" alt="{{$book->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$book->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$book->title}}</a></h4>
                           <span class="aa-product-price">{{$book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -53,7 +53,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="/book/{{$book->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$book->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
