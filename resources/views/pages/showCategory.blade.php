@@ -47,7 +47,7 @@
                         <a class="aa-add-card-btn" href="/buy/{{$book->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$book->title}}</a></h4>
-                          <span class="aa-product-price">{{$book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
+                          <span class="aa-product-price">Rs.{{$book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
                           <p class="aa-product-descrip">{{str_limit($book->abstract, 250)}}</p>
                         </figcaption>
                       </figure>                     

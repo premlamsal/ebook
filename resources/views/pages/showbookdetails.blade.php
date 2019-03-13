@@ -259,8 +259,8 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                      
-                        <a href="#" class="popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><span class="fa fa-search"></span></a>                            
+                       <a href="/book/{{$relatedBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
+                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
                     <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->
