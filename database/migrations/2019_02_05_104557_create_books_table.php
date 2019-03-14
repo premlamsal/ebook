@@ -29,6 +29,7 @@ class CreateBooksTable extends Migration
             $table->unsignedInteger('publication_id');
             $table->foreign('publication_id')->references('id')->on('publications');
             $table->string('image');
+            $table->string('book_file');
             $table->string('edition');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

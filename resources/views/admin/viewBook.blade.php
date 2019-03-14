@@ -48,7 +48,7 @@
                     <td>
                                 {{ $book->category}}
                     </td>
-                     <td>
+                    <td>
                                 {{ $book->sub_category}}
                     </td>
                     <td>

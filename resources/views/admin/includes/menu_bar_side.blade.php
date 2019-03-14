@@ -4,7 +4,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index">
+          <a class="nav-link" href="{{route('/admin')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Admin Dashboard</span>
           </a>
@@ -53,7 +53,7 @@
             <h6 class="dropdown-header" >Category Screens:</h6>
 
             <a class="dropdown-item" href="{{route('admin/addCategory')}}" >Add Main Category</a>
-            <a class="dropdown-item" href="{{route('admin/addCategory')}}" >Add Sub Category</a>
+            <a class="dropdown-item" href="{{route('admin/addSubCategory')}}" >Add Sub Category</a>
             <a class="dropdown-item" href="{{route('admin/viewCategory')}}">View and Edit Category</a>
           </div>
         </li>
@@ -63,7 +63,8 @@
             <span>Slider</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-header" href="{{route('admin/Slider')}}" >Add slider</a>
+            <h6 class="dropdown-header" >Slider Screens:</h6>
+            <a class="dropdown-item" href="{{route('admin/Slider')}}" >Add slider</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -72,7 +73,7 @@
               <span>Testimonial</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              {{-- <h6 class="dropdown-header" >Category Screens:</h6> --}}
+             <h6 class="dropdown-header" >Testimonial Screens:</h6>
               <a class="dropdown-item" href="{{route('admin/Testimonial')}}" >Add Testimonial</a>
             </div>
           </li>
@@ -82,7 +83,7 @@
               <span>Blog</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              {{-- <h6 class="dropdown-header" >Category Screens:</h6> --}}
+              <h6 class="dropdown-header" >Blog Screens:</h6>
               <a class="dropdown-item" href="{{route('admin/addBlog')}}" >Add Blog</a>
               <a class="dropdown-item" href="{{route('admin/showBlog')}}" >View And Edit</a>
             </div>

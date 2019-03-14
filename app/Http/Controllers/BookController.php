@@ -8,6 +8,7 @@ use App\Category;
 use App\User;
 use App\Publication;
 use Auth;
+use DB;
 use App\Book;
 class BookController extends Controller
 {
@@ -46,6 +47,7 @@ class BookController extends Controller
         'page_no'=>'required',
         'tagline'=>'required',
         'category'=>'required',
+        'subcategory'=>'required',
         'price'=>'required',
         'author'=>'required',
         'publication'=>'required',
@@ -70,14 +72,19 @@ class BookController extends Controller
              {
                 $filenameWithExt=$request->file('bookfile')->getClientOriginalName();
                 $filename=pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                $extension=$request->file('bookfile')->getClientOriginalExtension();
-                $BookfileNameToStore=$filename.'_'.time().'.'.$extension;
+                //$extension=$request->file('bookfile')->getClientOriginalExtension();
+                $BookfileNameToStore=$filename.'_'.time(); //.'.'.$extension;
                 $Bookpath=$request->file('bookfile')->storeAs('public/Book_pdf',$BookfileNameToStore);
             }
             else{
                 $BookfileNameToStore='nofile.pdf';
             }
-
+            //cat_name
+            $catid=$request->input('category');
+        $cat=DB::table('categories')->where(['id'=>$catid])->value('category_name');
+         //cat_name
+            $subcatid=$request->input('subcategory');
+        $subcat=DB::table('sub_categories')->where(['id'=>$subcatid])->value('subcategory_name');
           $user_id= 1;
 
         $addBook=new Book;
@@ -86,7 +93,10 @@ class BookController extends Controller
             $addBook->isbn=$request->input('isbn');
             $addBook->page_no=$request->input('page_no');
             $addBook->tagline=$request->input('tagline');
+            $addBook->price=$request->input('price');
             $addBook->category_id=$request->input('category');
+            $addBook->category=$cat;
+            $addBook->sub_category=$subcat;
             $addBook->price=$request->input('price');
             $addBook->author=$request->input('author');
             $addBook->publication_id=$request->input('publication');
@@ -137,6 +147,7 @@ class BookController extends Controller
         'page_no'=>'required',
         'tagline'=>'required',
         'category'=>'required',
+        'subcategory'=>'required',
         'price'=>'required',
         'author'=>'required',
         'publication'=>'required',
@@ -169,7 +180,13 @@ class BookController extends Controller
             // else{
             //     $BookfileNameToStore=NULL;
             // }
+ //cat_name
 
+            $catid=$request->input('category');
+        $cat=DB::table('categories')->where(['id'=>$catid])->value('category_name');
+         //cat_name
+            $subcatid=$request->input('subcategory');
+        $subcat=DB::table('sub_categories')->where(['id'=>$subcatid])->value('subcategory_name');
           $user_id= 1;
 
         $editBook=Book::find($id);
@@ -178,12 +195,14 @@ class BookController extends Controller
             $editBook->isbn=$request->input('isbn');
             $editBook->page_no=$request->input('page_no');
             $editBook->tagline=$request->input('tagline');
+            $editBook->category=$cat;
+            $editBook->sub_category=$subcat;
             $editBook->category_id=$request->input('category');
             $editBook->price=$request->input('price');
             $editBook->author=$request->input('author');
             $editBook->publication_id=$request->input('publication');
             $editBook->image=$fileNameToStore;
-            $editBook->file=$BookfileNameToStore;
+            $editBook->book_file=$BookfileNameToStore;
             $editBook->edition=$request->input('edition');
             $editBook->user_id=$user_id;
             $editBook->tags=$request->input('tags');

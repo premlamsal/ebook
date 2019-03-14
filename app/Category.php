@@ -13,12 +13,12 @@ class Category extends Model
     }
 }
 
-// SubMenu Model
-class SubCategory extends Model
-{
+// // SubMenu Model
+// class SubCategory extends Model
+// {
   
-	public function Category()
-	    {
-	        return $this->belongsTo(Category::class);
-	    }
-}
+// 	public function Category()
+// 	    {
+// 	        return $this->belongsTo(Category::class);
+// 	    }
+// }

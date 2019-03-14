@@ -33,6 +33,15 @@
            @endforeach
         </select>
    </div>
+   <div class="form-group row">
+      <label for="radio_btn">Select Sub-Category</label>
+      <select name="subcategory" class="form-control  country_to_state" id="subcategory">
+            <option value="0">Select a Sub-Category</option>
+            @foreach ($subcat_id as $subcategory)
+             <option value="{{$subcategory->id}}">{{$subcategory->subcategory_name}}</option>
+           @endforeach
+        </select>
+   </div>
     <div class="form-group row">
       <label for="price">Price</label>
         <input type="text" class="form-control " id="price" value="" name="price" placeholder="Price">
