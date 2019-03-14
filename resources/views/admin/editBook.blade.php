@@ -28,7 +28,7 @@
    <div class="form-group row">
       <label for="category">Select Category</label>
       <select name="category" class="form-control  country_to_state" id="category">
-            <option value="{{ $book->Category->id}}">{{ $book->Category->category_name}}</option>
+            <option value="{{ $book->Category->id}}">{{ $book->category_name}}</option>
             @foreach ($cat_id as $category)
              <option value="{{$category->id}}">{{$category->category_name}}</option>
            @endforeach

@@ -62,10 +62,7 @@ class AdminController extends Controller
     }
      public function editBook($id)
     {
-
-
       $book= Book::all()->first();
-      
       $cat_id= Category::all();
       $pub_id= Publication::all();
    
