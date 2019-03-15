@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('content')
-
+<div class="container">
   <h3>Add Book</h3>
    <form method="post" action="{{route('admin/Book/Store')}}" enctype="multipart/form-data">
    @csrf
