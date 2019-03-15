@@ -69,7 +69,7 @@ Route::post('/admin/category/storeCat',['as'=>'admin/category/storeCat','uses'=>
 Route::get('admin/addSubCategory',['as'=>'admin/addSubCategory','uses'=>'AdminController@addSubCategory']);
 Route::post('/admin/category/storeSubCat',['as'=>'admin/category/storeSubCat','uses'=>'CategoryController@storeSubCat']);
 
-Route::post('/admin/getCategory', [ 'as' => '/admin/getCategory', 'uses' => 'AdminController@getCategory']);
+Route::post('/admin/getSubCategory', [ 'as' => '/admin/getSubCategory', 'uses' => 'AdminController@getSubCategory']);
 
 Route::delete('/admin/{id}/Catdestroy',['as'=>'/admin/{id}/Catdestroy','uses'=>'CategoryController@Catdestroy']);
 Route::delete('/admin/{id}/SubCatdestroy',['as'=>'/admin/{id}/SubCatdestroy','uses'=>'CategoryController@SubCatdestroy']);

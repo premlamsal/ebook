@@ -86,7 +86,7 @@
                 var selectedCategory = $(this).children("option:selected").val();
                 $.ajax({
                         type : 'post',
-                        url : '{{url("/admin/getCategory")}}',
+                        url : '{{url("admin/getSubCategory")}}',
                         data:{'id':selectedCategory},
                         success:function(data){
                         $('#toShowSubCategory').html(data);

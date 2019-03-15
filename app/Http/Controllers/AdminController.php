@@ -103,7 +103,7 @@ class AdminController extends Controller
 
 
     //AJAX for sub categories
-    public function getCategory(Request $request){
+    public function getSubCategory(Request $request){
         $id=$request->get('id');
     if($id==0){
         $output="";
