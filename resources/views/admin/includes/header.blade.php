@@ -48,6 +48,5 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
 </style>
   </head>

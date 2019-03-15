@@ -35,7 +35,7 @@
    </div>
  <div class="form-group row ">
       <label for="subcategory"> Sub-Category Name</label>
-      <div id="toShowSubCategory" style="margin-left: 20px;"></div>
+      <div id="toShowSubCategory" style="width: 100%;"></div>
    </div>
 
     <div class="form-group row">
@@ -89,7 +89,7 @@
                         url : '{{url("admin/getSubCategory")}}',
                         data:{'id':selectedCategory},
                         success:function(data){
-                        $('#toShowSubCategory').html(data);
+                          $('#toShowSubCategory').html(data);
                         }
                     });
             });

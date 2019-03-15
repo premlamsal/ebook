@@ -120,6 +120,8 @@ Route::get('admin/destroyBlog/{id}',['as'=>'admin/destroyBlog', 'uses'=>'BlogCon
 //end of pralhad routes
 
 
+Route::get('/testing',['as'=>'testing', 'uses'=>'SnippController@testing']);
+
 
 
 

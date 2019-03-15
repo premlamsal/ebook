@@ -29,25 +29,30 @@
       <label for="radio_btn">Select Category</label>
       <select name="category" class="form-control  country_to_state" id="category">
             <option value="0">Select a Category</option>
-            @foreach ($cat_id as $category)
-             <option value="{{$category->id}}">{{$category->category_name}}</option>
+           @foreach ($Categories as $Category)
+             @if($Category->category_name==$book->category) 
+                      <option value="{{$Category->id}}" selected="">{{$Category->category_name}}</option>
+              @else
+                      <option value="{{$Category->id}}">{{$Category->category_name}}</option>
+              @endif
            @endforeach
         </select>
    </div>
-  {{-- <!-- <div class="form-group row">
-      <label for="radio_btn">Select Sub-Category</label>
-      <select name="subcategory" class="form-control  country_to_state" id="subcategory">
-            <option value="0">Select a Sub-Category</option>
-            @foreach ($subcat_id as $subcategory)
-             <option value="{{$subcategory->id}}">{{$subcategory->subcategory_name}}</option>
-           @endforeach
-        </select>
-   </div> -->--}}
-
 
  <div class="form-group row ">
       <label for="subcategory"> Sub-Category Name</label>
-      <div id="toShowSubCategory" style="margin-left: 20px;"></div>
+      <div id="toShowSubCategory" style="width: 100%;">
+          <select name='subcategory' class='form-control'  required>
+             <option value="0">Select a SubCategory</option>
+           @foreach ($SubCategories as $SubCategory)
+             @if($SubCategory->subcategory_name==$book->sub_category) 
+                      <option value="{{$SubCategory->id}}" selected="">{{$SubCategory->subcategory_name}}</option>
+              @else
+                      <option value="{{$SubCategory->id}}">{{$SubCategory->subcategory_name}}</option>
+              @endif
+           @endforeach
+          </select>
+      </div>
    </div>
 
     <div class="form-group row">
@@ -62,8 +67,8 @@
       <label for="radio_btn">Select Publication</label>
       <select name="publication" class="form-control  country_to_state" id="publication"">
             <option value="{{ $book->Publication->id}}">{{ $book->Publication->name}}</option>
-            @foreach ($pub_id as $publication)
-             <option value="{{$publication->id}}">{{$publication->name}}</option>
+            @foreach ($Publications as $Publication)
+             <option value="{{$Publication->id}}">{{$Publication->name}}</option>
            @endforeach
         </select>
    </div>
@@ -98,10 +103,10 @@
                 var selectedCategory = $(this).children("option:selected").val();
                 $.ajax({
                         type : 'post',
-                        url : '{{url("/admin/getCategory")}}',
+                        url : '{{url("admin/getSubCategory")}}',
                         data:{'id':selectedCategory},
                         success:function(data){
-                       alert("Hello");
+                          $('#toShowSubCategory').html(data);
                         }
                     });
             });

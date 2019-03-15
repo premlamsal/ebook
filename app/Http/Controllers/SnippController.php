@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\SubCategory;
 use Auth;
 use URL;
 use App\MyBook;
@@ -82,6 +83,24 @@ class SnippController extends Controller
          dd($arrayName);
         $newdata=json_decode($arrayName);
          print_r($newdata->amount);
+
+
+    }
+    public function testing(){
+
+        // $column="category_id";
+        // $id=2;
+        // $subCats=SubCategory::where($column,'=',$id)->get();
+        // // $data=SubCategory::all();
+        // foreach($subCats as $subCat)
+        //   {
+             
+        //     $output="<option value='$subCat->id'>$subCat->subcategory_name</option>"; 
+        //     print_r($output);   
+        //   }
+        print_r("This is test route");
+          
+         
 
 
     }

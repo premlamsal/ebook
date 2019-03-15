@@ -87,12 +87,12 @@ class AdminController extends Controller
 
       $book= Book::all()->first();
       
-      $cat_id= Category::all();
-      $subcat_id= SubCategory::all();
-      $pub_id= Publication::all();
+      $Categories= Category::all();
+      $SubCategories= SubCategory::all();
+      $Publications= Publication::all();
    
       // print_r($user_id);
-      return view('admin.editBook',compact('book','cat_id','subcat_id','pub_id'));
+      return view('admin.editBook',compact('book','Categories','SubCategories','Publications'));
     }
     public function viewTransaction()
     {
@@ -104,22 +104,24 @@ class AdminController extends Controller
 
     //AJAX for sub categories
     public function getSubCategory(Request $request){
-        $id=$request->get('id');
-    if($id==0){
+
+    $id=$request->id;
+      $id=$request->id;
+        if($id==0){
         $output="";
         return Response($output); 
         }
         
     else{
-      $column="SubCat_id";
-        $subCategory=SubCategory::where($column,'=',$id)->get();
+        $column="category_id";
+        $subCats=SubCategory::where($column,'=',$id)->get();
         $output="";
-        $output.="<select name='category' class='form-control category_options'  required autofocus>";
-      if($subCategory){  
-          foreach($subCategory as $subcategory)
+        $output.="<select name='subcategory' class='form-control'  required autofocus>";
+      if($subCats){  
+          foreach($subCats as $subCat)
           {
              
-            $output.="<option value='$subcategory->id'>$subcategory->subcategory_name</option>";    
+            $output.="<option value='$subCat->id'>$subCat->subcategory_name</option>";    
           }
           $output.="</select>";
 
@@ -129,7 +131,9 @@ class AdminController extends Controller
         return Response($output);
       }
     }
-        
+
+
+       
     }
 
 }
