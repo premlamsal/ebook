@@ -4,7 +4,7 @@
 
  <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="/img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+   <img src="/img/feathers-books-ancient-blurred-background-shelves-1280x720-wallpaper-1170x470.jpg" alt="fashion img" class="jumbot-image">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">

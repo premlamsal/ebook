@@ -46,8 +46,22 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
+    <style type="text/css">
+        .jumbotronImage{
+          width: 100%;
+          max-height: 300px;
+          overflow: hidden;
+           /* Add the blur effect */
+          filter: blur(5px);
+          -webkit-filter: blur(5px);
 
+        }
+        .jumbot-image{
+          width: 100%;
+          max-height: 300px;
+        }
+
+    </style>
   </head>
   <body> 
    <!-- wpf loader Two -->
