@@ -3,7 +3,7 @@
 
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="../img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+   <img src="../storage/Book_image/{{$book->image}}" alt="fashion img" class="jumbot-image">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
@@ -100,10 +100,10 @@
                     </div>
                     <p>{{ str_limit($book->abstract, 250) }}</p>
                       <p class="aa-prod-category">
-                        Category: <a href="#">{{$CategoryName}}</a>
+                        Category: <a href="#">{{$book->category}}</a>
                       </p>
                     <div class="aa-prod-view-bottom">
-                      <a class="aa-add-to-cart-btn" href="#">Buy</a>
+                      <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
                       <a class="aa-add-to-cart-btn" href="#">Wishlist</a>
              
                     </div>
@@ -120,7 +120,7 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="description">
-                  <p>{{str_limit($book->abstract, 250)}}</p>
+                  <p style="text-align: justify;">{{$book->abstract}}</p>
                 </div>
                 <div class="tab-pane fade " id="review">
                  <div class="aa-product-review-area">
@@ -251,7 +251,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$relatedBook->image}}" alt="{{$relatedBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add to Cart</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$relatedBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$relatedBook->title}}</a></h4>
                           <span class="aa-product-price">{{$relatedBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -259,8 +259,8 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                      
-                        <a href="#" class="popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><span class="fa fa-search"></span></a>                            
+                       <a href="/book/{{$relatedBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
+                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
                     <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->

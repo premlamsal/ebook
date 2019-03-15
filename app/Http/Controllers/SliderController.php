@@ -48,6 +48,8 @@ class SliderController extends Controller
         //store Image in Database
         $slider=new Slider;
         $slider->slider_image=$imageName;
+        $slider->slider_title=$request->input('slider_title');
+        $slider->slider_subtitle=$request->input('slider_subtitle');
         $slider->save();
         return redirect('admin/Slider');
        

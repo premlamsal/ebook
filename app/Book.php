@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-	public function Category()
+    public function Category()
     {
         return $this->belongsTo('App\Category');
+    }
+    public function SubCategory()
+    {
+        return $this->belongsTo('App\SubCategory');
     }
     public function Publication()
     {
@@ -25,5 +29,5 @@ class Book extends Model
     public function getImageUrl()
     {
     return asset($this->image);
-	}
+    }
 }

@@ -29,7 +29,7 @@
                     </td>
                     <td>
 
-                                  <a href="{{URL('/admin/'.$account->id.'/editAccount')}}" class='btn btn-info' role='button' style='width:100%;'>Edit</a>
+                                  <a href="{{URL('/admin/'.$account->id.'/editAccount')}}" class='btn btn-info' role='button' style='width:38%;'>Edit</a>
                                   {!! Form::open(['action'=>['AccountController@destroy',$account->id],'method'=>'POST']) !!} 
                                   {{Form::hidden('_method','DELETE')}}
                                   {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
