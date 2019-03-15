@@ -26,30 +26,30 @@
         <input type="text" class="form-control " id="tagline" name="tagline" value="{{$book->tagline}}">
    </div>
     <div class="form-group row">
-      <label for="category">Select Category</label>
+      <label for="radio_btn">Select Category</label>
       <select name="category" class="form-control  country_to_state" id="category">
+            <option value="0">Select a Category</option>
             @foreach ($cat_id as $category)
-             <option value="{{$category->id}}"
-                 @if($book->category == $category->category_name)
-                 {{'selected="selected"'}}
-                 @endif 
-              >{{$category->category_name}}</option>
+             <option value="{{$category->id}}">{{$category->category_name}}</option>
            @endforeach
         </select>
+   </div>
+  {{-- <!-- <div class="form-group row">
+      <label for="radio_btn">Select Sub-Category</label>
+      <select name="subcategory" class="form-control  country_to_state" id="subcategory">
+            <option value="0">Select a Sub-Category</option>
+            @foreach ($subcat_id as $subcategory)
+             <option value="{{$subcategory->id}}">{{$subcategory->subcategory_name}}</option>
+           @endforeach
+        </select>
+   </div> -->--}}
+
+
+ <div class="form-group row ">
+      <label for="subcategory"> Sub-Category Name</label>
+      <div id="toShowSubCategory" style="margin-left: 20px;"></div>
    </div>
 
-    <div class="form-group row">
-      <label for="category">Select Sub-Category</label>
-      <select name="subcategory" class="form-control  country_to_state" id="subcategory">
-            @foreach ($subcat_id as $subcategory)
-             <option value="{{$category->id}}"
-                 @if($book->sub_category == $subcategory->subcategory_name)
-                 {{'selected="selected"'}}
-                 @endif 
-              >{{$subcategory->subcategory_name}}</option>
-           @endforeach
-        </select>
-   </div>
     <div class="form-group row">
       <label for="price">Price</label>
         <input type="text" class="form-control " id="price" name="price" value="{{$book->price}}">
@@ -89,4 +89,34 @@
    </div>
  
 </div>
+@endsection
+
+@section('PageScripts')
+<script>
+        $(document).ready(function(){
+            $("select#category").change(function(){
+                var selectedCategory = $(this).children("option:selected").val();
+                $.ajax({
+                        type : 'post',
+                        url : '{{url("/admin/getCategory")}}',
+                        data:{'id':selectedCategory},
+                        success:function(data){
+                        $('#toShowSubCategory').html(data);
+                        }
+                    });
+            });
+        });
+        </script>
+        <script type="text/javascript">
+         
+         $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+             
+        </script>
+    <!--  <script type="text/javascript">
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    </script> -->  
 @endsection

@@ -33,7 +33,7 @@
            @endforeach
         </select>
    </div>
-   <div class="form-group row">
+  {{-- <!-- <div class="form-group row">
       <label for="radio_btn">Select Sub-Category</label>
       <select name="subcategory" class="form-control  country_to_state" id="subcategory">
             <option value="0">Select a Sub-Category</option>
@@ -41,7 +41,14 @@
              <option value="{{$subcategory->id}}">{{$subcategory->subcategory_name}}</option>
            @endforeach
         </select>
+   </div> -->--}}
+
+
+ <div class="form-group row ">
+      <label for="subcategory"> Sub-Category Name</label>
+      <div id="toShowSubCategory" style="margin-left: 20px;"></div>
    </div>
+
     <div class="form-group row">
       <label for="price">Price</label>
         <input type="text" class="form-control " id="price" value="" name="price" placeholder="Price">
@@ -81,4 +88,34 @@
    </div>
  
 </div>
+@endsection
+
+@section('PageScripts')
+<script>
+        $(document).ready(function(){
+            $("select#category").change(function(){
+                var selectedCategory = $(this).children("option:selected").val();
+                $.ajax({
+                        type : 'post',
+                        url : '{{url("/admin/getCategory")}}',
+                        data:{'id':selectedCategory},
+                        success:function(data){
+                        $('#toShowSubCategory').html(data);
+                        }
+                    });
+            });
+        });
+        </script>
+        <script type="text/javascript">
+         
+         $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+             
+        </script>
+    <!--  <script type="text/javascript">
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    </script> -->  
 @endsection
