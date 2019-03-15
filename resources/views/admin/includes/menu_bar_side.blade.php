@@ -1,4 +1,3 @@
-
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -102,7 +101,7 @@
            
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="  writer"  role="button"  aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href=" admin/ writer"  role="button"  aria-haspopup="true" aria-expanded="false">
                 <span>Top Writers</span>
               </a>             
             </li>
