@@ -52,6 +52,22 @@
 <style>
 
 </style>
+    <style type="text/css">
+        .jumbotronImage{
+          width: 100%;
+          max-height: 300px;
+          overflow: hidden;
+           /* Add the blur effect */
+          filter: blur(5px);
+          -webkit-filter: blur(5px);
+
+        }
+        .jumbot-image{
+          width: 100%;
+          max-height: 300px;
+        }
+
+    </style>
   </head>
   <body> 
    <!-- wpf loader Two -->
@@ -215,8 +231,8 @@
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                <form action="/search" method="GET">
+                  <input type="text" name="query" id="" placeholder="Search by Name or Category">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -421,9 +437,9 @@
                             <!-- Modal view content -->
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <div class="aa-product-view-content">
-                                <h3 class="popup_title">T-Shirt</h3>
+                                <h3 class="popup_title">Loading..Book Name</h3>
                                 <div class="aa-price-block">
-                                  <span class="aa-product-view-price popup_price">$34.99</span>
+                                  <span class="aa-product-view-price popup_price">Loading..Book Pricec</span>
                                   <p class="aa-product-avilability">Avilable<!-- : <span>In stock</span></p> -->
                                 </div>
                                 <p class="popup_abstract"></p>

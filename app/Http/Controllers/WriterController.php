@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Slider;
+use App\Writer;
 
-class SliderController extends Controller
+class WriterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        // $slider=Slider::all();
-        $slider=Slider::orderBy('created_at','desc')->get();
-        return view('admin.slider')->with('sliders',$slider);
+        $writer=Writer::all();
+        return view('admin.writer')->with('writer',$writer);
     }
 
     /**
@@ -37,29 +36,11 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
-        ]);
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('Sliderimages'), $imageName);
-
-        //store Image in Database
-        $slider=new Slider;
-        $slider->slider_image=$imageName;
-        $slider->slider_title=$request->input('slider_title');
-        $slider->slider_subtitle=$request->input('slider_subtitle');
-        $slider->save();
-        return redirect('admin/Slider');
-       
-
-        // return back()
-
-        //     ->with('success','You have successfully upload image.')
-
-        //     ->with('image',$imageName);
-            
+        $writer=new Writer();
+        $writer->writer_name=$request->input('writer_name');
+        $writer->writer_Contact=$request->input('writer_Contact');
+        $writer->save();
+        return back();
     }
 
     /**
@@ -70,8 +51,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        // $sliders=Find::all();
-        // return view('admin.slider')->with('slider',$sliders);
+        //
     }
 
     /**
@@ -105,8 +85,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $slider=Slider::find($id);
-        $slider->delete();
-        return redirect('/admin/Slider');
+        $writer=Writer::find($id);
+        $writer->delete();
+        return back();
     }
 }

@@ -12,6 +12,7 @@
     <th>Page Number</th>
     <th>Tagline</th>
     <th>Category</th>
+    <th>Sub-Category</th>
     <th>Price</th>
     <th>Author</th>
     <th>Publication House</th>
@@ -33,7 +34,7 @@
                                  {{$book->title}}
                     </td>
                     <td>
-                                 {{$book->abstract}}
+                                 {{str_limit($book->abstract,250)}}
                     </td>
                     <td>
                                  {{$book->isbn}}
@@ -45,7 +46,10 @@
                                  {{$book->tagline}}
                     </td>
                     <td>
-                                {{ $book->Category->category_name}}
+                                {{ $book->category}}
+                    </td>
+                    <td>
+                                {{ $book->sub_category}}
                     </td>
                     <td>
                                  {{$book->price}}

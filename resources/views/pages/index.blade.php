@@ -12,12 +12,11 @@
               @foreach ($sliders as $slider)
               <li>
                   <div class="seq-model">
-                    <img data-seq src="Sliderimages/{{$slider->slider_image}}" alt="Men slide img" />
+                    <img data-seq src="Sliderimages/{{$slider->slider_image}}" alt="" />
                   </div>
                   <div class="seq-title">
-                              
-                    {{-- <h2 data-seq>Men Collection</h2>                 --}}
-                    {{-- <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p> --}}
+                    <h2 data-seq>{{$slider->slider_title}}</h2>     
+                    <p data-seq>{{$slider->slider_subtitle}}</p> 
                     <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">BUY NOW</a>
                   </div>
                 </li>
@@ -127,7 +126,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$popularBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$popularBook->image}}" alt="{{$popularBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$popularBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$popularBook->title}}</a></h4>
                           <span class="aa-product-price">{{$popularBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -135,7 +134,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="/book/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$popularBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
                      
@@ -145,7 +144,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a>
+                  <!-- <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / popular product category -->        
               </div>
@@ -181,7 +180,7 @@
                      <li>
                       <figure>
                         <a class="aa-product-img popup" href="javascript:void(0)" id="{{$latestBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$latestBook->image}}" alt="{{$latestBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$latestBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$latestBook->title}}</a></h4>
                           <span class="aa-product-price">{{$latestBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -189,7 +188,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        
+                        <a href="/book/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                      <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$latestBook->id}}"><span class="fa fa-search"></span></a>                              
                       </div>
                      
@@ -199,7 +198,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all<span class="fa fa-long-arrow-right"></span></a>
+                 <!--  <a class="aa-browse-btn" href="#">Browse all<span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / Latest product category -->
            
@@ -237,7 +236,7 @@
                      <li>
                       <figure>
                          <a class="aa-product-img popup" href="javascript:void(0)" id="{{$moreBook->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$moreBook->image}}" alt="{{$moreBook->title}}"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$moreBook->id}}"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$moreBook->title}}</a></h4>
                           <span class="aa-product-price">{{$moreBook->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
@@ -245,7 +244,7 @@
                       </figure>                     
                       <div class="aa-product-hvr-content">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                        <a href="/book/{{$moreBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                       <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$moreBook->id}}"><span class="fa fa-search"></span></a>                                
                       </div>
                      
@@ -255,7 +254,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a>
+              <!--     <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / Latest product category -->
            
@@ -295,8 +294,8 @@
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
-                <span class="fa fa-truck"></span>
-                <h4>FREE SHIPPING</h4>
+                <span class="fa fa-eye"></span>
+                <h4>Online Reading</h4>
                 <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
               </div>
             </div>

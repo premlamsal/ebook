@@ -17,10 +17,10 @@ class PagesController extends Controller
 {
     public function home(){
 
-        //sliders
-        $sliders=Slider::all();
-        //testimonial
-        $testimonials=Testimonial::all();
+      //sliders
+      $sliders=Slider::all();
+      //testimonial
+      $testimonials=Testimonial::all();
     	//popular book retrival
     	$popularBooks=Book::orderBy('views', 'desc')->limit(8)->get();
     	//lastet book retrival
@@ -42,6 +42,33 @@ class PagesController extends Controller
 
              return view('pages.buybook')->with(['book'=>$book,'url'=>$url]);
 
+
+    }
+    public function showCategory(Request $request){
+
+      $cat_name=$request->category_name;
+      $sub_cat_name="";
+      $book=Book::whereCategory($cat_name)->paginate();
+      return view('pages.showCategory')->with(['books'=>$book,'cat_name'=>$cat_name,'sub_cat_name'=>$sub_cat_name]);
+    
+
+    }
+     public function showSubCategory(Request $request){
+
+      $cat_name=$request->category_name;
+      $sub_cat_name=$request->sub_category_name;
+     
+      $book=Book::where('category',$cat_name)->where('sub_category',$sub_cat_name)->paginate();
+   
+      return view('pages.showCategory')->with(['books'=>$book,'cat_name'=>$cat_name,'sub_cat_name'=>$sub_cat_name]);
+
+    }
+
+    public function search(Request $request){
+
+      $query=$request->get('query');
+      $searchBooks=Book::where('title','like','%'.$query.'%')->orWhere('category','like','%'.$query.'%')->get();
+      return view('pages.showSearch')->with(['searchBooks'=>$searchBooks,'query'=>$query]);
 
     }
 
@@ -66,8 +93,8 @@ class PagesController extends Controller
 
           $book_id=$request->id;
           $book=Book::find($book_id);
-          $bookCategoryId=$book->category_id;
-          $categoryName=Category::find($bookCategoryId)->value('category_name');
+          // $bookCategoryId=$book->category_id;
+          // $categoryName=$book->category;
           $reviews=Review::where('book_id',$book_id)->get();
 
           $rating_no=Review::where('book_id',$book_id)->get();
@@ -105,7 +132,7 @@ class PagesController extends Controller
          
           $relatedBooks=Book::all()->where('category_id',$category_id)->where('id','!=',$book_id);
           if($book){
-             return view('pages.showbookdetails')->with(['book'=>$book,'reviews'=>$reviews,'relatedBooks'=>$relatedBooks,'finalRating'=>$finalRating,'isReviewdDone'=>$isReviewdDone,'CategoryName'=>$categoryName]);
+             return view('pages.showbookdetails')->with(['book'=>$book,'reviews'=>$reviews,'relatedBooks'=>$relatedBooks,'finalRating'=>$finalRating,'isReviewdDone'=>$isReviewdDone]);
           }
           else{
              return abort(404);

@@ -17,7 +17,7 @@ class NavServiceProvider extends ServiceProvider
             view()->composer('partials.nav', function($view)
         {
             // $Category=Category::all()->load('subcategory');
-            $view->with('Category', \App\Category::all()->load('subcategory'));
+            $view->with('Category', \App\Category::all()->load('SubCategory'));
         });
 
     }

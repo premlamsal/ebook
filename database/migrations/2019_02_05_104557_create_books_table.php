@@ -19,6 +19,8 @@ class CreateBooksTable extends Migration
             $table->Text('abstract');
             $table->string('isbn');
             $table->integer('page_no');
+            $table->string('category');
+            $table->string('sub_category');
             $table->string('tagline');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
@@ -27,6 +29,7 @@ class CreateBooksTable extends Migration
             $table->unsignedInteger('publication_id');
             $table->foreign('publication_id')->references('id')->on('publications');
             $table->string('image');
+            $table->string('book_file');
             $table->string('edition');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

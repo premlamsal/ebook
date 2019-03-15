@@ -17,8 +17,16 @@ class Category extends Model
 class SubCategory extends Model
 {
   
-	public function Category()
-	    {
-	        return $this->belongsTo(Category::class);
-	    }
+	// public function Category()
+	//     {
+	//         return $this->belongsTo(Category::class);
+	//     }
+	public function Book()
+    {
+        return $this->belongsTo('App\Book');
+    }
+    public function Category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }

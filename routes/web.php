@@ -45,6 +45,12 @@ Route::post('/reviewStore', ['as'=> 'reviewStore', 'uses'=>'SnippController@revi
 
 Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPage'] );
 
+Route::get('/category/{category_name}', ['as'=> '/category/{category_name}', 'uses'=>'PagesController@showCategory'] );
+
+Route::get('/category/{category_name}/{sub_category_name}', ['as'=> '/category/{category_name}/sub_category_name', 'uses'=>'PagesController@showSubCategory'] );
+
+Route::get('/search', ['as'=> '/search', 'uses'=>'PagesController@search'] );
+
 //payment verification
 Route::post('verifyPayment', ['as'=> 'verifyPayment', 'uses'=>'PaymentController@verifyPayment'] );
 
@@ -58,48 +64,45 @@ Route::get('/testjson', ['as'=> 'testjson', 'uses'=>'SnippController@testJson'] 
 //bishal routes
 
 Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index']);
-
-
-
 //FOR CATEGORY
-Route::post('/admin/category/Store',['as'=>'admin/category/Store','uses'=>'CategoryController@store']);
-Route::post('/admin/getCategory', [ 'as' => '/admin/getCategory', 'uses' => 'AdminController@getCategory']);
+Route::get('/admin/viewCategory',['as'=>'admin/viewCategory','uses'=>'AdminController@viewCategory']);
+Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminController@addCategory']);
+Route::post('/admin/category/storeCat',['as'=>'admin/category/storeCat','uses'=>'CategoryController@storeCat']);
+Route::get('admin/addSubCategory',['as'=>'admin/addSubCategory','uses'=>'AdminController@addSubCategory']);
+Route::post('/admin/category/storeSubCat',['as'=>'admin/category/storeSubCat','uses'=>'CategoryController@storeSubCat']);
+
+Route::post('/admin/getSubCategory', [ 'as' => '/admin/getSubCategory', 'uses' => 'AdminController@getSubCategory']);
+
+Route::delete('/admin/{id}/Catdestroy',['as'=>'/admin/{id}/Catdestroy','uses'=>'CategoryController@Catdestroy']);
+Route::delete('/admin/{id}/SubCatdestroy',['as'=>'/admin/{id}/SubCatdestroy','uses'=>'CategoryController@SubCatdestroy']);
+Route::get('/admin/{id}/editCategory',['as'=>'admin/{id}/editCategory','uses'=>'AdminController@editCategory']);
+Route::get('/admin/{id}/editSubCategory',['as'=>'admin/{id}/editSubCategory','uses'=>'AdminController@editSubCategory']);
+Route::put('/admin/SubCategory/{id}',['as'=>'admin/SubCategory/{id}','uses'=>'CategoryController@SubCatupdate']);
+Route::put('/admin/Category/{id}',['as'=>'admin/Category/{id}','uses'=>'CategoryController@Catupdate']);
 //FOR ACCOUNT
 Route::post('/admin/account/Store',['as'=>'admin/account/Store','uses'=>'AccountController@store']);
 Route::get('/admin/addAccount',['as'=>'admin/addAccount','uses'=>'AdminController@addAccount']);
 Route::post('/admin/account/Show',['as'=>'admin/account/Show','uses'=>'AccountController@adminShow']);
 Route::get('/admin/viewAccount',['as'=>'admin/viewAccount','uses'=>'AdminController@viewAccount']);
-
 Route::get('/admin/{id}/editAccount',['as'=>'admin/{id}/editAccount','uses'=>'AdminController@editAccount']);
-
-
-Route::put('/admin/{id}',['as'=>'/admin/{id}','uses'=>'AccountController@destroy']);
+Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'AccountController@destroy']);
 Route::put('/admin/{id}',['as'=>'/admin/{id}','uses'=>'AccountController@update']);
-
 //FOR BOOK
 Route::get('/admin/addBook',['as'=>'admin/addBook','uses'=>'AdminController@addBook']);
 Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@viewBook']);
 Route::post('/admin/Book/Store',['as'=>'admin/Book/Store','uses'=>'BookController@store']);
 Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@viewBook']);
-Route::get('/admin/{id}/editBook',['as'=>'admin/{{id}}/editBook','uses'=>'AdminController@editBook']);
+Route::get('/admin/{id}/editBook',['as'=>'admin/{id}/editBook','uses'=>'AdminController@editBook']);
 Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'BookController@destroy']);
 Route::put('/admin/Book/{id}',['as'=>'admin/Book/{id}','uses'=>'BookController@update']);
 //For Transaction
 Route::get('/admin/viewTransaction',['as'=>'admin/viewTransaction','uses'=>'AdminController@viewTransaction']);
-
-
-Route::get('/admin/viewCategory',['as'=>'admin/viewCategory','uses'=>'AdminController@viewCategory']);
-Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminController@addCategory']);
-
 //end of bishal routes
 
 
 //pralhad
 Route::resource('/blog','BlogController');
-
-
 Route::post('admin/addSlider',['as'=>'admin/addSlider', 'uses'=>'SliderController@store']);
-
 Route::get('admin/Slider',['as'=>'admin/Slider', 'uses'=>'SliderController@index']);
 Route::get('admin/Slider/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'SliderController@destroy']);
 Route::get('admin/Testimonial',['as'=>'admin/Testimonial', 'uses'=>'TestimonialController@index']);
@@ -130,3 +133,7 @@ Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterCon
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
 //end of pralhad routes
+
+
+
+

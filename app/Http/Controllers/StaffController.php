@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Slider;
+use App\Staff;
 
-class SliderController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        // $slider=Slider::all();
-        $slider=Slider::orderBy('created_at','desc')->get();
-        return view('admin.slider')->with('sliders',$slider);
+        $staff=Staff::all();
+        return view('admin.staff')->with('staff', $staff);
     }
 
     /**
@@ -43,23 +42,16 @@ class SliderController extends Controller
 
         ]);
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('Sliderimages'), $imageName);
+        request()->image->move(public_path('img/staffImages'), $imageName);
 
-        //store Image in Database
-        $slider=new Slider;
-        $slider->slider_image=$imageName;
-        $slider->slider_title=$request->input('slider_title');
-        $slider->slider_subtitle=$request->input('slider_subtitle');
-        $slider->save();
-        return redirect('admin/Slider');
-       
-
-        // return back()
-
-        //     ->with('success','You have successfully upload image.')
-
-        //     ->with('image',$imageName);
-            
+        $staff=new Staff();
+        $staff->staff_image=$imageName;
+        $staff->staff_name=$request->input('staff_name');
+        $staff->staff_position=$request->input('staff_position');
+        $staff->contact_info=$request->input('contact_info');
+        $staff->staff_type=$request->input('staff_type');
+        $staff->save();
+        return back();
     }
 
     /**
@@ -70,8 +62,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        // $sliders=Find::all();
-        // return view('admin.slider')->with('slider',$sliders);
+        //
     }
 
     /**
@@ -82,8 +73,9 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $staff=Staff::find($id);
+        return view('admin.editStaff')->with('staff', $staff);
+    }   
 
     /**
      * Update the specified resource in storage.
@@ -94,7 +86,14 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $staff=Staff::find($id);
+        $staff->staff_image=$imageName;
+        $staff->staff_name=$request->input('staff_name');
+        $staff->staff_position=$request->input('staff_position');
+        $staff->contact_info=$request->input('contact_info');
+        $staff->staff_type=$request->input('staff_type');
+        $staff->save();
+        return back();
     }
 
     /**
@@ -105,8 +104,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $slider=Slider::find($id);
-        $slider->delete();
-        return redirect('/admin/Slider');
+        $staff=Staff::find($id);
+        $staff->delete();
+        return back();
     }
 }

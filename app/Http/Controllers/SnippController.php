@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\SubCategory;
 use Auth;
 use URL;
 use App\MyBook;
@@ -12,82 +13,6 @@ use App\Review;
 use App\User;
 class SnippController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
     // Where ever you want your menu
     public function Category()
     {
@@ -106,8 +31,9 @@ class SnippController extends Controller
             $book_id=$request->getId;
             //searching for book of id
             $fetchBookData=Book::find($book_id);
-            $bookCategoryId=$fetchBookData->category_id;
-            $categoryName=Category::find($bookCategoryId)->value('category_name');
+            $categoryName=$fetchBookData->category;
+            $sub_categoryName=$fetchBookData->sub_category;
+            // $categoryName=Category::find($bookCategoryId)->value('category_name');
             //assingn fetched data to the variable one by one
             $popup_id=$fetchBookData->id;
             $popup_image=$fetchBookData->image;
@@ -115,7 +41,7 @@ class SnippController extends Controller
             $popup_title=$fetchBookData->title;
             $popup_author=$fetchBookData->author;
             $popup_price=$fetchBookData->price;
-            $popup_abstract=$fetchBookData->abstract;
+            $popup_abstract=str_limit($fetchBookData->abstract,250);
             //return repsone to the ajax call with data
              return response([
                 'popup_image' =>$popup_image,
@@ -157,6 +83,24 @@ class SnippController extends Controller
          dd($arrayName);
         $newdata=json_decode($arrayName);
          print_r($newdata->amount);
+
+
+    }
+    public function testing(){
+
+        // $column="category_id";
+        // $id=2;
+        // $subCats=SubCategory::where($column,'=',$id)->get();
+        // // $data=SubCategory::all();
+        // foreach($subCats as $subCat)
+        //   {
+             
+        //     $output="<option value='$subCat->id'>$subCat->subcategory_name</option>"; 
+        //     print_r($output);   
+        //   }
+        print_r("This is test route");
+          
+         
 
 
     }

@@ -39,7 +39,7 @@
                         <a class="aa-add-card-btn"href="{{route('/customer/readbook/',['book_id'=>$my_book->id])}}"><span class="fa fa-eye"></span>Read Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>
-                          <span class="aa-product-price">{{$my_book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
+                          <span class="aa-product-price">Rs.{{$my_book->price}}</span><!-- <span class="aa-product-price"><del>$0.00</del></span -->
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">                            
@@ -89,16 +89,18 @@
                      <li>
                       <figure>
                          <a class="aa-product-img popup" href="javascript:void(0)" id="{{$my_book->id}}"><img src="{{URL::asset('storage/Book_image').'/'.$my_book->image}}" alt="polo shirt img"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="fa fa-eye"></span>Buy Book</a>
+                        <a class="aa-add-card-btn" href="/buy/{{$my_book->id}}"><span class="fa fa-eye"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>
-                          <span class="aa-product-price">{{$my_book->price}}</span><span class="aa-product-price"><del>$0.00</del></span>
+                          <span class="aa-product-price">Rs.{{$my_book->price}}</span><!-- <span class="aa-product-price"><del>$0.00</del></span -->
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
                       
                      
-                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                          <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="/book/{{$my_book->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
+                        <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$my_book->id}}"><span class="fa fa-search"></span></a>                         
                       </div>
                      
                     <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->
