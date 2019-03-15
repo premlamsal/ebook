@@ -34,7 +34,7 @@
                                  {{$book->title}}
                     </td>
                     <td>
-                                 {{$book->abstract}}
+                                 {{str_limit($book->abstract,250)}}
                     </td>
                     <td>
                                  {{$book->isbn}}

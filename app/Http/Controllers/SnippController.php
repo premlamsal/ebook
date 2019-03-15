@@ -41,7 +41,7 @@ class SnippController extends Controller
             $popup_title=$fetchBookData->title;
             $popup_author=$fetchBookData->author;
             $popup_price=$fetchBookData->price;
-            $popup_abstract=$fetchBookData->abstract;
+            $popup_abstract=str_limit($fetchBookData->abstract,250);
             //return repsone to the ajax call with data
              return response([
                 'popup_image' =>$popup_image,

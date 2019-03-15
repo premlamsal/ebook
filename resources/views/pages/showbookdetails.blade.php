@@ -120,7 +120,7 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="description">
-                  <p>{{str_limit($book->abstract, 250)}}</p>
+                  <p style="text-align: justify;">{{$book->abstract}}</p>
                 </div>
                 <div class="tab-pane fade " id="review">
                  <div class="aa-product-review-area">

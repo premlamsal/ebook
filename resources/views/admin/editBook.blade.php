@@ -11,7 +11,7 @@
    </div>
    <div class="form-group row">
       <label for="abstract">Abstract</label>
-        <textarea class="form-control" rows="5" id="abstract" name="abstract" >{{$book->abstract}}</textarea>
+        <textarea class="form-control" rows="5" id="abstract" name="abstract" >{{str_limit($book->abstract,250)}}</textarea>
    </div>
    <div class="form-group row">
       <label for="isbn">ISBN</label>
