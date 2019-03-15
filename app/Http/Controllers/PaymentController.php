@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Book;
 use App\Auth;
 
-class PaymenetController extends Controller
+class PaymentController extends Controller
 {
     public function verifyPayment(Request $request){
         //get book id from ajax call

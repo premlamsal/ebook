@@ -68,7 +68,9 @@ Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminControl
 Route::post('/admin/category/storeCat',['as'=>'admin/category/storeCat','uses'=>'CategoryController@storeCat']);
 Route::get('admin/addSubCategory',['as'=>'admin/addSubCategory','uses'=>'AdminController@addSubCategory']);
 Route::post('/admin/category/storeSubCat',['as'=>'admin/category/storeSubCat','uses'=>'CategoryController@storeSubCat']);
+
 Route::post('/admin/getCategory', [ 'as' => '/admin/getCategory', 'uses' => 'AdminController@getCategory']);
+
 Route::delete('/admin/{id}/Catdestroy',['as'=>'/admin/{id}/Catdestroy','uses'=>'CategoryController@Catdestroy']);
 Route::delete('/admin/{id}/SubCatdestroy',['as'=>'/admin/{id}/SubCatdestroy','uses'=>'CategoryController@SubCatdestroy']);
 Route::get('/admin/{id}/editCategory',['as'=>'admin/{id}/editCategory','uses'=>'AdminController@editCategory']);

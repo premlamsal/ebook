@@ -101,7 +101,7 @@
                         url : '{{url("/admin/getCategory")}}',
                         data:{'id':selectedCategory},
                         success:function(data){
-                        $('#toShowSubCategory').html(data);
+                       alert("Hello");
                         }
                     });
             });
