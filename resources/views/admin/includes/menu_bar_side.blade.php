@@ -12,7 +12,7 @@
     
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>Accounts</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -23,7 +23,7 @@
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-book"></i>
             <span>Book</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -45,7 +45,7 @@
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-th"></i>
             <span>Category</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -58,7 +58,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-map"></i>
             <span>Slider</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -68,7 +68,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-fw fa-folder"></i>
+              <i class="fas fa-fw fa-user-tie"></i>
               <span>Testimonial</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -78,7 +78,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-fw fa-folder"></i>
+              <i class="fas fa-fw fa-edit"></i>
               <span>Blog</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -90,7 +90,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-fw fa-folder"></i>
+              <i class="fas fa-fw fa-info"></i>
               <span>About</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
