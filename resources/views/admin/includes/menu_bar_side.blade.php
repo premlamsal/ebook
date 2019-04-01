@@ -32,16 +32,7 @@
             <a class="dropdown-item" href="{{route('admin/viewBook')}}">View and Edit Book</a>
           </div>
         </li>
-        <!--  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Menus</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header" >Menu Screens:</h6>
-            <a class="dropdown-item" href="addMenu" >Add Menu</a>
-            <a class="dropdown-item" href="viewMenu">View and Edit Menu</a>
-          </div> -->
+       
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,6 +97,15 @@
                 <span>Top Writers</span>
               </a>             
             </li>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-envelope"></i>
+            <span>Subscribers</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header" >Menu Screens:</h6>
+            <a class="dropdown-item" href="addMenu" >View Subscriber</a>
+          </div>
       </ul>
 
       <div id="content-wrapper">
