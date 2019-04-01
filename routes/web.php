@@ -16,6 +16,8 @@ Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
 Route::resource('/RegisterAccount','AccountController');
 
+Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountController@registerCustomer'] );
+
 Auth::routes();
 
 //Route::get('/convert', 'SnippController@convert')->name('convert');
@@ -66,7 +68,7 @@ Route::get('/testjson', ['as'=> 'testjson', 'uses'=>'SnippController@testJson'] 
 //or you can use singleton like this ** Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index'])->middleware('admin');
 //********
 
-Route::group(['middleware' => ['admin']], function () {
+ Route::group(['middleware' => ['admin']], function () {
 	//keep admin routes here inside
 
 Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index'])->middleware('admin');
@@ -136,7 +138,7 @@ Route::get('admin/writer', ['as'=> 'admin/writer', 'uses'=>'WriterController@ind
 Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterController@store'] );
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
-}); //end of gorup admin middleware routes
+ }); //end of gorup admin middleware routes
 
 //pralhad
 Route::resource('/blog','BlogController');

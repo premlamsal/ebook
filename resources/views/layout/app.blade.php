@@ -157,8 +157,11 @@
                                                
                                     {{ __('Logout') }}
                                 </a>
-                                <a class="dropdown-list" href="{{route('/customer/profile')}}" style="border: none;">Customer Profile</a>
-
+                                 @if(auth()->user()->user_type == 'admin')
+                                  <a class="dropdown-list" href="{{route('/admin')}}" style="border: none;">Admin Dashboard</a>
+                                  @else
+                                <a class="dropdown-list" href="{{route('/customer/profile')}}" style="border: none;">Customer Dashboard</a>
+                                @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
@@ -388,7 +391,7 @@
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4>Register Now. </h4>
-          <form class="aa-login-form" action="{{action('AccountController@store')}}" method="POST">
+          <form class="aa-login-form" action="{{route('registerCustomer')}}" method="POST">
                @csrf
                <input type="hidden" name="getUserType" value="customer">
               <label for="">Full Name<span>*</span></label>

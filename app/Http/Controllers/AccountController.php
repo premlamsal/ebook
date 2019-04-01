@@ -59,28 +59,8 @@ class AccountController extends Controller
 
     public function store(Request $request)
     {
-        $getUserType=$request->get('getUserType');
+      
 
-            if($getUserType==='customer'){
-                $this->validate($request,[
-                'name'=>'required',
-                'address'=>'required',
-                'email'=>'required',
-                'password'=>'required',
-                'gender'=>'required',
-                ]);
-                    $user_type='customer';
-                User::create([
-                    'name' => $request->get('name'),
-                    'email' => $request->get('email'),
-                    'password' => Hash::make($request->get('password')),
-                    'address' => $request->get('address'),
-                    'gender' => $request->get('gender'),
-                    'user_type'=>$user_type,
-                 ]);
-                return redirect('/');
-            }
-            else{
                  $this->validate($request,[
                 'name'=>'required',
                 'address'=>'required',
@@ -102,12 +82,41 @@ class AccountController extends Controller
                     $addAccount->user_type="admin";
                         $addAccount->save();
                  return redirect('/admin')->with('sucsess','Account Added');
-                }
+              
              
 
        
     }
+
+    public function registerCustomer(Request $request)
+    {
+        $getUserType=$request->get('getUserType');
+
+            if($getUserType==='customer'){
+                $this->validate($request,[
+                'name'=>'required',
+                'address'=>'required',
+                'email'=>'required',
+                'password'=>'required',
+                'gender'=>'required',
+                ]);
+                    $user_type='customer';
+                User::create([
+                    'name' => $request->get('name'),
+                    'email' => $request->get('email'),
+                    'password' => Hash::make($request->get('password')),
+                    'address' => $request->get('address'),
+                    'gender' => $request->get('gender'),
+                    'user_type'=>$user_type,
+                 ]);
+                return redirect('/');
+            }
+    }
+
+
+
      public function update(Request $request, $id)
+    
     {
           $this->validate($request, [
         'name'=>'required',

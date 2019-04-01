@@ -22,9 +22,6 @@ class Admin
             return $next($request);
              }
          }
-         else{
-            return redirect('/');
-         }
           
         return redirect('/')->with('error','You have not admin access');
     }

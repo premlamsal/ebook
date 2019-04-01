@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Slider;
+use Auth;
 
 class SliderController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
