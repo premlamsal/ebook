@@ -32,7 +32,7 @@
             <a class="dropdown-item" href="{{route('admin/viewBook')}}">View and Edit Book</a>
           </div>
         </li>
-         <li class="nav-item dropdown">
+        <!--  <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
             <span>Menus</span>
@@ -41,7 +41,7 @@
             <h6 class="dropdown-header" >Menu Screens:</h6>
             <a class="dropdown-item" href="addMenu" >Add Menu</a>
             <a class="dropdown-item" href="viewMenu">View and Edit Menu</a>
-          </div>
+          </div> -->
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -101,7 +101,8 @@
            
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href=" admin/ writer"  role="button"  aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/admin/writer"  role="button"  aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-feather"></i>
                 <span>Top Writers</span>
               </a>             
             </li>
