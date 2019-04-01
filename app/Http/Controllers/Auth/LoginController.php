@@ -38,7 +38,7 @@ class LoginController extends Controller
     }
     protected function authenticated($request,$user){
         if($user->user_type === 'customer'){
-           
+            
            return redirect()->intended('/customer/profile'); //redirect to admin panel
         }
         else if($user->user_type === 'admin'){

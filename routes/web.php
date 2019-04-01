@@ -62,8 +62,14 @@ Route::get('/testjson', ['as'=> 'testjson', 'uses'=>'SnippController@testJson'] 
 
 
 //bishal routes
+//admin group middleware route **keep routes of admin inside this otherwise the security breaks
+//or you can use singleton like this ** Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index'])->middleware('admin');
+//********
 
-Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index']);
+Route::group(['middleware' => ['admin']], function () {
+	//keep admin routes here inside
+
+Route::get('/admin',['as'=>'/admin','uses'=>'AdminController@index'])->middleware('admin');
 //FOR CATEGORY
 Route::get('/admin/viewCategory',['as'=>'admin/viewCategory','uses'=>'AdminController@viewCategory']);
 Route::get('/admin/addCategory',['as'=>'admin/addCategory','uses'=>'AdminController@addCategory']);
@@ -100,8 +106,7 @@ Route::get('/admin/viewTransaction',['as'=>'admin/viewTransaction','uses'=>'Admi
 //end of bishal routes
 
 
-//pralhad
-Route::resource('/blog','BlogController');
+
 Route::post('admin/addSlider',['as'=>'admin/addSlider', 'uses'=>'SliderController@store']);
 Route::get('admin/Slider',['as'=>'admin/Slider', 'uses'=>'SliderController@index']);
 Route::get('admin/Slider/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'SliderController@destroy']);
@@ -115,8 +120,7 @@ Route::post('admin/storeBlog',['as'=>'admin/storeBlog', 'uses'=>'BlogController@
 Route::put('admin/updateBlog/{id}',['as'=>'admin/updateBlog', 'uses'=>'BlogController@updateBlog']);
 Route::get('admin/showBlog',['as'=>'admin/showBlog', 'uses'=>'BlogController@showAdmin']);
 Route::get('admin/destroyBlog/{id}',['as'=>'admin/destroyBlog', 'uses'=>'BlogController@destroyBlog']);
-//about route
-Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
+
 Route::get('admin/about',['as'=>'admin/about', 'uses'=>'AboutController@index']);
 Route::get('admin/aboutEdit/{id}',['as'=>'admin/aboutEdit', 'uses'=>'AboutController@edit']);
 Route::put('admin/update/{id}',['as'=>'admin/update', 'uses'=>'AboutController@update']);
@@ -132,6 +136,12 @@ Route::get('admin/writer', ['as'=> 'admin/writer', 'uses'=>'WriterController@ind
 Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterController@store'] );
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
+}); //end of gorup admin middleware routes
+
+//pralhad
+Route::resource('/blog','BlogController');
+//about route
+Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
 //end of pralhad routes
 
 
