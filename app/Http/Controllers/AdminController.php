@@ -22,7 +22,7 @@ class AdminController extends Controller
 
      public function addCategory()
     {
-    	$categories= Category::all();
+      $categories= Category::all();
       return view('admin.addCategory')->with('categories',$categories);  
     }
     public function addSubCategory()
@@ -49,13 +49,39 @@ class AdminController extends Controller
         return view('admin.editCategory')->with('cat',$cat);
     }
 
+
+
+//publication
+     public function addPublication()
+    {
+      $public= Publication::all();
+      return view('admin.addPublication')->with('public',$public);  
+    }
+     public function showPublication()
+    {
+      $public= Publication::all();
+      return view('admin.showPublication')->with('public',$public);  
+    }
+     public function editPublication($id)
+    {
+      $pub= Publication::all()->first();
+   
+      // print_r($user_id);
+      return view('admin.editPublication')->with('pub',$pub);
+    }
+
+
+
+
+
+//account
     public function addAccount()
     {
-    	return view('admin.addAccount');
+      return view('admin.addAccount');
     }
     public function viewAccount()
     {
-    	$showAccount= User::orderBy('id','desc')->get();
+      $showAccount= User::orderBy('id','desc')->get();
       return view('admin.viewAccount')->with('showAccount',$showAccount);
     }
     public function editAccount($id)
@@ -63,6 +89,11 @@ class AdminController extends Controller
       $account=User::find($id);
         return view('admin.editAccount')->with('account',$account);
     }
+
+
+
+
+
     //book
     public function addBook()
     {

@@ -19,11 +19,11 @@
                     <td>
 
                                   <a href="{{URL('/admin/'.$cat->id.'/editCategory')}}" class='btn btn-info' role='button' style='width:38%;'>Edit</a>
-                                  <a href="{{URL('/admin/'.$cat->id.'/Catdestroy')}}" class='btn btn-info' role='button' style='width:38%;'>Delete</a>
-                                 {{-- {!! Form::open(['action'=>['CategoryController@Catdestroy',$cat->id],'method'=>'POST']) !!} 
+                                  {{--<!-- <a href="{{URL('/admin/'.$cat->id.'/Catdestroy')}}" class='btn btn-info' role='button' style='width:38%;'>Delete</a> -->--}}
+                                 {!! Form::open(['action'=>['CategoryController@Catdestroy',$cat->id],'method'=>'POST']) !!} 
                                   {{Form::hidden('_method','DELETE')}}
                                   {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
-                                  {!!Form::close()!!}--}}
+                                  {!!Form::close()!!}
                     </td>
                   </tr>
         <!-- </div> -->
@@ -56,11 +56,11 @@
                     <td>
 
                                  <a href="{{URL('/admin/'.$subcat->id.'/editSubCategory')}}" class='btn btn-info' role='button' style='width:38%;'>Edit</a>
-                                 <a href="{{URL('/admin/'.$subcat->id.'/SubCatdestroy')}}" class='btn btn-info' role='button' style='width:38%;'>Delete</a>
-                                 {{-- {!!Form::open(['action'=>['CategoryController@SubCatdestroy',$subcat->id],'method'=>'POST']) !!} 
+                                 {{--<!-- <a href="{{URL('/admin/'.$subcat->id.'/SubCatdestroy')}}" class='btn btn-info' role='button' style='width:38%;'>Delete</a> -->--}}
+                                 {!!Form::open(['action'=>['CategoryController@SubCatdestroy',$subcat->id],'method'=>'POST']) !!} 
                                   {{Form::hidden('_method','DELETE')}}
                                   {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
-                                  {!!Form::close()!!}--}}
+                                  {!!Form::close()!!}
                     </td>
                   </tr>
         <!-- </div> -->

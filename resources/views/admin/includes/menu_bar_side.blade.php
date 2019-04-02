@@ -77,7 +77,17 @@
               <a class="dropdown-item" href="{{route('admin/addBlog')}}" >Add Blog</a>
               <a class="dropdown-item" href="{{route('admin/showBlog')}}" >View And Edit</a>
             </div>
-           
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-fw fa-users"></i>
+              <span>Publication</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              <h6 class="dropdown-header" >Publication Screens:</h6>
+              <a class="dropdown-item" href="{{route('admin/addPublication')}}" >Add Publication</a>
+              <a class="dropdown-item" href="{{route('admin/showPublication')}}" >View And Edit Publication</a>
+            </div>
+          </li>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

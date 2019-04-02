@@ -105,6 +105,15 @@ Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'BookController@destroy
 Route::put('/admin/Book/{id}',['as'=>'admin/Book/{id}','uses'=>'BookController@update']);
 //For Transaction
 Route::get('/admin/viewTransaction',['as'=>'admin/viewTransaction','uses'=>'AdminController@viewTransaction']);
+
+
+//For Publication
+Route::get('admin/addPublication',['as'=>'admin/addPublication', 'uses'=>'AdminController@addPublication']);
+Route::get('admin/showPublication',['as'=>'admin/showPublication', 'uses'=>'AdminController@showPublication']);
+Route::post('/admin/Publication/Store',['as'=>'admin/Publication/Store','uses'=>'PublicationController@store']);
+Route::get('/admin/{id}/editPublication',['as'=>'admin/{id}/editPublication','uses'=>'AdminController@editPublication']);
+Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'PublicationController@destroy']);
+Route::put('/admin/Publication/{id}',['as'=>'admin/Publication/{id}','uses'=>'PublicationController@update']);
 //end of bishal routes
 
 
