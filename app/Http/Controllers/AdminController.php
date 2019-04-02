@@ -12,12 +12,23 @@ use App\Review;
 use Auth;
 use App\Book;
 use App\Transaction;
+use App\Blog;
+use App\Testimonial;
 
 class AdminController extends Controller
 {
     public function index()
     {
-      return view('admin.index');  
+      $userNo=User::count();
+      $bookNo=Book::count();
+      $CatNo=Category::count();
+      $blogNo=Blog::count();
+      $pubNo=Publication::count();
+      $TestNo=Testimonial::count();
+      $subCatNo=SubCategory::count();
+
+      return view('admin.index',compact('userNo','bookNo','CatNo','blogNo','pubNo','TestNo','subCatNo'));  
+
     }
 
      public function addCategory()
