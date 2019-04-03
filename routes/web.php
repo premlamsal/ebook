@@ -101,7 +101,7 @@ Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@vi
 Route::post('/admin/Book/Store',['as'=>'admin/Book/Store','uses'=>'BookController@store']);
 Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@viewBook']);
 Route::get('/admin/{id}/editBook',['as'=>'admin/{id}/editBook','uses'=>'AdminController@editBook']);
-Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'BookController@destroy']);
+Route::post('/admin/{id}',['as'=>'/admin/{id}','uses'=>'BookController@destroy']);
 Route::put('/admin/Book/{id}',['as'=>'admin/Book/{id}','uses'=>'BookController@update']);
 //For Transaction
 Route::get('/admin/viewTransaction',['as'=>'admin/viewTransaction','uses'=>'AdminController@viewTransaction']);
