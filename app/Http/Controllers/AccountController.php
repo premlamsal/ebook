@@ -66,7 +66,8 @@ class AccountController extends Controller
                 'address'=>'required',
                 'email'=>'required',
                 'password'=>'required',
-                'phone'=>'required|regex:/[0-9]{10}/',
+                // 'phone'=>'required|regex:/[0-9]{10}/',
+                'phone'=>'required',
                 'gender'=>'required',
 
 
@@ -130,7 +131,7 @@ class AccountController extends Controller
         $editAccount=User::find($id);
             $editAccount->name=$request->input('name');
             $editAccount->email=$request->input('email');
-            $editAccount->password=$request->input('password');
+            $editAccount->password=Hash::make($request->input('password'));
             $editAccount->address=$request->input('address');
             $editAccount->phone=$request->input('phone');
             $editAccount->gender=$request->input('gender');
@@ -178,6 +179,6 @@ class AccountController extends Controller
     {
         $delAccount=User::find($id);
         $delAccount->delete();
-        return redirect('/admin/index')->with('success','Account Removed');
+        return redirect('/admin/viewAccount')->with('success','Account Removed');
     }
 }
