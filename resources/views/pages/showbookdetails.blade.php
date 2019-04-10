@@ -104,7 +104,7 @@
                       </p>
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
-                      <a class="aa-add-to-cart-btn" href="#">Wishlist</a>
+                      <a class="aa-add-to-cart-btn" href="/insertWishlist/{{$book->id}}">Wishlist</a>
              
                     </div>
                   </div>

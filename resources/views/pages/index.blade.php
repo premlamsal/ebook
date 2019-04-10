@@ -133,7 +133,7 @@
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="/insertWishlist/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                         <a href="/book/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$popularBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
@@ -187,7 +187,7 @@
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="/insertWishlist/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                         <a href="/book/{{$latestBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                      <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$latestBook->id}}"><span class="fa fa-search"></span></a>                              
                       </div>
@@ -243,7 +243,7 @@
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="/insertWishlist/{{$moreBook->id}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                         <a href="/book/{{$moreBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                       <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$moreBook->id}}"><span class="fa fa-search"></span></a>                                
                       </div>
