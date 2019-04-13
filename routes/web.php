@@ -147,13 +147,7 @@ Route::get('admin/writer', ['as'=> 'admin/writer', 'uses'=>'WriterController@ind
 Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterController@store'] );
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
-//prem routes
-//wishlist
-Route::get('/wishlist', ['as'=> '/wishlist', 'uses'=>'WishlistController@show'] );
 
-Route::get('/insertWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@add'] );
-
-Route::get('/deleteWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@remove'] );
 
 
  }); //end of gorup admin middleware routes
@@ -163,6 +157,22 @@ Route::resource('/blog','BlogController');
 //about route
 Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
 //end of pralhad routes
+
+
+
+Route::group(['middleware' => ['customer']], function () {
+
+
+//prem routes
+//wishlist
+Route::get('/wishlist', ['as'=> '/wishlist', 'uses'=>'WishlistController@show'] );
+
+Route::get('/insertWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@add'] );
+
+Route::get('/deleteWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@remove'] );
+
+
+ });
 
 
 
