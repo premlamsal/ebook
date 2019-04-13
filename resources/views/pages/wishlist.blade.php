@@ -41,7 +41,7 @@
                    @if($Wishlists->first())
                       @foreach($Wishlists as $Wishlist)
                       <tr>
-                        <td><a class="remove" href="/deleteWishlist/{{$Wishlist->id}}"><fa class="fa fa-close"></fa></a></td>
+                        <td><a class="remove wishlistRemoveBtn" href="javascript:void(0)" wishlistId="{{$Wishlist->id}}"><fa class="fa fa-close"></fa></a></td>
                         <td><a href="#"><img src="{{URL::asset('storage/Book_image').'/'.$Wishlist->image}}" alt="img"></a></td>
                         <td><a class="aa-cart-title" href="/book/{{$Wishlist->book_id}}">{{$Wishlist->title}}</a></td>
                         <td>Rs.{{$Wishlist->price}}</td>
@@ -73,5 +73,45 @@
 
 
 
+
+@endsection
+
+@section('PageScripts')
+
+
+        <script type="text/javascript">
+           $(document).ready(function(){
+
+         $('.wishlistRemoveBtn').click(function(e) {
+         var getId=$(this).attr('wishlistId');
+        
+               $.ajax({
+                        type : 'post',
+                        url : '{{url("deleteWishlist")}}',
+                        data:{'getId':getId},
+                        success:function(result){
+                        message=result.message
+                        $.notify(message); 
+                        // Sets the new location of the current window.
+                        window.location = "/wishlist"  
+                        }
+
+
+                    });//end of ajax
+
+         });//end of click function
+
+      
+       
+
+
+      });    //end of document ready function  
+
+
+
+
+
+
+        </script>
 
 @endsection

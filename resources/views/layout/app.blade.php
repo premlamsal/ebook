@@ -130,8 +130,8 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">My Account</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
+                  <li><a href="/customer/profile">My Account</a></li>
+                  <li class="hidden-xs"><a href="/wishlist">Wishlist</a></li>
                   <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
                     <!-- Authentication Links -->
@@ -355,7 +355,7 @@
       <div class="modal-content">                      
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4>Login or Register</h4>
+          <h4>Login</h4>
           <form class="aa-login-form" action="{{ route('login') }}" method="POST">
               {{ csrf_field() }}
             <label for="">Username or Email address<span>*</span></label>
@@ -407,8 +407,6 @@
             <input type="radio" value="female" name="gender"> Female
             
             <button class="aa-browse-btn" type="submit">Register</button>
-            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
-           
           </form>
         </div>                        
       </div><!-- /.modal-content -->
@@ -483,6 +481,8 @@
   <script type="text/javascript" src="{{URL::asset('js/nouislider.js')}}"></script>
   <!-- Custom js -->
   <script src="{{URL::asset('js/custom.js')}}"></script> 
+  <!-- notification js -->
+  <script src="{{URL::asset('js/notify.min.js')}}"></script>
 <script>
         $(document).ready(function(){
          $('.popup').click(function(e) {
@@ -541,6 +541,40 @@
             }
         });
              
+        </script>
+
+        <script type="text/javascript">
+           $(document).ready(function(){
+
+         $('.wislistTrigger').click(function(e) {
+         var getId=$(this).attr('wislistBookId');
+        
+               $.ajax({
+                        type : 'post',
+                        url : '{{url("insertWishlist")}}',
+                        data:{'getId':getId},
+                        success:function(result){
+                        message=result.message
+                        $.notify(message); 
+                        }
+
+
+                    });//end of ajax
+
+
+         });//end of click function
+
+      
+       
+
+
+      });    //end of document ready function  
+
+
+
+
+
+
         </script>
         @yield('PageScripts')
   

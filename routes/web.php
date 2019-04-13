@@ -13,6 +13,8 @@
 
 Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
+Route::get('/home', ['as'=> 'home', 'uses'=>'PagesController@home'] );
+
 
 Route::resource('/RegisterAccount','AccountController');
 
@@ -167,10 +169,9 @@ Route::group(['middleware' => ['customer']], function () {
 //wishlist
 Route::get('/wishlist', ['as'=> '/wishlist', 'uses'=>'WishlistController@show'] );
 
-Route::get('/insertWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@add'] );
+Route::post('insertWishlist', ['as'=> 'insertWishlist', 'uses'=>'WishlistController@add'] );
 
-Route::get('/deleteWishlist/{book_id}', ['as'=> '/insertWishlist', 'uses'=>'WishlistController@remove'] );
-
+Route::post('deleteWishlist', ['as'=> 'deleteWishlist', 'uses'=>'WishlistController@remove'] );
 
  });
 

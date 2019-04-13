@@ -133,7 +133,7 @@
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
-                        <a href="/insertWishlist/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="wislistTrigger" wislistBookId="{{$popularBook->id}}"><span class="fa fa-heart-o"></span></a>
                         <a href="/book/{{$popularBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$popularBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
