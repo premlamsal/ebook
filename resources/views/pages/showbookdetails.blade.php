@@ -104,7 +104,7 @@
                       </p>
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
-                      <a class="aa-add-to-cart-btn" href="/insertWishlist/{{$book->id}}">Wishlist</a>
+                     <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="wislistTrigger" wislistBookId="{{$book->id}}">
              
                     </div>
                   </div>
