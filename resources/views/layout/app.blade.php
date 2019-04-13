@@ -386,7 +386,7 @@
     </div><!-- /.modal-dialog -->
   </div>    
   <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: 400px;">
       <div class="modal-content">                      
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -405,7 +405,7 @@
 
             <input type="radio" value="male" name="gender"> Male
             <input type="radio" value="female" name="gender"> Female
-            
+            <div class="mt-4"></div>
             <button class="aa-browse-btn" type="submit">Register</button>
           </form>
         </div>                        
