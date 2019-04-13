@@ -104,7 +104,7 @@
                       </p>
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
-                     <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="wislistTrigger" wislistBookId="{{$book->id}}">
+                     <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="aa-add-to-cart-btn wislistTrigger" wislistBookId="{{$book->id}}">Add to Wishlist</a>
              
                     </div>
                   </div>
@@ -258,7 +258,7 @@
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="wislistTrigger" wislistBookId="{{$relatedBook->id}}"><span class="fa fa-heart-o"></span></a>
                        <a href="/book/{{$relatedBook->id}}" data-toggle="tooltip" data-placement="top" title="Details"><span class="fa fa-list"></span></a>
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$relatedBook->id}}"><span class="fa fa-search"></span></a>                            
                       </div>
