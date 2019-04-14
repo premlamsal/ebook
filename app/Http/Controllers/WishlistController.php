@@ -22,16 +22,16 @@ class WishlistController extends Controller
     }
 
     public function add(Request $request){
-
+        $userId=auth()->user()->id;
         //get book id from ajax call
         $book_id=$request->getId;
-
+      $matchThese = ['book_id' => $book_id, 'user_id' => $userId,];
         if (Auth::check()){
         //check item exits on wishlist table or not
-        $checkWishlist=Wishlist::where('book_id', $book_id); 
+        $checkWishlist=Wishlist::where($matchThese)->get(); 
             if(!$checkWishlist->first()){
-                $Wishlist=new Wishlist;
-                $Wishlist->user_id=auth()->user()->id;
+                $Wishlist= new Wishlist;
+                $Wishlist->user_id=$userId;
                 $Wishlist->book_id=$book_id;
                 $Wishlist->save();
                 //sent message to the ajax call to show the user
@@ -49,12 +49,18 @@ class WishlistController extends Controller
     }
     public function remove(Request $request)
     {
-         //get book id from ajax call
+        $userId=auth()->user()->id;
+        //get book id from ajax call
         $id=$request->getId;
         $Wishlist=Wishlist::find($id);
-        $Wishlist->delete();
-        //sent message to the ajax call to show the user
-        $message="Item Removed from your Wislist"; 
+        $table_user_id=$Wishlist->user_id;
+        if($table_user_id==$userId){
+
+            $Wishlist->delete();    
+            
+            $message="Item Removed from your Wislist"; 
+        }
+       //sent message to the ajax call to show the user
          return response([
                 'message' =>$message,
         ]);  
