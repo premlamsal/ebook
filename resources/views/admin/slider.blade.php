@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h2>Add Slider</h2>
-    <form action="{{route('admin/addSlider')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin/addSlider')}}" method="post" enctype="multipart/form-data">
      @csrf
       <div class="form-group">
         <label for="short">Choose a Slider</label>

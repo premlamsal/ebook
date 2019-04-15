@@ -95,15 +95,19 @@ Route::get('/admin/addAccount',['as'=>'admin/addAccount','uses'=>'AdminControlle
 Route::post('/admin/account/Show',['as'=>'admin/account/Show','uses'=>'AccountController@adminShow']);
 Route::get('/admin/viewAccount',['as'=>'admin/viewAccount','uses'=>'AdminController@viewAccount']);
 Route::get('/admin/{id}/editAccount',['as'=>'admin/{id}/editAccount','uses'=>'AdminController@editAccount']);
-Route::delete('/admin/{id}',['as'=>'/admin/{id}','uses'=>'AccountController@destroy']);
-Route::put('/admin/{id}',['as'=>'/admin/{id}','uses'=>'AccountController@update']);
+
+
 //FOR BOOK
 Route::get('/admin/addBook',['as'=>'admin/addBook','uses'=>'AdminController@addBook']);
 Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@viewBook']);
 Route::post('/admin/Book/Store',['as'=>'admin/Book/Store','uses'=>'BookController@store']);
 Route::get('/admin/viewBook',['as'=>'admin/viewBook','uses'=>'AdminController@viewBook']);
 Route::get('/admin/{id}/editBook',['as'=>'admin/{id}/editBook','uses'=>'AdminController@editBook']);
-Route::post('/admin/{id}',['as'=>'/admin/{id}','uses'=>'BookController@destroy']);
+
+Route::post('/admin/removeBook/{id}',['as'=>'/admin/removeBook/{id}','uses'=>'BookController@destroy']);
+
+
+
 Route::put('/admin/Book/{id}',['as'=>'admin/Book/{id}','uses'=>'BookController@update']);
 //For Transaction
 Route::get('/admin/viewTransaction',['as'=>'admin/viewTransaction','uses'=>'AdminController@viewTransaction']);
@@ -121,6 +125,7 @@ Route::put('/admin/Publication/{id}',['as'=>'admin/Publication/{id}','uses'=>'Pu
 
 
 Route::post('admin/addSlider',['as'=>'admin/addSlider', 'uses'=>'SliderController@store']);
+
 Route::get('admin/Slider',['as'=>'admin/Slider', 'uses'=>'SliderController@index']);
 Route::get('admin/Slider/destroy/{id}',['as'=>'admin/destroy', 'uses'=>'SliderController@destroy']);
 Route::get('admin/Testimonial',['as'=>'admin/Testimonial', 'uses'=>'TestimonialController@index']);
