@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 09:59 AM
+-- Generation Time: Apr 15, 2019 at 06:00 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -25,6 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `abouts`
+--
+
+CREATE TABLE `abouts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `about_body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `staff_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `staff_position` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `blogs`
 --
 
@@ -37,13 +52,6 @@ CREATE TABLE `blogs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `blogs`
---
-
-INSERT INTO `blogs` (`id`, `blog_title`, `blog_image`, `blog_body`, `featured`, `created_at`, `updated_at`) VALUES
-(1, 'This is blog', '1552616675.jpg', '<p>This is blog body</p>', NULL, '2019-03-14 20:39:35', '2019-03-14 20:39:35');
 
 -- --------------------------------------------------------
 
@@ -79,7 +87,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `abstract`, `isbn`, `page_no`, `category`, `sub_category`, `tagline`, `category_id`, `price`, `author`, `publication_id`, `image`, `book_file`, `edition`, `user_id`, `tags`, `views`, `created_at`, `updated_at`) VALUES
-(4, 'Hand Gestures Recognition', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2432423', 44, 'Love', 'Romance', 'Hand Gestures, Computing', 1, '3000', 'Prem Lamsal', 1, 'polo-shirt-6_1552637163.png', 'HGRS_FINAL_1552637164.pdf', '2019', 1, 'gdfsgdfgd,gagaedgaee,gradgadfga', NULL, '2019-03-14 21:12:09', '2019-03-15 02:21:04');
+(3, 'Mere Dushman Mere Bhai', 'THis is the best', '132', 3223, 'Love', 'Romance', 'fkasdnf', 1, '1321', 'fadsfas', 1, 'polo-shirt-6_1554909132.png', 'HGRS_FINAL_1554909133.pdf', '2019', 1, 'fasjnf', NULL, '2019-04-02 08:55:03', '2019-04-10 09:27:13');
 
 -- --------------------------------------------------------
 
@@ -100,9 +108,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'Love', '/Love', '2019-03-14 19:41:25', '2019-03-14 19:41:25'),
-(2, 'Science', '/Science', '2019-03-14 19:59:12', '2019-03-14 19:59:12'),
-(3, 'Information Technology', '/Information Technology', '2019-03-14 20:00:47', '2019-03-14 20:00:47');
+(1, 'Love', '/Love', '2019-04-02 08:18:50', '2019-04-02 08:18:50'),
+(2, 'Tech', '/Tech', '2019-04-02 08:19:00', '2019-04-02 08:19:00'),
+(3, 's', '/s', '2019-04-15 09:22:13', '2019-04-15 09:22:13');
 
 -- --------------------------------------------------------
 
@@ -146,9 +154,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2019_02_06_052123_create_sub_menus_table', 1),
 (9, '2019_02_06_081523_create_sub_categories_table', 1),
 (10, '2019_02_07_104827_create_blogs_table', 1),
-(11, '2019_02_08_082215_create_reviews_table', 1),
-(12, '2019_02_12_132746_create_sliders_table', 1),
-(13, '2019_02_14_053639_create_testimonials_table', 1);
+(11, '2019_02_12_132746_create_sliders_table', 1),
+(12, '2019_02_14_053639_create_testimonials_table', 1),
+(13, '2019_03_11_201514_create_abouts_table', 1),
+(14, '2019_03_13_063955_create_staff_table', 1),
+(15, '2019_03_15_034824_create_writers_table', 1),
+(16, '2019_02_08_082215_create_reviews_table', 2),
+(20, '2019_04_10_153005_create_wishlists_table', 3);
 
 -- --------------------------------------------------------
 
@@ -203,7 +215,7 @@ CREATE TABLE `publications` (
 --
 
 INSERT INTO `publications` (`id`, `name`, `address`, `pobox`, `phone`, `fax`, `email`, `website`, `tagline`, `created_at`, `updated_at`) VALUES
-(1, 'Makalu Publications', 'Kathmandu Nepal', '41000', '9999999', '999999', 'makalu@gmail.com', 'makalupublication.com', 'makalu', '2019-02-05 21:23:11', '2019-02-05 21:23:11');
+(1, 'Gnagotri', 'ghoarhi', '97897', 'hjhfkajs', 'kjnfaskdj', 'jnfksad', 'knfalsdf', 'jnfasd', '2019-02-15 01:43:31', '2019-02-15 01:43:31');
 
 -- --------------------------------------------------------
 
@@ -222,6 +234,13 @@ CREATE TABLE `reviews` (
   `book_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `title`, `body`, `rating`, `created_at`, `updated_at`, `user_id`, `book_id`) VALUES
+(1, 'premlamsal', 'Nice Book', 2, '2019-04-08 09:51:32', '2019-04-08 09:51:32', 2, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -231,7 +250,34 @@ CREATE TABLE `reviews` (
 CREATE TABLE `sliders` (
   `id` int(10) UNSIGNED NOT NULL,
   `slider_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slider_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slider_subtitle` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slider_url` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `slider_image`, `slider_title`, `slider_subtitle`, `slider_url`, `created_at`, `updated_at`) VALUES
+(6, '1555342075.jpg', 'New Books in Store', 'Valenti Bash Lakh With the Thousand of Granite', NULL, '2019-04-15 09:42:55', '2019-04-15 09:42:55'),
+(7, '1555342338.jpg', 'new', 'new', NULL, '2019-04-15 09:47:18', '2019-04-15 09:47:18'),
+(8, '1555343921.jpg', 'ok donw', 'ok done', NULL, '2019-04-15 10:13:41', '2019-04-15 10:13:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `staff_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `staff_position` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_info` text COLLATE utf8mb4_unicode_ci,
+  `staff_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -256,11 +302,8 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `subcategory_name`, `link`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Romance', '/Love/Romance', 1, '2019-02-05 21:23:11', '2019-02-05 21:23:11'),
-(2, 'Physics', '/Science/Physics', 2, '2019-03-14 19:59:33', '2019-03-14 19:59:33'),
-(3, 'Chemistry', '/Science/Chemistry', 2, '2019-03-14 19:59:44', '2019-03-14 19:59:44'),
-(4, 'C Programming', '/Information Technology/C Programming', 3, '2019-03-14 20:00:59', '2019-03-14 20:00:59'),
-(5, 'Biology', '/Science/Biology', 2, '2019-03-14 20:03:10', '2019-03-14 20:03:10');
+(1, 'Romance', '/Love/Romance', 1, '2019-04-02 08:19:12', '2019-04-02 08:19:12'),
+(2, 'Computer', '/Tech/Computer', 2, '2019-04-02 08:19:22', '2019-04-02 08:19:22');
 
 -- --------------------------------------------------------
 
@@ -295,6 +338,13 @@ CREATE TABLE `testimonials` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `person_image`, `testimonial_body`, `person_name`, `company_name`, `post`, `created_at`, `updated_at`) VALUES
+(1, '1554112656.jpg', '<p>THis can be great with the bar graph and the coordinate geometry and the traingular rule of the happen kura in this thing.</p>', 'Prem Lamsal', NULL, NULL, '2019-04-01 04:12:36', '2019-04-01 04:12:36');
+
 -- --------------------------------------------------------
 
 --
@@ -322,11 +372,62 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `address`, `phone`, `interest`, `gender`, `user_type`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Prem', 'premlamsal2@gmail.com', '2019-03-13 18:15:00', 'premlamsal', 'ktm', 99999, 'coding', 'male', 'admin', NULL, '2019-02-05 21:23:11', '2019-02-05 21:23:11');
+(1, 'premlamsal', 'premlamsal2@gmail.com', NULL, '$2y$10$NG3eVmybM0F/24SiyBs4EekSykdjIRrojkowM6fCfi4JGx3qdTWLW', NULL, NULL, NULL, 'male', 'admin', 'ScnQZLWLtqgqWSTulopcfWXIUdSXXt0yIUHbUZK0Xe2EG9wQ6vMJHD0UuzEk', '2019-04-01 02:48:57', '2019-04-01 02:48:57'),
+(2, 'niraj lamsal', 'nirajlamsal@gmail.com', NULL, '$2y$10$UEQEgw13363NxsO3cle5YeusnMD/5pACKtmfZq98pl/e9jKZ1fgjG', NULL, NULL, NULL, 'male', 'customer', 'QLrgMEgScdTVxoEzAphobIzsPOAkeW2CkFzbLxxkilWMziByJWMvMhPCEn0F', '2019-04-08 09:50:47', '2019-04-08 09:50:47'),
+(3, 'Nisha lamsal', 'nishalamsal@yahoo.com', NULL, '$2y$10$HvOtZlbLKcAkDf9ywDMjvOrUKeYIXeI4Cb20LsELlk82Hzjw1r64W', NULL, NULL, NULL, 'Female', 'customer', 'XJpAVE65xjWrEtzTk6aNHPaPkI0B4NIZLec4Hm9VGKBEVbdtuReiCbaKSwSJ', '2019-04-13 01:44:41', '2019-04-13 01:44:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `book_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `user_id`, `book_id`, `created_at`, `updated_at`) VALUES
+(2, 2, 3, '2019-04-15 09:55:00', '2019-04-15 09:55:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `writers`
+--
+
+CREATE TABLE `writers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `writer_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `writer_Contact` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `writers`
+--
+
+INSERT INTO `writers` (`id`, `writer_name`, `writer_Contact`, `created_at`, `updated_at`) VALUES
+(1, 'Prem Lamsal', '980980', '2019-04-01 04:24:47', '2019-04-01 04:24:47'),
+(2, 'hari', '98798', '2019-04-01 04:24:52', '2019-04-01 04:24:52');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `abouts`
+--
+ALTER TABLE `abouts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `blogs`
@@ -397,6 +498,12 @@ ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
@@ -424,20 +531,38 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `writers`
+--
+ALTER TABLE `writers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `abouts`
+--
+ALTER TABLE `abouts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -455,7 +580,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `my_books`
@@ -473,19 +598,25 @@ ALTER TABLE `publications`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sub_menus`
@@ -497,13 +628,25 @@ ALTER TABLE `sub_menus`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `writers`
+--
+ALTER TABLE `writers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
