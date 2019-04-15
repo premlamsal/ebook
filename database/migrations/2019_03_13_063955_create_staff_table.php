@@ -16,6 +16,7 @@ class CreateStaffTable extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
             $table->string('staff_name');
+            $table->string('staff_image');
             $table->string('staff_position');
             $table->Text('contact_info')->nullable();
             $table->string('staff_type');

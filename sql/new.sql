@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2019 at 06:00 PM
+-- Generation Time: Apr 15, 2019 at 06:06 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -275,12 +275,20 @@ INSERT INTO `sliders` (`id`, `slider_image`, `slider_title`, `slider_subtitle`, 
 CREATE TABLE `staff` (
   `id` int(10) UNSIGNED NOT NULL,
   `staff_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `staff_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `staff_position` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contact_info` text COLLATE utf8mb4_unicode_ci,
   `staff_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`id`, `staff_name`, `staff_image`, `staff_position`, `contact_info`, `staff_type`, `created_at`, `updated_at`) VALUES
+(1, 'ram tandon', '1555344396.png', 'hero', '<p>nothing like anything</p>', 'ADMINISTRATION AND FINANCE', '2019-04-15 10:21:36', '2019-04-15 10:21:36');
 
 -- --------------------------------------------------------
 
@@ -610,7 +618,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sub_categories`
