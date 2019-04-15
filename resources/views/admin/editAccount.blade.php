@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
 <div class="container">
-   <h3>Edit Book</h3>
+   <h3>Edit Account</h3>
   {!! Form::open(['action'=>['AccountController@update',$account->id],'method'=>'POST']) !!}
   @csrf
       <div class="form-group">
