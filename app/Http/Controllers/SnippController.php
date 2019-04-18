@@ -61,7 +61,7 @@ class SnippController extends Controller
          ]);
 
          $userId= Auth::user()->id;
-         $username=User::find($userId)->value('name');
+         $username= Auth::user()->name;
          $Review = Review::create([
               'user_id'=>$userId,
               'title'=>$username,
