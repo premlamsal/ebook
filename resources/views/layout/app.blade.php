@@ -95,7 +95,7 @@
   padding-bottom: 70%;
   background-size: cover;
   border-radius: 39px;
-  border-radius: 40px 40px 40px 0px;
+  border-radius: 40px 40px 0px 0px;
   background-position: center center;
 }
 .lcl_fade_oc.lcl_pre_show #lcl_overlay,
