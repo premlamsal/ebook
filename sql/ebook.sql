@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2019 at 10:32 AM
+-- Generation Time: May 03, 2019 at 11:17 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -132,7 +132,9 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `title`, `short_description`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'New new new new nmew new', 'nirja new new new', '/uploads/1556872000.jpg', '2019-05-03 02:41:07', '2019-05-03 02:44:11');
+(3, 'New new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew ne', 'nirja new new new', '/uploads/1556872000.jpg', '2019-05-03 02:41:07', '2019-05-03 02:44:11'),
+(4, 'Hand Gestures Recognition', 'lots of love', '/uploads/1556874444.jpg', '2019-05-03 03:22:24', '2019-05-03 03:22:24'),
+(5, 'long', 'logn', '/uploads/1556874677.jpg', '2019-05-03 03:26:17', '2019-05-03 03:26:17');
 
 -- --------------------------------------------------------
 
@@ -613,7 +615,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menus`

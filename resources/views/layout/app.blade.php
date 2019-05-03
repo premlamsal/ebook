@@ -81,7 +81,7 @@
   padding: 10px;
   height: auto;
   border: 1px solid #eff2f6;
-  border-radius: 40px 40px 40px 0px;
+  border-radius: 40px 40px 40px 40px;
   background-clip: padding-box;
 }
 .elem:hover{
