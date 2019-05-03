@@ -159,8 +159,8 @@
               <div class="aa-logo">
                 <!-- Text based logo -->
                 <a href="index.html">
-                  <span class="fa fa-shopping-cart"></span>
-                  <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
+                  <span class="fa fa-book"></span>
+                  <p>Makalu<strong>Publication</strong> <span>Online Book Store</span></p>
                 </a>
                 <!-- img based logo -->
                 <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
