@@ -84,6 +84,10 @@ class PagesController extends Controller
       return view('pages.about')->with(['abouts'=>$about, 'admin'=>$admin, 'marketing'=>$marketing, 'computer'=>$COMPUTER, 'DISTRIBUTION'=>$distribution ]);
 
     }
+    public function contact(){
+
+      return view('pages.contact');
+    }
 
 
  

@@ -165,6 +165,11 @@ Route::resource('/blog','BlogController');
 Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
 //end of pralhad routes
 
+//prem routes
+Route::get('/contact', ['as'=> 'contact', 'uses'=>'PagesController@contact'] );
+
+
+//end of prem routes
 
 
 Route::group(['middleware' => ['customer']], function () {
