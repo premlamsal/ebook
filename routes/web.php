@@ -156,11 +156,22 @@ Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterCon
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
 
 //prem routes
-//gallery
+//show gallery
 Route::get('admin/gallery', ['as'=> 'admin/gallery', 'uses'=>'AdminController@gallery'] );
+//show add form for gallery
 Route::get('admin/gallery/add', ['as'=> 'admin/gallery/add', 'uses'=>'AdminController@addGallery'] );
+//showing update from for gallery
+Route::get('admin/gallery/update/{id}', ['as'=> 'admin/gallery/update/{id}', 'uses'=>'AdminController@updateGallery'] );
 
+//saving new gallery
 Route::post('admin/gallery/save', ['as'=> 'admin/gallery/save', 'uses'=>'GalleryController@saveGallery'] );
+//saving edited gallery
+Route::post('admin/gallery/edit', ['as'=> 'admin/gallery/edit', 'uses'=>'GalleryController@editGallery'] );
+
+//removing gallery
+Route::get('admin/gallery/delete/{id}', ['as'=> 'admin/gallery/delete/{id}', 'uses'=>'GalleryController@removeGallery'] );
+
+
 
 
 

@@ -115,6 +115,13 @@ class AdminController extends Controller
       return view('admin.addGallery');
     }
 
+    public function updateGallery($id){
+
+      $gallery=Gallery::find($id);
+      return view('admin.updateGallery')->with('gallery',$gallery);
+    }
+
+
 
 
 
