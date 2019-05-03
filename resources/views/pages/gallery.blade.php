@@ -27,7 +27,9 @@
             <!-- start gallery code -->
             <div class="content">
               @foreach($galleries as $gallery)
-                <a class="elem" href="{{$gallery->image}}" title="{{$gallery->title}}" data-lcl-txt="{{$gallery->short_description}}" data-lcl-author="Makalu Publication" data-lcl-thumb="{{$gallery->image}}">
+               
+                <a class="elem" href="{{$gallery->image}}" title="{{$gallery->title}}" data-lcl-txt="{{$gallery->short_description}}" data-lcl-author="Makalu Publication" data-lcl-thumb="{{$gallery->image}}" style="position: relative;">
+              <h5 style="background: #ff6666; padding:5px;position: absolute;bottom:0%;left: 0%;color: white;text-align: justify;border-radius: 0px 0px 40px 0px; width: 100%">{{str_limit($gallery->title,40)}}</h5>
                     <span style="background-image: url({{$gallery->image}});"></span>
                   </a>
               @endforeach
