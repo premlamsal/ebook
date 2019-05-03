@@ -80,14 +80,22 @@
   background: #fff;
   padding: 10px;
   height: auto;
+  border: 1px solid #eff2f6;
+  border-radius: 40px 40px 40px 0px;
   background-clip: padding-box;
+}
+.elem:hover{
+      -webkit-box-shadow: 0 10px 90px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 90px rgba(0, 0, 0, 0.08);
 }
 .elem > span {
   display: block;
   cursor: pointer;
   height: 0;
   padding-bottom: 70%;
-  background-size: cover; 
+  background-size: cover;
+  border-radius: 39px;
+  border-radius: 40px 40px 40px 0px;
   background-position: center center;
 }
 .lcl_fade_oc.lcl_pre_show #lcl_overlay,
