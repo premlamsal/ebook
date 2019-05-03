@@ -92,38 +92,10 @@
             <div class="aa-header-top-area">
               <!-- start header top left -->
               <div class="aa-header-top-left">
-                <!-- start language -->
-                <div class="aa-language">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="{{URL::asset('img/flag/english.jpg')}}" alt="english flag">ENGLISH
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><img src="{{URL::asset('img/flag/french.jpg')}}" alt="">FRENCH</a></li>
-                      <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / language -->
-
-                <!-- start currency -->
-                <div class="aa-currency">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="fa fa-usd"></i>USD
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                      <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
-                    </ul>
-                  </div>
-                </div>
                 <!-- / currency -->
                 <!-- start cellphone -->
                 <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                  <p><span class="fa fa-phone"></span>01-4416599</p>
                 </div>
                 <!-- / cellphone -->
               </div>
@@ -132,8 +104,8 @@
                 <ul class="aa-head-top-nav-right">
                   <li><a href="/customer/profile">My Account</a></li>
                   <li class="hidden-xs"><a href="/wishlist">Wishlist</a></li>
-                  <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                  <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
+                 
+                
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -268,11 +240,9 @@
                 <div class="aa-footer-widget">
                   <h3>Main Menu</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Our Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contactus">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -284,8 +254,6 @@
                       <li><a href="#">Delivery</a></li>
                       <li><a href="#">Returns</a></li>
                       <li><a href="#">Services</a></li>
-                      <li><a href="#">Discount</a></li>
-                      <li><a href="#">Special Offer</a></li>
                     </ul>
                   </div>
                 </div>
@@ -296,8 +264,6 @@
                     <h3>Useful Links</h3>
                     <ul class="aa-footer-nav">
                       <li><a href="#">Site Map</a></li>
-                      <li><a href="#">Search</a></li>
-                      <li><a href="#">Advanced Search</a></li>
                       <li><a href="#">Suppliers</a></li>
                       <li><a href="#">FAQ</a></li>
                     </ul>
@@ -309,15 +275,16 @@
                   <div class="aa-footer-widget">
                     <h3>Contact Us</h3>
                     <address>
-                      <p> 25 Astor Pl, NY 10003, USA</p>
-                      <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                      <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                      <p> Makalu Publication House, कालिका मार्ग, Kathmandu</p>
+                      <p><span class="fa fa-phone"></span>01-4416599</p>
+                      <p><span class="fa fa-phone"></span>01-4435148</p>
+                      <p><span class="fa fa-envelope"></span>info@makalupublication.com</p>
                     </address>
                     <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
+                      <a href="https://facebook.com/makalupublication"><span class="fa fa-facebook"></span></a>
+                      <a href="https://twitter.com/makalupublication"><span class="fa fa-twitter"></span></a>
+                      <a href="https://facebook.com/makalupublication"><span class="fa fa-linkedin"></span></a>
+                      <a href="https://facebook.com/makalupublication"><span class="fa fa-instagram"></span></a>
                     </div>
                   </div>
                 </div>
@@ -334,12 +301,9 @@
         <div class="row">
         <div class="col-md-12">
           <div class="aa-footer-bottom-area">
-            <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+            <p>© Copyright 2019 Makalu Publication House</p>
             <div class="aa-footer-payment">
-              <span class="fa fa-cc-mastercard"></span>
-              <span class="fa fa-cc-visa"></span>
-              <span class="fa fa-paypal"></span>
-              <span class="fa fa-cc-discover"></span>
+                <span>We accept Khalti</span>
             </div>
           </div>
         </div>
