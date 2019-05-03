@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2019 at 06:06 PM
+-- Generation Time: May 03, 2019 at 10:32 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -115,6 +115,28 @@ INSERT INTO `categories` (`id`, `category_name`, `url`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `title`, `short_description`, `image`, `created_at`, `updated_at`) VALUES
+(3, 'New new new new nmew new', 'nirja new new new', '/uploads/1556872000.jpg', '2019-05-03 02:41:07', '2019-05-03 02:44:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menus`
 --
 
@@ -160,7 +182,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2019_03_13_063955_create_staff_table', 1),
 (15, '2019_03_15_034824_create_writers_table', 1),
 (16, '2019_02_08_082215_create_reviews_table', 2),
-(20, '2019_04_10_153005_create_wishlists_table', 3);
+(20, '2019_04_10_153005_create_wishlists_table', 3),
+(23, '2019_05_03_043232_create_galleries_table', 4);
 
 -- --------------------------------------------------------
 
@@ -239,7 +262,8 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `title`, `body`, `rating`, `created_at`, `updated_at`, `user_id`, `book_id`) VALUES
-(1, 'premlamsal', 'Nice Book', 2, '2019-04-08 09:51:32', '2019-04-08 09:51:32', 2, 3);
+(2, 'premlamsal', 'Nice Book. Well done Authors.', 4, '2019-04-18 06:54:54', '2019-04-18 06:54:54', 2, 3),
+(5, 'Nisha lamsal', 'nice', 4, '2019-04-18 07:06:14', '2019-04-18 07:06:14', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -380,8 +404,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `address`, `phone`, `interest`, `gender`, `user_type`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'premlamsal', 'premlamsal2@gmail.com', NULL, '$2y$10$NG3eVmybM0F/24SiyBs4EekSykdjIRrojkowM6fCfi4JGx3qdTWLW', NULL, NULL, NULL, 'male', 'admin', 'ScnQZLWLtqgqWSTulopcfWXIUdSXXt0yIUHbUZK0Xe2EG9wQ6vMJHD0UuzEk', '2019-04-01 02:48:57', '2019-04-01 02:48:57'),
-(2, 'niraj lamsal', 'nirajlamsal@gmail.com', NULL, '$2y$10$UEQEgw13363NxsO3cle5YeusnMD/5pACKtmfZq98pl/e9jKZ1fgjG', NULL, NULL, NULL, 'male', 'customer', 'QLrgMEgScdTVxoEzAphobIzsPOAkeW2CkFzbLxxkilWMziByJWMvMhPCEn0F', '2019-04-08 09:50:47', '2019-04-08 09:50:47'),
+(1, 'premlamsal', 'premlamsal2@gmail.com', NULL, '$2y$10$NG3eVmybM0F/24SiyBs4EekSykdjIRrojkowM6fCfi4JGx3qdTWLW', NULL, NULL, NULL, 'male', 'admin', 'i9IS7CEQBSmOBcr49z3imw6eVvtEdYEWfXUmGh3eFo03a5CjIrnKb7Wd9btE', '2019-04-01 02:48:57', '2019-04-01 02:48:57'),
+(2, 'niraj lamsal', 'nirajlamsal@gmail.com', NULL, '$2y$10$UEQEgw13363NxsO3cle5YeusnMD/5pACKtmfZq98pl/e9jKZ1fgjG', NULL, NULL, NULL, 'male', 'customer', 'pl4u3OShZjdEeFSz5DyJz0WnEtFjx6wiJJVIRUZzslWmQpa4p4VpFbl29F0N', '2019-04-08 09:50:47', '2019-04-08 09:50:47'),
 (3, 'Nisha lamsal', 'nishalamsal@yahoo.com', NULL, '$2y$10$HvOtZlbLKcAkDf9ywDMjvOrUKeYIXeI4Cb20LsELlk82Hzjw1r64W', NULL, NULL, NULL, 'Female', 'customer', 'XJpAVE65xjWrEtzTk6aNHPaPkI0B4NIZLec4Hm9VGKBEVbdtuReiCbaKSwSJ', '2019-04-13 01:44:41', '2019-04-13 01:44:41');
 
 -- --------------------------------------------------------
@@ -403,7 +427,8 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `book_id`, `created_at`, `updated_at`) VALUES
-(2, 2, 3, '2019-04-15 09:55:00', '2019-04-15 09:55:00');
+(2, 2, 3, '2019-04-15 09:55:00', '2019-04-15 09:55:00'),
+(3, 3, 3, '2019-04-18 07:08:34', '2019-04-18 07:08:34');
 
 -- --------------------------------------------------------
 
@@ -456,6 +481,12 @@ ALTER TABLE `books`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `galleries`
+--
+ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -570,12 +601,18 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `galleries`
+--
+ALTER TABLE `galleries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -588,7 +625,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `my_books`
@@ -606,7 +643,7 @@ ALTER TABLE `publications`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sliders`
@@ -648,7 +685,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `writers`
