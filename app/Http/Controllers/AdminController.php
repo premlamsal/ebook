@@ -14,6 +14,7 @@ use App\Book;
 use App\Transaction;
 use App\Blog;
 use App\Testimonial;
+use App\Gallery;
 
 class AdminController extends Controller
 {
@@ -100,6 +101,20 @@ class AdminController extends Controller
       $account=User::find($id);
         return view('admin.editAccount')->with('account',$account);
     }
+
+    //gallery
+
+    public function gallery(){
+
+      $galleries=Gallery::all();
+      return view('admin.gallery')->with('galleries',$galleries);
+    }
+
+    public function addGallery(){
+
+      return view('admin.addGallery');
+    }
+
 
 
 

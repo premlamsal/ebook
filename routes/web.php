@@ -151,8 +151,16 @@ Route::get('admin/EditStaffs/{id}',['as'=>'admin/EditStaff', 'uses'=>'StaffContr
 Route::put('admin/UpdateStaffs/{id}',['as'=>'admin/UpdateStaff', 'uses'=>'StaffController@update']);
 //writer slider
 Route::get('admin/writer', ['as'=> 'admin/writer', 'uses'=>'WriterController@index'] );
+
 Route::post('admin/writerStore', ['as'=> 'admin/writerStore', 'uses'=>'WriterController@store'] );
 Route::get('admin/writerdelete/{id}', ['as'=> 'admin/writerdelete', 'uses'=>'WriterController@destroy'] );
+
+//prem routes
+//gallery
+Route::get('admin/gallery', ['as'=> 'admin/gallery', 'uses'=>'AdminController@gallery'] );
+Route::get('admin/gallery/add', ['as'=> 'admin/gallery/add', 'uses'=>'AdminController@addGallery'] );
+
+Route::post('admin/gallery/save', ['as'=> 'admin/gallery/save', 'uses'=>'GalleryController@saveGallery'] );
 
 
 
@@ -167,8 +175,7 @@ Route::get('/about', ['as'=> 'about', 'uses'=>'PagesController@about'] );
 
 //prem routes
 Route::get('/contact', ['as'=> 'contact', 'uses'=>'PagesController@contact'] );
-
-
+Route::get('/gallery', ['as'=> 'gallery', 'uses'=>'PagesController@gallery'] );
 //end of prem routes
 
 

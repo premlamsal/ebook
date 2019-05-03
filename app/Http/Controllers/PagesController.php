@@ -13,6 +13,7 @@ use App\About;
 use App\Category;
 use DB;
 use App\Writer;
+use App\Gallery;
 class PagesController extends Controller
 {
     public function home(){
@@ -87,6 +88,12 @@ class PagesController extends Controller
     public function contact(){
 
       return view('pages.contact');
+    }
+
+      public function gallery(){
+
+        $galleries=Gallery::all();
+      return view('pages.gallery')->with('galleries',$galleries);
     }
 
 

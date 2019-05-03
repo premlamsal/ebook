@@ -67,7 +67,49 @@
           max-height: 300px;
         }
 
+.elem, .elem * {
+  box-sizing: border-box;
+  margin: 0 !important; 
+}
+.elem {
+  display: inline-block;
+  font-size: 0;
+  width: 33%;
+  border: 20px solid transparent;
+  border-bottom: none;
+  background: #fff;
+  padding: 10px;
+  height: auto;
+  background-clip: padding-box;
+}
+.elem > span {
+  display: block;
+  cursor: pointer;
+  height: 0;
+  padding-bottom: 70%;
+  background-size: cover; 
+  background-position: center center;
+}
+.lcl_fade_oc.lcl_pre_show #lcl_overlay,
+.lcl_fade_oc.lcl_pre_show #lcl_window,
+.lcl_fade_oc.lcl_is_closing #lcl_overlay,
+.lcl_fade_oc.lcl_is_closing #lcl_window {
+  opacity: 0 !important;
+}
+.lcl_fade_oc.lcl_is_closing #lcl_overlay {
+  -webkit-transition-delay: .15s !important; 
+  transition-delay: .15s !important;
+}
+
     </style>
+    <!-- REQUIRED ELEMENTS -->
+
+<link rel="stylesheet" href="css/lc_lightbox.css" />
+
+
+<!-- SKINS -->
+<link rel="stylesheet" href="skins/minimal.css" />
+
   </head>
   <body> 
    <!-- wpf loader Two -->
@@ -203,6 +245,7 @@
                   <h3>Main Menu</h3>
                   <ul class="aa-footer-nav">
                     <li><a href="/">Home</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                   </ul>
