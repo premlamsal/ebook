@@ -171,6 +171,13 @@ Route::post('admin/gallery/edit', ['as'=> 'admin/gallery/edit', 'uses'=>'Gallery
 //removing gallery
 Route::get('admin/gallery/delete/{id}', ['as'=> 'admin/gallery/delete/{id}', 'uses'=>'GalleryController@removeGallery'] );
 
+//subscribers
+Route::get('admin/subscribers', ['as'=> 'admin/subscribers', 'uses'=>'AdminController@viewSubscribers'] );
+//addSubscribers
+
+Route::post('addSubscriber', ['as'=> 'addSubscriber', 'uses'=>'AdminController@addSubscriber'] );
+
+
 
 
 

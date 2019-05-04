@@ -15,6 +15,7 @@ use App\Transaction;
 use App\Blog;
 use App\Testimonial;
 use App\Gallery;
+use App\Subscriber;
 
 class AdminController extends Controller
 {
@@ -119,6 +120,20 @@ class AdminController extends Controller
 
       $gallery=Gallery::find($id);
       return view('admin.updateGallery')->with('gallery',$gallery);
+    }
+
+    public function viewSubscribers(){
+
+      $subscribers=Subscriber::all();
+      return view('admin.viewSubscribers')->with('subscribers',$subscribers);
+
+
+    }
+    public function addSubscriber(Request $request){
+
+      $email=$request->input('sub_email');
+      print_r($email);
+
     }
 
 

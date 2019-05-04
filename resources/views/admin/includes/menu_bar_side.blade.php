@@ -128,7 +128,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header" >Menu Screens:</h6>
-            <a class="dropdown-item" href="addMenu" >View Subscriber</a>
+            <a class="dropdown-item" href="/admin/subscribers" >View Subscriber</a>
           </div>
       </ul>
 

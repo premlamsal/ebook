@@ -434,15 +434,17 @@
   <!-- / Latest Blog -->
 
   <!-- Subscribe section -->
-  <section id="aa-subscribe">
+  @if(!auth::check())
+<section id="aa-subscribe">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="aa-subscribe-area">
             <h3>Subscribe our newsletter </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
-            <form action="" class="aa-subscribe-form">
-              <input type="email" name="" id="" placeholder="Enter your Email">
+            <p>Please Subscribe us for more latest news and updates.</p>
+            <form action="/addSubscriber" class="aa-subscribe-form">
+              @csrf
+              <input type="email" name="sub_email" id="" placeholder="Enter your Email">
               <input type="submit" value="Subscribe">
             </form>
           </div>
@@ -450,7 +452,26 @@
       </div>
     </div>
   </section>
+ 
+   @else
+
+  <section id="aa-subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-subscribe-area">
+            <h3>Subscribe our newsletter </h3>
+            <p>Registered Customers are Subscribed default.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @endif
   <!-- / Subscribe section -->
+
+
   <!-- Client Brand -->
   <section id="aa-client-brand">
   

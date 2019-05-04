@@ -8,11 +8,7 @@ use DB;
 
 class BlogController extends Controller
 {
-    /**
-         * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         //  $blogs=DB::select('SELECT * FROM blogs ORDER BY id DESC LIMIT 3');
@@ -20,26 +16,12 @@ class BlogController extends Controller
        
         return view('blog.index')->with('blogs',$blogs);
     }
-public function addBlog(){
+    
+    public function addBlog(){
 
-    return view('admin.addBlog');
-}
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+            return view('admin.addBlog');
+        }
+        
     public function store(Request $request)
     {
         request()->validate([
@@ -58,12 +40,6 @@ public function addBlog(){
         return redirect('admin/showBlog');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
 
@@ -79,12 +55,7 @@ public function addBlog(){
 
             return view('admin.showBlog')->with('blog',$blogs);
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function editBlog($id)
     {
         $blogs=Blog::find($id);
@@ -92,13 +63,6 @@ public function addBlog(){
         return view('admin.editBlog')->with('blog', $blogs);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function updateBlog(Request $request, $id)
     {
         $this->validate($request, [
@@ -112,12 +76,7 @@ public function addBlog(){
         return redirect('admin/showBlog');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function destroyBlog($id)
     {
         $blogs=Blog::find($id);
