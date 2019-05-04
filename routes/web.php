@@ -173,14 +173,6 @@ Route::get('admin/gallery/delete/{id}', ['as'=> 'admin/gallery/delete/{id}', 'us
 
 //subscribers
 Route::get('admin/subscribers', ['as'=> 'admin/subscribers', 'uses'=>'AdminController@viewSubscribers'] );
-//addSubscribers
-
-Route::post('addSubscriber', ['as'=> 'addSubscriber', 'uses'=>'AdminController@addSubscriber'] );
-
-
-
-
-
 
 
  }); //end of gorup admin middleware routes
@@ -196,7 +188,14 @@ Route::get('/contact', ['as'=> 'contact', 'uses'=>'PagesController@contact'] );
 Route::get('/gallery', ['as'=> 'gallery', 'uses'=>'PagesController@gallery'] );
 //end of prem routes
 
+//addSubscribers
 
+Route::post('addSubscriber', ['as'=> 'addSubscriber', 'uses'=>'PagesController@addSubscriber'] );
+
+
+
+
+//customer middle ware
 Route::group(['middleware' => ['customer']], function () {
 
 

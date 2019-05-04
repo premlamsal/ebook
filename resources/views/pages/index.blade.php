@@ -442,7 +442,7 @@
           <div class="aa-subscribe-area">
             <h3>Subscribe our newsletter </h3>
             <p>Please Subscribe us for more latest news and updates.</p>
-            <form action="/addSubscriber" class="aa-subscribe-form">
+            <form action="/addSubscriber" class="aa-subscribe-form" method="post">
               @csrf
               <input type="email" name="sub_email" id="" placeholder="Enter your Email">
               <input type="submit" value="Subscribe">

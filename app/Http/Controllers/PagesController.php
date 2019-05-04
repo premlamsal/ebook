@@ -14,6 +14,7 @@ use App\Category;
 use DB;
 use App\Writer;
 use App\Gallery;
+use App\Subscriber;
 class PagesController extends Controller
 {
     public function home(){
@@ -94,6 +95,22 @@ class PagesController extends Controller
 
         $galleries=Gallery::all();
       return view('pages.gallery')->with('galleries',$galleries);
+    }
+
+     public function addSubscriber(Request $request){
+
+    
+         $this->validate($request,[
+                'sub_email'=>'required|string|unique:users,email',
+                ]);
+
+        $subscriber=new Subscriber;
+                    $subscriber->email=$request->input('sub_email');
+                    $subscriber->save();
+
+        return redirect('/');
+                  
+
     }
 
 

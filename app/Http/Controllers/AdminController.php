@@ -129,14 +129,7 @@ class AdminController extends Controller
 
 
     }
-    public function addSubscriber(Request $request){
-
-      $email=$request->input('sub_email');
-      print_r($email);
-
-    }
-
-
+   
 
 
 
