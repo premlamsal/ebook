@@ -120,7 +120,7 @@ class BookController extends Controller
                 $filenameWithExt=$request->file('bookfile')->getClientOriginalName();
                 $filename=pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $extension=$request->file('bookfile')->getClientOriginalExtension();
-                $BookfileNameToStore=$filename.'_'.time().'.'.$extension;
+                $BookfileNameToStore=$filename.'_'.time();//.'.'.$extension;
                 $Bookpath=$request->file('bookfile')->storeAs('public/Book_pdf',$BookfileNameToStore);
             }
             // else{
