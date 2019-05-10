@@ -19,7 +19,13 @@ class Customer
         if($user = Auth::user())
          {
             if(auth()->user()->user_type == 'customer'){
-            return $next($request);
+                
+                 return $next($request);
+             }
+             elseif (auth()->user()->user_type == 'admin') {
+             
+             
+                 return redirect('/')->with('error','Admin cant be Customer');
              }
          }
           

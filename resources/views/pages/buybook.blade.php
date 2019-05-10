@@ -3,6 +3,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 20px">
+
+    @if(empty($nackH1))
 			<h2>You are about to buy</h2>
 			<div class="row">
 				<div class="col-md-3">
@@ -17,7 +19,11 @@
 				    <!-- Place this where you need payment button -->
 				</div>
 			</div>
-			
+	@else
+    <h2>{{$nackH1}}</h2>
+    <p>{{$nackP}}</p>
+    @endif
+
 		</div>
 	</div>
 </div>
@@ -25,6 +31,8 @@
 
 @endsection
 @section('PageScripts')
+
+@if(empty($nackH1))
 <script type="text/javascript">
         var config = {
             // replace the publicKey with yours
@@ -76,4 +84,5 @@
         }
 
    </script>
+   @endif
 @endsection

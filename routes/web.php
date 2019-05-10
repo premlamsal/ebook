@@ -24,20 +24,10 @@ Auth::routes();
 
 //Route::get('/convert', 'SnippController@convert')->name('convert');
 
-//prem routes
-//profile customer
-
-Route::get('/customer/profile','CustomerController@index')->name('/customer/profile');
-Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/readbook');
-
-Route::get('/category', 'SnippController@Category')->name('category');
 
 
 //readbooks
 
-Route::get('/customer/readbook/', function(){
-	return redirect('/');
-});
 //for imagemagick rendering start
 Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
 
@@ -47,7 +37,6 @@ Route::get('/book/{id}', ['as'=> '/book/{id}', 'uses'=>'PagesController@showBook
 
 Route::post('/reviewStore', ['as'=> 'reviewStore', 'uses'=>'SnippController@reviewStore'] );
 
-Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPage'] );
 
 Route::get('/category/{category_name}', ['as'=> '/category/{category_name}', 'uses'=>'PagesController@showCategory'] );
 
@@ -207,19 +196,33 @@ Route::post('insertWishlist', ['as'=> 'insertWishlist', 'uses'=>'WishlistControl
 
 Route::post('deleteWishlist', ['as'=> 'deleteWishlist', 'uses'=>'WishlistController@remove'] );
 
- });
+
+Route::post('khalti/verification', 'KhaltiController@transaction')->name('khalti.verification');
+
+
+Route::get('/nack', ['as'=> 'nack', 'uses'=>'PagesController@nack'] );
+
+Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPage'] );
+
+//prem routes
+//profile customer
+
+Route::get('/customer/profile','CustomerController@index')->name('/customer/profile');
+Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/readbook');
+
+
+ });//end of customer routes
+
+// Route::get('/category', 'SnippController@Category')->name('category');
 
 
 //khalti
 
 // Route::post('khalti/verification', ['as'=> 'khalti.verification', 'uses'=>'KhaltiController@transaction'] );
 
- Route::get('khalti/verify', 'KhaltiController@test')->name('khalti.test');
+//  Route::get('khalti/verify', 'KhaltiController@test')->name('khalti.test');
 	 
-Route::get('subtract/{a}/{b}', 'KhaltiController@subtract');
-
-
- Route::post('khalti/verification', 'KhaltiController@transaction')->name('khalti.verification');
+// Route::get('subtract/{a}/{b}', 'KhaltiController@subtract');
 
 
 

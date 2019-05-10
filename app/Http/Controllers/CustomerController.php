@@ -21,6 +21,9 @@ class CustomerController extends Controller
     public function index()
     {
         if (isset(Auth::user()->id)) {
+
+            
+
             $user_id=Auth::user()->id;
             $userName=Auth::user()->name;
             //$my_books=MyBook::where('user_id',$user_id)->get();

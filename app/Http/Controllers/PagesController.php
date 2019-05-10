@@ -15,6 +15,7 @@ use DB;
 use App\Writer;
 use App\Gallery;
 use App\Subscriber;
+use App\MyBook;
 class PagesController extends Controller
 {
     public function home(){
@@ -41,11 +42,30 @@ class PagesController extends Controller
              $book=Book::find($getId);
              $url=URL('/');
 
+            if (isset(Auth::user()->id)) {
+             $user_id=Auth::user()->id;
+             $book_id=$getId;
+             $isBookBought=MyBook::where('user_id',$user_id)->where('book_id',$book_id)->get();
+            if($isBookBought->first()){
+                $nackH1="Hurray!!!";
+                $nackP="You have already bought this book.";
 
-             return view('pages.buybook')->with(['book'=>$book,'url'=>$url]);
+                    return view('pages.buybook')->with(['nackH1'=>$nackH1,'nackP'=>$nackP]);
+              }
+              else{
+                   return view('pages.buybook')->with(['book'=>$book,'url'=>$url]);
+              }
+            }
+           
+          
 
 
     }
+    public function nack(){
+
+
+    }
+
     public function showCategory(Request $request){
 
       $cat_name=$request->category_name;
