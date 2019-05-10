@@ -51,7 +51,7 @@
 
 
                   </ul>
-                  <a class="aa-browse-btn" href="#">Browse all MyBooks <span class="fa fa-long-arrow-right"></span></a>
+                  <!-- <a class="aa-browse-btn" href="#">Browse all MyBooks <span class="fa fa-long-arrow-right"></span></a> -->
                 </div>
                 <!-- / popular product category -->
            
@@ -64,8 +64,8 @@
     </div>
   </section>
   <!-- / popular section -->
-
-  <!-- popular section -->
+<!-- 
+  
   <section id="aa-popular-category">
 
     <div class="container">
@@ -73,17 +73,16 @@
         <div class="col-md-12">
           <div class="row">
             <div class="aa-popular-category-area">
-              <!-- start prduct navigation -->
+             
              <ul class="nav nav-tabs aa-products-tab">
                 <li class="active"><a href="#" data-toggle="tab">You May Like</a></li>
               </ul>
-              <!-- Tab panes -->
+            
               <div class="tab-content">
-                <!-- Start men popular category -->
+               
                 <div class="tab-pane fade in active" id="popular">
                   <ul class="aa-product-catg aa-popular-slider">
-                    <!-- start single product item -->
-                 
+                
                     @foreach($my_books as $my_book)
                           
                      <li>
@@ -92,7 +91,7 @@
                         <a class="aa-add-card-btn" href="/buy/{{$my_book->id}}"><span class="fa fa-eye"></span>Buy Book</a>
                          <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{$my_book->title}}</a></h4>
-                          <span class="aa-product-price">Rs.{{$my_book->price}}</span><!-- <span class="aa-product-price"><del>$0.00</del></span -->
+                          <span class="aa-product-price">Rs.{{$my_book->price}}</span>
                         </figcaption>
                       </figure>                     
                       <div class="aa-product-hvr-content">
@@ -103,7 +102,7 @@
                         <a href="#" href="#" class="popup" href="javascript:void(0)" id="{{$my_book->id}}"><span class="fa fa-search"></span></a>                         
                       </div>
                      
-                    <!--   <span class="aa-badge aa-sale" href="#">SALE!</span> -->
+                   
                     </li>
                   @endforeach
 
@@ -111,7 +110,7 @@
                   </ul>
                   <a class="aa-browse-btn" href="#">Browse all <span class="fa fa-long-arrow-right"></span></a>
                 </div>
-                <!-- / popular product category -->
+               
            
                        
               </div>
@@ -121,7 +120,7 @@
       </div>
     </div>
   </section>
-  <!-- / popular section -->
+ -->
 
 
 
