@@ -17,7 +17,7 @@
                   <div class="seq-title">
                     <h2 data-seq>{{$slider->slider_title}}</h2>     
                     <p data-seq>{{$slider->slider_subtitle}}</p> 
-                    <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">BUY NOW</a>
+                    <!-- <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">BUY NOW</a> -->
                   </div>
                 </li>
               @endforeach
