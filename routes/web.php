@@ -210,6 +210,19 @@ Route::post('deleteWishlist', ['as'=> 'deleteWishlist', 'uses'=>'WishlistControl
  });
 
 
+//khalti
+
+// Route::post('khalti/verification', ['as'=> 'khalti.verification', 'uses'=>'KhaltiController@transaction'] );
+
+ Route::get('khalti/verify', 'KhaltiController@test')->name('khalti.test');
+	 
+Route::get('subtract/{a}/{b}', 'KhaltiController@subtract');
+
+
+ Route::post('khalti/verification', 'KhaltiController@transaction')->name('khalti.verification');
+
+
+
 
 
 

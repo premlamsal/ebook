@@ -112,11 +112,11 @@
     </style>
     <!-- REQUIRED ELEMENTS -->
 
-<link rel="stylesheet" href="css/lc_lightbox.css" />
+<link rel="stylesheet" href="/css/lc_lightbox.css" />
 
 
 <!-- SKINS -->
-<link rel="stylesheet" href="skins/minimal.css" />
+<link rel="stylesheet" href="/skins/minimal.css" />
 
   </head>
   <body> 
@@ -511,14 +511,7 @@
       });      
      
         </script>
-        <script type="text/javascript">
-         $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-             
-        </script>
+     
 
         <script type="text/javascript">
            $(document).ready(function(){
@@ -554,6 +547,13 @@
 
         </script>
         @yield('PageScripts')
-  
+     <script type="text/javascript">
+         $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+             
+        </script>
   </body>
 </html>

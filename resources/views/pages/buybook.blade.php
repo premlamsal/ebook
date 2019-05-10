@@ -26,50 +26,54 @@
 @endsection
 @section('PageScripts')
 <script type="text/javascript">
- var book_id="{{$book->id}}";
- price=1000;
- var config = {
+        var config = {
             // replace the publicKey with yours
-            "publicKey": "test_public_key_0bf500d3a44e4200a7f7a1dc4d40d6e0",
+            "publicKey": "{{env('KHALTI_TEST_PUBLIC', '')}}",
             "productIdentity": "{{$book->id}}",
             "productName": "{{$book->title}}",
             "productUrl": "{{$url}}/book/{{$book->id}}",
-            "amount":"{{$book->price}}"*100,
             "eventHandler": {
                 onSuccess (payload) {
                     // hit merchant api for initiating verfication
-                     // console.log(payload);
-                      verifyPayment(payload);
-
-                    
+                    console.log(payload);
+                    $.ajax({
+                        url: '{{url("khalti/verification")}}',
+                        type: 'post',
+                        data: {
+                            'amount': payload.amount,
+                            'mobile': payload.mobile,
+                            'product_identity': payload.product_identity,
+                            'token': payload.token
+                            },
+                        success: function(data) 
+                        {
+                            console.log(data);
+                             
+                        },
+                        error: function(data) 
+                        {
+                            console.log("error occured");
+                          //redirext to error page
+                        }
+                   });
                 },
                 onError (error) {
-                    // console.log(error);
-                   
+                    console.log(error);
+                    //redirect as needed
                 },
                 onClose () {
                     console.log('widget is closing');
+                    //redirect as needed
                 }
             }
         };
-
         var checkout = new KhaltiCheckout(config);
         var btn = document.getElementById("payment-button");
-        btn.onclick = function () {
-            checkout.show();
+        btn.onclick = function (e) {
+            e.preventDefault();
+         var amount = "{{$book->price}}" *100;   
+         checkout.show({amount: amount});
         }
 
- function verifyPayment(payload){
- 
- 		            $.ajax({
-                        type : 'post',
-                        url : '{{url("verifyPayment")}}',
-                        data:{'payload':payload,'book_id':book_id},
-                        success:function(result){
-                        message=result.message
-                          alert(message);
-                        }
-                    });
- }
-</script>
+   </script>
 @endsection
