@@ -157,7 +157,9 @@ class AdminController extends Controller
     {
 
 
-      $book= Book::all()->first();
+     
+      $book=Book::find($id);
+
       
       $Categories= Category::all();
       $SubCategories= SubCategory::all();
