@@ -58,7 +58,7 @@ class CustomerController extends Controller
                                 $publicURL=url('/');
                                 $filePath="../../storage/Book_pdf/".$bookFile;
                                 // $random=Str::random(60);//generates random sting of length 60
-                               return view('customer.readbook')->with('filePath',$filePath);
+                               return view('customer.readBook')->with('filePath',$filePath);
 
                                }
                                else{
