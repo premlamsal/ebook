@@ -55,7 +55,9 @@
                             },
                         success: function(data) 
                         {
-                            console.log(data);
+                            // console.log(data);
+                            //redirect to customer profile
+                             window.location = "/customer/profile";
                              
                         },
                         error: function(data) 
