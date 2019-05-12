@@ -155,12 +155,7 @@ class AdminController extends Controller
     }
      public function editBook($id)
     {
-
-
-     
-      $book=Book::find($id);
-
-      
+      $book=Book::find($id);      
       $Categories= Category::all();
       $SubCategories= SubCategory::all();
       $Publications= Publication::all();
