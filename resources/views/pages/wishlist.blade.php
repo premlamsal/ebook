@@ -33,8 +33,8 @@
                         <th></th>
                         <th>Product</th>
                         <th>Price</th>
-                        <th>Stock Status</th>
-                        <th></th>
+                       
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -45,8 +45,8 @@
                         <td><a href="#"><img src="{{URL::asset('storage/Book_image').'/'.$Wishlist->image}}" alt="img"></a></td>
                         <td><a class="aa-cart-title" href="/book/{{$Wishlist->book_id}}">{{$Wishlist->title}}</a></td>
                         <td>Rs.{{$Wishlist->price}}</td>
-                        <td>In Stock</td>
-                        <td><a href="#" class="aa-add-to-cart-btn">Add To Cart</a></td>
+                       
+                        
                       </tr>  
                       @endforeach   
                     @else
