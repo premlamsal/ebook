@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2019 at 11:25 AM
+-- Generation Time: May 13, 2019 at 05:02 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -36,6 +36,13 @@ CREATE TABLE `abouts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `about_body`, `staff_image`, `staff_position`, `created_at`, `updated_at`) VALUES
+(1, 'Makalu Publicatio House is the best book store in the Nepal', '', '', '2019-05-21 18:15:00', '2019-05-21 18:15:00');
 
 -- --------------------------------------------------------
 
@@ -710,7 +717,7 @@ ALTER TABLE `writers`
 -- AUTO_INCREMENT for table `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `blogs`
