@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2019 at 11:17 AM
+-- Generation Time: May 13, 2019 at 11:25 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -87,7 +87,8 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `abstract`, `isbn`, `page_no`, `category`, `sub_category`, `tagline`, `category_id`, `price`, `author`, `publication_id`, `image`, `book_file`, `edition`, `user_id`, `tags`, `views`, `created_at`, `updated_at`) VALUES
-(3, 'Mere Dushman Mere Bhai', 'THis is the best', '132', 3223, 'Love', 'Romance', 'fkasdnf', 1, '1321', 'fadsfas', 1, 'polo-shirt-6_1554909132.png', 'HGRS_FINAL_1554909133.pdf', '2019', 1, 'fasjnf', NULL, '2019-04-02 08:55:03', '2019-04-10 09:27:13');
+(3, 'All around the circle', 'THis is the best', '132', 3223, 'Love', 'Romance', 'fkasdnf', 1, '10', 'fadsfas', 1, 'polo-shirt-6_1554909132.png', 'HGRS_FINAL_1554909133', '2019', 1, 'fasjnf', NULL, '2019-04-02 08:55:03', '2019-04-10 09:27:13'),
+(4, 'Introduction to Business', 'Introduction to Business', '23412', 123, 'Business', 'Finance', 'Dbms', 5, '20', 'Dipesh Acharya', 1, 'gtkpro_second_frontcover_lg-250x300_1557495303.jpg', '13 DDBMS - Intro_1557495304', '2014', 1, 'DBMS', NULL, '2019-05-10 07:50:04', '2019-05-10 07:50:04');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,9 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `category_name`, `url`, `created_at`, `updated_at`) VALUES
 (1, 'Love', '/Love', '2019-04-02 08:18:50', '2019-04-02 08:18:50'),
 (2, 'Tech', '/Tech', '2019-04-02 08:19:00', '2019-04-02 08:19:00'),
-(3, 's', '/s', '2019-04-15 09:22:13', '2019-04-15 09:22:13');
+(3, 'Comics', '/Comics', '2019-05-04 01:57:10', '2019-05-04 01:57:10'),
+(4, 'Horror', '/Horror', '2019-05-04 02:00:46', '2019-05-04 02:00:46'),
+(5, 'Business', '/Business', '2019-05-04 02:05:24', '2019-05-04 02:05:24');
 
 -- --------------------------------------------------------
 
@@ -135,6 +138,59 @@ INSERT INTO `galleries` (`id`, `title`, `short_description`, `image`, `created_a
 (3, 'New new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew newNew new new new nmew ne', 'nirja new new new', '/uploads/1556872000.jpg', '2019-05-03 02:41:07', '2019-05-03 02:44:11'),
 (4, 'Hand Gestures Recognition', 'lots of love', '/uploads/1556874444.jpg', '2019-05-03 03:22:24', '2019-05-03 03:22:24'),
 (5, 'long', 'logn', '/uploads/1556874677.jpg', '2019-05-03 03:26:17', '2019-05-03 03:26:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `khaltis`
+--
+
+CREATE TABLE `khaltis` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` decimal(8,2) NOT NULL,
+  `pre_token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `verified_token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_identity` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `khaltis`
+--
+
+INSERT INTO `khaltis` (`id`, `user_id`, `mobile`, `amount`, `pre_token`, `verified_token`, `product_identity`, `status`, `created_at`, `updated_at`) VALUES
+(1, 3, '98XXXXX747', '10.00', 'U4Jw4qyaQdQUT9MRNVLnp5', 'TokenNotSet', 0, 0, '2019-05-10 02:02:18', '2019-05-10 02:02:18'),
+(2, 3, '98XXXXX747', '10.00', 'DTbC6aTWAaM5nVHuFeXDv3', 'TokenNotSet', 0, 0, '2019-05-10 04:05:05', '2019-05-10 04:05:05'),
+(3, 3, '98XXXXX747', '10.00', 'dmEhfhHUgkeov7p4MwioSE', 'TokenNotSet', 0, 0, '2019-05-10 04:07:01', '2019-05-10 04:07:01'),
+(4, 3, '98XXXXX747', '10.00', 'fFS5j9jM6UGruupuDFAKPL', 'TokenNotSet', 0, 0, '2019-05-10 04:09:31', '2019-05-10 04:09:31'),
+(5, 3, '98XXXXX747', '10.00', 'X9sML9QFDXjxdrQ5SR7SL6', 'TokenNotSet', 0, 0, '2019-05-10 04:48:25', '2019-05-10 04:48:25'),
+(6, 3, '98XXXXX747', '10.00', 'dtASzaayvrKzwWPRJeT5P8', 'TokenNotSet', 3, 0, '2019-05-10 06:14:30', '2019-05-10 06:14:30'),
+(7, 3, '98XXXXX747', '10.00', 'imetVt6wQgoGb2fFZmsrpm', 'TokenNotSet', 3, 0, '2019-05-10 06:17:30', '2019-05-10 06:17:30'),
+(8, 3, '98XXXXX747', '10.00', 'r5DjmBmjSBGiDDfmgN2Wrj', 'TokenNotSet', 3, 0, '2019-05-10 06:18:44', '2019-05-10 06:18:44'),
+(9, 3, '98XXXXX747', '10.00', 'Shc92f8xCsoPMQCyKAX2RU', 'TokenNotSet', 3, 0, '2019-05-10 06:31:10', '2019-05-10 06:31:10'),
+(10, 3, '98XXXXX747', '10.00', 'MhvTo3ENBpoiqTaLDsYRUb', 'TokenNotSet', 3, 0, '2019-05-10 06:32:50', '2019-05-10 06:32:50'),
+(11, 3, '98XXXXX747', '10.00', 'Vchog8qQtTrakwMx4rMmkK', 'TokenNotSet', 3, 0, '2019-05-10 06:35:24', '2019-05-10 06:35:24'),
+(12, 3, '98XXXXX747', '10.00', 'YSxtiHw37E84muwD2Kcitf', 'TokenNotSet', 3, 0, '2019-05-10 06:37:43', '2019-05-10 06:37:43'),
+(13, 3, '98XXXXX747', '10.00', 'sDeoZLqykxQVmqCn3WC2HE', 'TokenNotSet', 3, 0, '2019-05-10 06:40:09', '2019-05-10 06:40:09'),
+(14, 3, '98XXXXX747', '10.00', 'wo8avkzVRX6rN5JNkSCiYC', 'TokenNotSet', 3, 0, '2019-05-10 06:41:48', '2019-05-10 06:41:48'),
+(15, 3, '98XXXXX747', '10.00', '839fdkrgJNX5NDrN6M2HZn', 'TokenNotSet', 3, 0, '2019-05-10 06:42:40', '2019-05-10 06:42:40'),
+(16, 3, '98XXXXX747', '10.00', 'YTXJS9u88H4CmrRKgxKVT3', 'TokenNotSet', 3, 0, '2019-05-10 06:45:23', '2019-05-10 06:45:23'),
+(17, 3, '98XXXXX747', '10.00', 'UyQCxaiKmn2pmh8jii4kUV', 'TokenNotSet', 3, 0, '2019-05-10 06:46:38', '2019-05-10 06:46:38'),
+(18, 3, '98XXXXX747', '10.00', '2sZmVe8cQSuiwtWD46s37d', 'null', 3, 0, '2019-05-10 06:52:01', '2019-05-10 06:52:01'),
+(19, 3, '98XXXXX747', '10.00', 'Xv3TV3UYqvXXsQG2qemhJB', 'null', 3, 0, '2019-05-10 06:52:52', '2019-05-10 06:52:52'),
+(20, 3, '98XXXXX747', '10.00', 'oFvoYrb395i8NisFHTikmU', 'null', 3, 0, '2019-05-10 07:12:09', '2019-05-10 07:12:09'),
+(21, 3, '98XXXXX747', '10.00', 'kwdHHJeNQAogfqg8bF9Lgk', 'null', 3, 0, '2019-05-10 07:13:45', '2019-05-10 07:13:45'),
+(22, 3, '98XXXXX747', '10.00', '7gEG9NGgR8QeiMWa8rYBfM', 'NRHiG2B67gseNdX4uxQBk9', 3, 1, '2019-05-10 07:17:22', '2019-05-10 07:17:22'),
+(23, 3, '98XXXXX747', '10.00', 'GfS5obxiHbkGTUk4bCaFRG', 'rCBLtRaKr4Yr9a8nDbaJVY', 3, 1, '2019-05-10 07:30:14', '2019-05-10 07:30:15'),
+(24, 2, '98XXXXX747', '20.00', 'ofhzCu5pe2LRxJQak4wyQD', 'ihEfdr82TVuna8yYbQz4C6', 4, 1, '2019-05-10 07:52:05', '2019-05-10 07:52:05'),
+(25, 2, '98XXXXX838', '10.00', 'tZzRRYjHeGUnzkEZxaWLVC', 'BTmbjHBzFnPQ8dk46yRqAD', 3, 1, '2019-05-11 19:26:59', '2019-05-11 19:27:00'),
+(26, 3, '98XXXXX747', '20.00', 'FpYFYYq2EKVjukWJzRZNjC', 'SdgUHm8MhJXfe9MkAP9R7a', 4, 1, '2019-05-11 19:35:22', '2019-05-11 19:35:24'),
+(27, 4, '98XXXXX838', '20.00', 'gm8mFQgFUNWmmEekSTDJBY', 'GNuELxX3YxgqcwXbZheAYY', 4, 1, '2019-05-11 19:44:39', '2019-05-11 19:44:39'),
+(28, 4, '98XXXXX838', '10.00', 'husW3UzCAD25WezP2VKMhH', '9wbH7GMbf8kyte8qLMYNk5', 3, 1, '2019-05-11 20:39:10', '2019-05-11 20:39:11');
 
 -- --------------------------------------------------------
 
@@ -185,7 +241,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2019_03_15_034824_create_writers_table', 1),
 (16, '2019_02_08_082215_create_reviews_table', 2),
 (20, '2019_04_10_153005_create_wishlists_table', 3),
-(23, '2019_05_03_043232_create_galleries_table', 4);
+(23, '2019_05_03_043232_create_galleries_table', 4),
+(24, '2019_05_04_075449_create_subscribers_table', 5),
+(25, '2019_05_05_160050_create_khaltis_table', 6);
 
 -- --------------------------------------------------------
 
@@ -202,6 +260,18 @@ CREATE TABLE `my_books` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `my_books`
+--
+
+INSERT INTO `my_books` (`id`, `user_id`, `book_id`, `trans_idx`, `trans_amount`, `created_at`, `updated_at`) VALUES
+(1, 3, 3, 'rCBLtRaKr4Yr9a8nDbaJVY', '10', '2019-05-10 07:30:15', '2019-05-10 07:30:15'),
+(2, 2, 4, 'ihEfdr82TVuna8yYbQz4C6', '20', '2019-05-10 07:52:05', '2019-05-10 07:52:05'),
+(3, 2, 3, 'BTmbjHBzFnPQ8dk46yRqAD', '10', '2019-05-11 19:27:00', '2019-05-11 19:27:00'),
+(4, 3, 4, 'SdgUHm8MhJXfe9MkAP9R7a', '20', '2019-05-11 19:35:24', '2019-05-11 19:35:24'),
+(5, 4, 4, 'GNuELxX3YxgqcwXbZheAYY', '20', '2019-05-11 19:44:40', '2019-05-11 19:44:40'),
+(6, 4, 3, '9wbH7GMbf8kyte8qLMYNk5', '10', '2019-05-11 20:39:11', '2019-05-11 20:39:11');
 
 -- --------------------------------------------------------
 
@@ -265,7 +335,8 @@ CREATE TABLE `reviews` (
 
 INSERT INTO `reviews` (`id`, `title`, `body`, `rating`, `created_at`, `updated_at`, `user_id`, `book_id`) VALUES
 (2, 'premlamsal', 'Nice Book. Well done Authors.', 4, '2019-04-18 06:54:54', '2019-04-18 06:54:54', 2, 3),
-(5, 'Nisha lamsal', 'nice', 4, '2019-04-18 07:06:14', '2019-04-18 07:06:14', 3, 3);
+(5, 'Nisha lamsal', 'nice', 4, '2019-04-18 07:06:14', '2019-04-18 07:06:14', 3, 3),
+(6, 'Nisha lamsal', 'nice book', 3, '2019-05-12 07:01:54', '2019-05-12 07:01:54', 3, 4);
 
 -- --------------------------------------------------------
 
@@ -319,6 +390,27 @@ INSERT INTO `staff` (`id`, `staff_name`, `staff_image`, `staff_position`, `conta
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subscribers`
+--
+
+INSERT INTO `subscribers` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'premlamsal2@gmail.com', '2019-05-04 03:00:59', '2019-05-04 03:00:59'),
+(5, 'hello@gmail.com', '2019-05-04 03:07:49', '2019-05-04 03:07:49');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sub_categories`
 --
 
@@ -336,8 +428,18 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `subcategory_name`, `link`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Romance', '/Love/Romance', 1, '2019-04-02 08:19:12', '2019-04-02 08:19:12'),
-(2, 'Computer', '/Tech/Computer', 2, '2019-04-02 08:19:22', '2019-04-02 08:19:22');
+(5, 'Ghosts', '/Horror/Ghosts', 4, '2019-05-04 02:01:01', '2019-05-04 02:01:01'),
+(6, 'Paranormal', '/Horror/Paranormal', 4, '2019-05-04 02:01:14', '2019-05-04 02:01:14'),
+(7, 'Computer', '/Tech/Computer', 2, '2019-05-04 02:02:43', '2019-05-04 02:02:43'),
+(8, 'Mobile', '/Tech/Mobile', 2, '2019-05-04 02:02:53', '2019-05-04 02:02:53'),
+(9, 'Romance', '/Love/Romance', 1, '2019-05-04 02:03:12', '2019-05-04 02:03:12'),
+(10, 'Animie', '/Comics/Animie', 3, '2019-05-04 02:03:36', '2019-05-04 02:03:36'),
+(11, 'Fantasy', '/Comics/Fantasy', 3, '2019-05-04 02:04:01', '2019-05-04 02:04:01'),
+(12, 'Finance', '/Business/Finance', 5, '2019-05-04 02:05:35', '2019-05-04 02:05:35'),
+(13, 'Economics', '/Business/Economics', 5, '2019-05-04 02:05:44', '2019-05-04 02:05:44'),
+(14, 'Industries', '/Business/Industries', 5, '2019-05-04 02:05:55', '2019-05-04 02:05:55'),
+(15, 'International', '/Business/International', 5, '2019-05-04 02:06:02', '2019-05-04 02:06:02'),
+(16, 'Careers', '/Business/Careers', 5, '2019-05-04 02:06:13', '2019-05-04 02:06:13');
 
 -- --------------------------------------------------------
 
@@ -406,9 +508,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `address`, `phone`, `interest`, `gender`, `user_type`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'premlamsal', 'premlamsal2@gmail.com', NULL, '$2y$10$NG3eVmybM0F/24SiyBs4EekSykdjIRrojkowM6fCfi4JGx3qdTWLW', NULL, NULL, NULL, 'male', 'admin', 'i9IS7CEQBSmOBcr49z3imw6eVvtEdYEWfXUmGh3eFo03a5CjIrnKb7Wd9btE', '2019-04-01 02:48:57', '2019-04-01 02:48:57'),
-(2, 'niraj lamsal', 'nirajlamsal@gmail.com', NULL, '$2y$10$UEQEgw13363NxsO3cle5YeusnMD/5pACKtmfZq98pl/e9jKZ1fgjG', NULL, NULL, NULL, 'male', 'customer', 'pl4u3OShZjdEeFSz5DyJz0WnEtFjx6wiJJVIRUZzslWmQpa4p4VpFbl29F0N', '2019-04-08 09:50:47', '2019-04-08 09:50:47'),
-(3, 'Nisha lamsal', 'nishalamsal@yahoo.com', NULL, '$2y$10$HvOtZlbLKcAkDf9ywDMjvOrUKeYIXeI4Cb20LsELlk82Hzjw1r64W', NULL, NULL, NULL, 'Female', 'customer', 'XJpAVE65xjWrEtzTk6aNHPaPkI0B4NIZLec4Hm9VGKBEVbdtuReiCbaKSwSJ', '2019-04-13 01:44:41', '2019-04-13 01:44:41');
+(1, 'premlamsal', 'premlamsal2@gmail.com', NULL, '$2y$10$NG3eVmybM0F/24SiyBs4EekSykdjIRrojkowM6fCfi4JGx3qdTWLW', NULL, NULL, NULL, 'male', 'admin', 'oeukRfYYOgoyDl9phVIx2jZqQzXnW9iVbvoCHwYNiaTNXmf3TP2TsSVagjB9', '2019-04-01 02:48:57', '2019-04-01 02:48:57'),
+(2, 'niraj lamsal', 'nirajlamsal@gmail.com', NULL, '$2y$10$UEQEgw13363NxsO3cle5YeusnMD/5pACKtmfZq98pl/e9jKZ1fgjG', NULL, NULL, NULL, 'male', 'customer', 'HvasXNcJ55yDlwCtmqxODwUCNeOCE1PnVdgHopAfLwOYFYrkr1fgOLOHbSHk', '2019-04-08 09:50:47', '2019-04-08 09:50:47'),
+(3, 'Nisha lamsal', 'nishalamsal@yahoo.com', NULL, '$2y$10$HvOtZlbLKcAkDf9ywDMjvOrUKeYIXeI4Cb20LsELlk82Hzjw1r64W', NULL, NULL, NULL, 'Female', 'customer', 'VkziRmsgMKDd0UqNYzFhvjTReIZVxbtWsT9At7b7hAYoltmpiLfKcK7K15hL', '2019-04-13 01:44:41', '2019-04-13 01:44:41'),
+(4, 'Umesh Puri', 'umeshpuri@gmail.com', NULL, '$2y$10$npJsOdehX05Mg7.EaZ0vn.2la9KCkPMQdGtDfCoNadeZaRcUtx3VG', NULL, NULL, NULL, 'male', 'customer', NULL, '2019-05-11 19:40:59', '2019-05-11 19:40:59'),
+(5, 'nirajan lamsal', 'nirajan@gmail.com', NULL, '$2y$10$ll6rtB1XGhpBu4Xc.8.Os.ckxDubhY14ByLbYZv9dJhPdGle85qSa', NULL, NULL, NULL, 'male', 'customer', '9X9KqEIVWDB5EC7ftcVN4PMpBAg5JJuc0Uyz1dkEkICx07sMSda71rieeBem', '2019-05-12 19:59:59', '2019-05-12 19:59:59');
 
 -- --------------------------------------------------------
 
@@ -429,8 +533,9 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `book_id`, `created_at`, `updated_at`) VALUES
-(2, 2, 3, '2019-04-15 09:55:00', '2019-04-15 09:55:00'),
-(3, 3, 3, '2019-04-18 07:08:34', '2019-04-18 07:08:34');
+(3, 3, 3, '2019-04-18 07:08:34', '2019-04-18 07:08:34'),
+(4, 2, 4, '2019-05-10 09:16:44', '2019-05-10 09:16:44'),
+(5, 4, 4, '2019-05-11 20:43:39', '2019-05-11 20:43:39');
 
 -- --------------------------------------------------------
 
@@ -492,6 +597,13 @@ ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `khaltis`
+--
+ALTER TABLE `khaltis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `khaltis_user_id_index` (`user_id`);
+
+--
 -- Indexes for table `menus`
 --
 ALTER TABLE `menus`
@@ -543,6 +655,13 @@ ALTER TABLE `sliders`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `subscribers_email_unique` (`email`);
 
 --
 -- Indexes for table `sub_categories`
@@ -603,19 +722,25 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `khaltis`
+--
+ALTER TABLE `khaltis`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -627,13 +752,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `my_books`
 --
 ALTER TABLE `my_books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `publications`
@@ -645,7 +770,7 @@ ALTER TABLE `publications`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sliders`
@@ -660,10 +785,16 @@ ALTER TABLE `staff`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sub_menus`
@@ -681,13 +812,13 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `writers`
