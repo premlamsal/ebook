@@ -224,6 +224,12 @@ Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/
 	 
 // Route::get('subtract/{a}/{b}', 'KhaltiController@subtract');
 
+//stationery routes
+
+
+Route::get('stationery','PagesController@stationery')->name('stationery');
+
+
 
 
 

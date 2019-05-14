@@ -4240,3 +4240,25 @@ img {
   }
 }
 
+.stationery{
+    display: inline;
+    margin-top: 35px;
+    float: left;
+    width: 100%;
+}
+.stationery h2{
+  
+}
+.table{
+  border: 1px solid #eee;
+}
+.table tr{
+  border: 1px solid #eee;
+}
+.table td{
+  border: 1px solid #eee;
+  width: 20%;
+}
+.table th{
+  border: 1px solid #eee;
+}
