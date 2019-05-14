@@ -4263,3 +4263,16 @@ img {
 .table th{
   border: 1px solid #eee;
 }
+td.name{
+  width: 25%;
+}
+td.address{
+  width: 20%;
+}
+td.phone{
+  width: 10%;
+}
+td.mobile{
+  width: 15%;
+}
+

@@ -16,6 +16,7 @@ use App\Blog;
 use App\Testimonial;
 use App\Gallery;
 use App\Subscriber;
+use App\Stationery;
 
 class AdminController extends Controller
 {
@@ -129,11 +130,37 @@ class AdminController extends Controller
 
 
     }
+    public function viewStationery(){
+      $state_kathmandu=Stationery::where('state','0')->get();
+      $state_one=Stationery::where('state','1')->get();
+      $state_two=Stationery::where('state','2')->get();
+      $state_three=Stationery::where('state','3')->get();
+      $state_four=Stationery::where('state','4')->get();
+      $state_five=Stationery::where('state','5')->get();
+      $state_six=Stationery::where('state','6')->get();
+      $state_seven=Stationery::where('state','7')->get();
+     
+      return view('admin.viewStationery')->with(['state_kathmandu'=>$state_kathmandu,'state_one'=>$state_one,'state_two'=>$state_two,'state_three'=>$state_three,'state_four'=>$state_four,'state_five'=>$state_five,'state_six'=>$state_six,'state_seven'=>$state_seven]);
    
 
 
+    }
+    public function addStationery(){
+
+      return view('admin.addStationery');
+
+    }
+    public function editStationery($id){
+
+      $stationery=Stationery::find($id);
+      return view('admin.editStationery')->with('stationery',$stationery);
+    }
+
+    public function addStationeryNew(){
 
 
+    }
+   
 
     //book
     public function addBook()

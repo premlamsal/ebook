@@ -37,8 +37,10 @@
                 </ul>
               </li>
              <li><a href="/gallery">Gallery</a></li>
+             <li><a href="/stationery">Stationery</a></li>
              <li><a href="/about">About Us</a></li>
              <li><a href="/contact">Contact Us</a></li>
+            
             </ul>
            </div><!--/.nav-collapse -->
         </div>

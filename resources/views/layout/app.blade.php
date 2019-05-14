@@ -267,6 +267,7 @@
                       <li><a href="#">Delivery</a></li>
                       <li><a href="#">Returns</a></li>
                       <li><a href="#">Services</a></li>
+                      <li><a href="/stationery">Stationery List</a></li>
                     </ul>
                   </div>
                 </div>

@@ -163,8 +163,23 @@ Route::get('admin/gallery/delete/{id}', ['as'=> 'admin/gallery/delete/{id}', 'us
 //subscribers
 Route::get('admin/subscribers', ['as'=> 'admin/subscribers', 'uses'=>'AdminController@viewSubscribers'] );
 
+//stationery list
+Route::get('admin/stationery', ['as'=> 'admin.stationery', 'uses'=>'AdminController@viewStationery'] );
+//show new stationery add form
+Route::get('admin/stationery/add', ['as'=> 'stationery.add', 'uses'=>'AdminController@addStationery'] );
+//save new stationery data
+Route::post('admin/stationery/store', ['as'=> 'admin.stationery.store', 'uses'=>'StationeryController@store'] );
+//directly deletes the stationery
+Route::get('admin/stationery/delete/{id}', ['as'=> 'admin.stationery.delete', 'uses'=>'StationeryController@delete'] );
+//get edit form for stationery
+Route::get('admin/stationery/edit/{id}', ['as'=> 'admin.stationery.edit', 'uses'=>'AdminController@editStationery'] );
+
+//update stationery
+Route::post('admin/stationery/update', ['as'=> 'admin.stationery.update', 'uses'=>'StationeryController@update'] );
+
 
  }); //end of gorup admin middleware routes
+Route::post('admin/stationery/store', ['as'=> 'admin.stationery.store', 'uses'=>'StationeryController@store'] );
 
 //pralhad
 Route::resource('/blog','BlogController');

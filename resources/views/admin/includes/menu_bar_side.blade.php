@@ -121,6 +121,18 @@
                 <span>Top Writers</span>
               </a>             
             </li>
+            
+             <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-book-open"></i>
+            <span>Stationery</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header" >Menu Screens:</h6>
+            <a class="dropdown-item" href="/admin/stationery" >View Stationery</a>
+            <a class="dropdown-item" href="/admin/stationery/add" >Add Stationery</a>
+          </div>
+
               <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-envelope"></i>
@@ -130,6 +142,7 @@
             <h6 class="dropdown-header" >Menu Screens:</h6>
             <a class="dropdown-item" href="/admin/subscribers" >View Subscriber</a>
           </div>
+          
       </ul>
 
       <div id="content-wrapper">
