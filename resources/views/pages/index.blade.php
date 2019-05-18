@@ -46,8 +46,8 @@
                   <div class="aa-promo-banner">                    
                     <img src="img/promo-banner-1.jpg" alt="img">                    
                     <div class="aa-prom-content">
-                      <span>75% Off</span>
-                      <h4><a href="#">For Women</a></h4>                      
+                      <span>Discount On</span>
+                      <h4><a href="#aa-popular-category">Stock Book</a></h4>                      
                     </div>
                   </div>
                 </div>
@@ -59,8 +59,8 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-banner-3.jpg" alt="img">                      
                       <div class="aa-prom-content">
-                        <span>Exclusive Item</span>
-                        <h4><a href="#">For Men</a></h4>                        
+                        <span>Exclusive Book</span>
+                        <h4><a href="#aa-popular-category">Most Popular</a></h4>                
                       </div>
                     </div>
                   </div>
@@ -68,8 +68,8 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-banner-2.jpg" alt="img">                      
                       <div class="aa-prom-content">
-                        <span>Sale Off</span>
-                        <h4><a href="#">On Shoes</a></h4>                        
+                        <span>Latest Book</span>
+                        <h4><a href="#aa-popular-category">Buy now</a></h4>                        
                       </div>
                     </div>
                   </div>
@@ -78,7 +78,7 @@
                       <img src="img/promo-banner-4.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>New Arrivals</span>
-                        <h4><a href="#">For Kids</a></h4>                        
+                        <h4><a href="#aa-popular-category">For Kids</a></h4>                        
                       </div>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
                       <img src="img/promo-banner-5.jpg" alt="img">                      
                       <div class="aa-prom-content">
                         <span>25% Off</span>
-                        <h4><a href="#">For Bags</a></h4>                        
+                        <h4><a href="#aa-popular-category">Time Limit Offer</a></h4>                  
                       </div>
                     </div>
                   </div>
@@ -296,15 +296,15 @@
               <div class="aa-support-single">
                 <span class="fa fa-eye"></span>
                 <h4>Online Reading</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <P>Read your favorite book with most friendly environment.</P>
               </div>
             </div>
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
-                <span class="fa fa-clock-o"></span>
-                <h4>30 DAYS MONEY BACK</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <span class="fa fa-credit-card"></span>
+                <h4>Online Payment</h4>
+                <P>We support online payment, more reliable and fast.</P>
               </div>
             </div>
             <!-- single support -->
@@ -312,7 +312,7 @@
               <div class="aa-support-single">
                 <span class="fa fa-phone"></span>
                 <h4>SUPPORT 24/7</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                <P>Our help desk is always there to help with your queries.</P>
               </div>
             </div>
           </div>
@@ -346,32 +346,6 @@
                   @endforeach
                   
               @endif
-              <!-- single slide -->
-              {{-- <li>
-                <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-1.jpg" alt="testimonial img">
-                  <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
-                  <div class="aa-testimonial-info">
-                    <p>KEVIN MEYER</p>
-                    <span>CEO</span>
-                    <a href="#">Alphabet</a>
-                  </div>
-                </div>
-              </li>
-               <!-- single slide -->
-              <li>
-                <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-3.jpg" alt="testimonial img">
-                  <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
-                  <div class="aa-testimonial-info">
-                    <p>Luner</p>
-                    <span>COO</span>
-                    <a href="#">Kinatic Solution</a>
-                  </div>
-                </div>
-              </li> --}}
             </ul>
           </div>
         </div>
@@ -412,15 +386,9 @@
                           </div>
                         </div>
                       </div>
-                    
                       @endforeach
-                     
               @endif
-               
-             
-                  
-             
-              
+            
               <!-- single latest blog -->
               
               <!-- single latest blog -->
