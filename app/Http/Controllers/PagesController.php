@@ -45,6 +45,11 @@ class PagesController extends Controller
 
       return view('pages.policy');
     }
+    public function opps(){
+
+      return view('pages.opps');
+    }
+
     public function showBuyPage(Request $request){
 
              $getId=$request->id;

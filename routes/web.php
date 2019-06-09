@@ -25,6 +25,8 @@ Route::get('/orderBook/{id}', ['as'=> 'order', 'uses'=>'PagesController@orderBoo
 
 Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountController@registerCustomer'] );
 
+Route::get('/opps', ['as'=> 'opps', 'uses'=>'PagesController@opps'] );
+
 Auth::routes();
 
 //Route::get('/convert', 'SnippController@convert')->name('convert');
@@ -34,7 +36,7 @@ Auth::routes();
 //readbooks
 
 //for imagemagick rendering start
-Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
+
 
 Route::post('fetchBookDataPopup', ['as'=> 'fetchBookDataPopup', 'uses'=>'SnippController@fetchBookDataPopup'] );
 
@@ -207,7 +209,7 @@ Route::post('addSubscriber', ['as'=> 'addSubscriber', 'uses'=>'PagesController@a
 //customer middle ware
 Route::group(['middleware' => ['customer']], function () {
 
-
+Route::get('/customer/readbook/{book_id}', ['as'=> '/customer/readbook/', 'uses'=>'CustomerController@ShowReadPage'] );
 //prem routes
 //wishlist
 Route::get('/wishlist', ['as'=> '/wishlist', 'uses'=>'WishlistController@show'] );

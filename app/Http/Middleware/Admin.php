@@ -19,7 +19,8 @@ class Admin
         if($user = Auth::user())
          {
             if(auth()->user()->user_type == 'admin'){
-            return $next($request);
+
+                return $next($request);
              }
          }
           

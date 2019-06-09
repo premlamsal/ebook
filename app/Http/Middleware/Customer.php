@@ -22,14 +22,10 @@ class Customer
                 
                  return $next($request);
              }
-             elseif (auth()->user()->user_type == 'admin') {
-             
-             
-                 return redirect('/')->with('error','Admin cant be Customer');
-             }
+            
          }
           
-        return redirect('/')->with('error','You have not admin access');
+        return redirect('/opps')->with('error','You have not admin access');
   
     }
 }
