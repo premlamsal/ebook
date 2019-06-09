@@ -17,7 +17,7 @@
    </div>
   </section>
   <!-- / catg header banner section -->
-
+@if($state_kathmandu->first())
  <!-- stationery predesh 1 section -->
   <section class="stationery">
     <div class="container">
@@ -44,7 +44,8 @@
       </div>
     </div>
   </section>
-
+@endif
+@if($state_one->first())
 
   <!-- stationery predesh 1 section -->
   <section class="stationery">
@@ -72,6 +73,8 @@
       </div>
     </div>
   </section>
+  @endif
+  @if($state_two->first())
   <!-- stationery pradesh 2 section -->
   <section class="stationery">
     <div class="container">
@@ -98,7 +101,9 @@
       </div>
     </div>
   </section>
+  @endif
   <!-- stationery pradesh 3 section -->
+   @if($state_three->first())
   <section class="stationery">
     <div class="container">
       <div class="row">
@@ -125,6 +130,8 @@
       </div>
     </div>
   </section>
+  @endif
+  @if($state_four->first())
   <!-- stationery pradesh 4 section -->
   <section class="stationery">
     <div class="container">
@@ -151,6 +158,8 @@
       </div>
     </div>
   </section>
+  @endif
+  @if($state_five->first())
   <!-- stationery pradesh 5 section -->
   <section class="stationery">
     <div class="container">
@@ -177,6 +186,8 @@
       </div>
     </div>
   </section>
+  @endif
+  @if($state_six->first())
   <!-- stationery pradesh 6 section -->
   <section class="stationery">
     <div class="container">
@@ -204,6 +215,8 @@
       </div>
     </div>
   </section>
+  @endif
+  @if($state_seven->first())
   <!-- stationery pradesh 7 section -->
   <section class="stationery">
     <div class="container">
@@ -230,6 +243,7 @@
       </div>
     </div>
   </section>
+@endif
 
 
 @endsection

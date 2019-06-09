@@ -37,6 +37,14 @@ class PagesController extends Controller
         $writer=Writer::all();
         return view('pages.index')->with(['blogs'=>$blogs,'popularBooks'=>$popularBooks,'latestBooks'=>$latestBooks,'moreBooks'=>$moreBooks,'sliders'=>$sliders,'testimonials'=>$testimonials,'writer'=>$writer]);
     }
+    public function faq(){
+
+      return view('pages.faq');
+    }
+    public function policy(){
+
+      return view('pages.policy');
+    }
     public function showBuyPage(Request $request){
 
              $getId=$request->id;
@@ -62,10 +70,7 @@ class PagesController extends Controller
 
 
     }
-    public function nack(){
-
-
-    }
+ 
 
     public function showCategory(Request $request){
 

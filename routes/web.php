@@ -15,8 +15,13 @@ Route::get('/', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
 Route::get('/home', ['as'=> 'home', 'uses'=>'PagesController@home'] );
 
+Route::get('/faq', ['as'=> 'faq', 'uses'=>'PagesController@faq'] );
+
+Route::get('/policy', ['as'=> 'policy', 'uses'=>'PagesController@policy'] );
 
 Route::resource('/RegisterAccount','AccountController');
+
+Route::get('/orderBook/{id}', ['as'=> 'order', 'uses'=>'PagesController@orderBook'] );
 
 Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountController@registerCustomer'] );
 

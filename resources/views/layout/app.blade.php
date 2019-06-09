@@ -278,8 +278,8 @@
                     <h3>Useful Links</h3>
                     <ul class="aa-footer-nav">
                       <li><a href="#">Site Map</a></li>
-                      <li><a href="#">Suppliers</a></li>
-                      <li><a href="#">FAQ</a></li>
+                      <li><a href="/stationery">Suppliers</a></li>
+                      <li><a href="/faq">FAQ</a></li>
                     </ul>
                   </div>
                 </div>
