@@ -30,7 +30,17 @@ class SnippController extends Controller
             //get book id from ajax call
             $book_id=$request->getId;
             //searching for book of id
+
+             
+
+
             $fetchBookData=Book::find($book_id);
+            $views=$fetchBookData->views;//get current views from the book
+            $fetchBookData->views=$views+1;//increment views with 1
+            $fetchBookData->save();//save or update views to the database
+
+
+
             $categoryName=$fetchBookData->category;
             $sub_categoryName=$fetchBookData->sub_category;
             // $categoryName=Category::find($bookCategoryId)->value('category_name');

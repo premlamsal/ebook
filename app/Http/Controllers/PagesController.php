@@ -203,6 +203,9 @@ class PagesController extends Controller
 
           $book_id=$request->id;
           $book=Book::find($book_id);
+          $views=$book->views;//get current views from the book
+          $book->views=$views+1;//increment views with 1
+          $book->save();//save or update views to the database
           // $bookCategoryId=$book->category_id;
           // $categoryName=$book->category;
           $reviews=Review::where('book_id',$book_id)->get();
