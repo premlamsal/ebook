@@ -103,6 +103,9 @@ img {
 .aa-primary-btn span {
   margin-right: 5px;
 }
+.order-box{
+  width: 50%;
+}
 
 .aa-secondary-btn {
   background-color: #fff;

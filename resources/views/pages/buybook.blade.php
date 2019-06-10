@@ -43,7 +43,7 @@
             "eventHandler": {
                 onSuccess (payload) {
                     // hit merchant api for initiating verfication
-                    console.log(payload);
+                    
                     $.ajax({
                         url: '{{url("khalti/verification")}}',
                         type: 'post',

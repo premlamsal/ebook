@@ -419,7 +419,7 @@
                                 <h3 class="popup_title">Loading..Book Name</h3>
                                 <div class="aa-price-block">
                                   <span class="aa-product-view-price popup_price">Loading..Book Pricec</span>
-                                  <p class="aa-product-avilability">Avilable<!-- : <span>In stock</span></p> -->
+                                  <p class="aa-product-avilability">Available<!-- : <span>In stock</span></p> -->
                                 </div>
                                 <p class="popup_abstract"></p>
                                   <p class="aa-prod-category">
@@ -432,6 +432,7 @@
                                 <div class="aa-prod-view-bottom">
                                   <a href="#" class="aa-add-to-cart-btn" id="popupBuyBoook"><span class="fa fa-shopping-cart"></span>Buy Book</a>
                                   <a href="#" class="aa-add-to-cart-btn" id="popupViewDetails">View Details</a>
+                                  <a href="#" class="aa-add-to-cart-btn" id="popupOrder">Order</a>
                                 </div>
                               </div>
                             </div>
@@ -494,6 +495,7 @@
                         $('#popupBuyBoook').attr('href','');
                         $('#popupViewDetails').attr('href',publicURL+'/book/'+getId);
                         $('#popupBuyBoook').attr('href',publicURL+'/buy/'+getId);
+                        $('#popupOrder').attr('href',publicURL+'/order/'+getId);
                         
                         }
 

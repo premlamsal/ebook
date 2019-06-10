@@ -14,8 +14,8 @@
             <div class="content">
              <h3>You must login to access this page.</h3>
               
-                 <a class="btn btn-success" href="/login">Login</a>
-                 <a class="btn btn-success" href="/register">Register</a>
+                 <a class="aa-browse-btn" href="/login">Login</a>
+                 <!-- <a class="aa-browse-btn" href="/register">Register</a> -->
               </div>
              <!-- end opps code -->
              </div>

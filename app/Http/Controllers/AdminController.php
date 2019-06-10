@@ -17,6 +17,7 @@ use App\Testimonial;
 use App\Gallery;
 use App\Subscriber;
 use App\Stationery;
+use App\Order;
 
 class AdminController extends Controller
 {
@@ -61,6 +62,13 @@ class AdminController extends Controller
     {
        $cat=Category::find($id);
         return view('admin.editCategory')->with('cat',$cat);
+    }
+    public function orders(){
+
+      $orders=Order::all();
+
+      return view('admin.orders')->with('orders',$orders);
+
     }
 
 

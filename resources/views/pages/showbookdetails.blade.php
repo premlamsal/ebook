@@ -105,6 +105,8 @@
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="/buy/{{$book->id}}">Buy</a>
                      <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" class="aa-add-to-cart-btn wislistTrigger" wislistBookId="{{$book->id}}">Add to Wishlist</a>
+
+                      <a class="aa-add-to-cart-btn" href="/order/{{$book->id}}">Order</a>
              
                     </div>
                   </div>

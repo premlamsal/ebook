@@ -142,6 +142,16 @@
             <h6 class="dropdown-header" >Menu Screens:</h6>
             <a class="dropdown-item" href="/admin/subscribers" >View Subscriber</a>
           </div>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-concierge-bell"></i>
+            <span>Orders</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header" >Menu Screens:</h6>
+            <a class="dropdown-item" href="/admin/orders" >View Orders</a>
+          </div>
           
       </ul>
 

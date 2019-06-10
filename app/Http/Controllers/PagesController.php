@@ -17,6 +17,8 @@ use App\Gallery;
 use App\Subscriber;
 use App\MyBook;
 use App\Stationery;
+use App\Order;
+
 class PagesController extends Controller
 {
     public function home(){
@@ -48,6 +50,41 @@ class PagesController extends Controller
     public function opps(){
 
       return view('pages.opps');
+    }
+    public function order($id){
+
+      $order_book=Book::find($id);
+
+      return view('pages.order')->with('order_book',$order_book);
+
+    }
+    public function postOrder(Request $request){
+
+         $bookId=$request->id;
+         $Title=$request->Title;
+         $Quantity=$request->Quantity;
+
+         if(Auth::check()){
+            $email=Auth::user()->email;
+            $phone=Auth::user()->phone;
+         }
+         else{
+            $email=$request->Email;
+            $phone=$request->Phone;
+         }
+
+        $Order=new Order;
+        $Order->title=$Title;
+        $Order->quantity=$Quantity;
+        $Order->email=$email;
+        $Order->phone=$phone;
+        $Order->book_id=$bookId;
+        $Order->save();            
+
+        if($Order){
+          return redirect('/');
+        }
+
     }
 
     public function showBuyPage(Request $request){

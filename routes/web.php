@@ -27,6 +27,14 @@ Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountCon
 
 Route::get('/opps', ['as'=> 'opps', 'uses'=>'PagesController@opps'] );
 
+
+//order book
+Route::get('/order/{id}', ['as'=> 'order', 'uses'=>'PagesController@order'] );
+
+//post order
+Route::post('/postOrder', ['as'=> 'postOrder', 'uses'=>'PagesController@postOrder'] );
+
+
 Auth::routes();
 
 //Route::get('/convert', 'SnippController@convert')->name('convert');
@@ -185,6 +193,9 @@ Route::get('admin/stationery/edit/{id}', ['as'=> 'admin.stationery.edit', 'uses'
 Route::post('admin/stationery/update', ['as'=> 'admin.stationery.update', 'uses'=>'StationeryController@update'] );
 
 
+Route::get('admin/orders', ['as'=> 'admin.orders', 'uses'=>'AdminController@orders'] );
+
+
  }); //end of gorup admin middleware routes
 Route::post('admin/stationery/store', ['as'=> 'admin.stationery.store', 'uses'=>'StationeryController@store'] );
 
@@ -230,7 +241,10 @@ Route::get('/buy/{id}', ['as'=> '/buy/{id}', 'uses'=>'PagesController@showBuyPag
 //profile customer
 
 Route::get('/customer/profile','CustomerController@index')->name('/customer/profile');
+
 Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/readbook');
+
+Route::get('/customer/profile/settings','CustomerController@profileSettings')->name('customer.profile.settings');
 
 
  });//end of customer routes
