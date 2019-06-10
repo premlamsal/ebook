@@ -1,10 +1,12 @@
   $(document).ready(function(){
          $('.popup').click(function(e) {
          var getId=$(this).attr('id');
-        
+         var path='/fetchBookDataPopup';
+         var fullURL = url.concat(path);
+
                $.ajax({
                         type : 'post',
-                        url : '{{url("fetchBookDataPopup")}}',
+                        url : fullURL,
                         data:{'getId':getId},
                         success:function(result){
                         popup_title=result.popup_title
