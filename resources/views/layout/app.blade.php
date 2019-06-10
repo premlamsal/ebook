@@ -182,7 +182,13 @@
                                  @if(auth()->user()->user_type == 'admin')
                                   <a class="dropdown-list" href="{{route('/admin')}}" style="border: none;">Admin Dashboard</a>
                                   @else
-                                <a class="dropdown-list" href="{{route('/customer/profile')}}" style="border: none;">Customer Dashboard</a>
+                                  <br>
+                                <a class="dropdown-list" href="{{route('/customer/profile')}}" style="border: none;">Profile</a>
+                                <br>
+
+                                <a class="dropdown-list" href="{{route('customer.profile.settings')}}" style="border: none;">Settings</a>
+                                  <br>
+
                                 @endif
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
@@ -406,7 +412,7 @@
                                   <div class="simpleLens-container">
                                       <div class="simpleLens-big-image-container">
                                           <a class="simpleLens-lens-image">
-                                              <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image" id="popup_image">
+                                              <img src="/img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image" id="popup_image">
                                           </a>
                                       </div>
                                   </div>

@@ -246,6 +246,8 @@ Route::get('/customer/readbook','CustomerController@readBook')->name('/customer/
 
 Route::get('/customer/profile/settings','CustomerController@profileSettings')->name('customer.profile.settings');
 
+Route::post('/customer/profile/settings/update','CustomerController@profileSettingsUpdate')->name('customer.profile.settings.update');
+
 
  });//end of customer routes
 
