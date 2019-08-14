@@ -14,9 +14,29 @@
 					<h3> {{$book->title}}</h3>
 					<p>Rs.{{$book->price}} </p>
 					<p>Author/s: {{$book->author}}</p>
+
+                    <div class="khalti-block">
 					<!-- Place this where you need payment button -->
 				    <button id="payment-button" style="background-color: #773292;cursor: pointer;color: #fff;border: none;padding: 5px 10px;border-radius: 2px;">Buy with Khalti</button>
 				    <!-- Place this where you need payment button -->
+                    <!-- esewa api block -->
+                </div>
+                   <div class="esewa-block">
+                     <form action="{{ env('ESEWA_URL') }}" method="POST">
+                        <input value="{{$book->price -9}}" name="tAmt" type="hidden">
+                        <input value="{{$book->price -9}}" name="amt" type="hidden">
+                        <input value="0" name="txAmt" type="hidden">
+                        <input value="0" name="psc" type="hidden">
+                        <input value="0" name="pdc" type="hidden">
+                        <input value="{{ env('ESEWA_MERCHANT') }}" name="scd" type="hidden">
+                        <input value="laravelmakalu1" name="pid" type="hidden">
+                        <input value="{{ env('APP_URL') }}/buy/verify" type="hidden" name="su">
+                        <input value="{{ env('APP_URL') }}/buy/failed" type="hidden" name="fu">
+                        <input value="Buy with Esewa" type="submit" class="btn btn-success">
+                    </form>
+
+                    <!-- esewa api block ends -->
+                   </div>
 				</div>
 			</div>
 	@else
