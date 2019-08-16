@@ -1204,8 +1204,10 @@ img {
   margin-right: 5px;
 }
 .aa-product-catg li .aa-product-title {
-  color: #333;
-  margin-bottom: 5px;
+    color: #333;
+    margin-bottom: 5px;
+    height: 40px;
+    overflow: hidden;
 }
 .aa-product-catg li .aa-product-title a {
   color: #333;
