@@ -4284,3 +4284,9 @@ td.mobile{
 .esewa-block{
   margin-top: 10px;
 }
+
+.buy-book-img{
+    border: 1px solid #ff6666;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px;
+}

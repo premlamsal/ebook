@@ -27,7 +27,12 @@ Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountCon
 
 Route::get('/opps', ['as'=> 'opps', 'uses'=>'PagesController@opps'] );
 
+
 Route::get('verifyEsewa','EsewaController@verifyEsewa')->name('verifyEsewa');
+
+Route::get('failedEsewa','EsewaController@failed')->name('failedEsewa');
+
+
 
 //order book
 Route::get('/order/{id}', ['as'=> 'order', 'uses'=>'PagesController@order'] );
@@ -274,8 +279,6 @@ Route::get('stationery','PagesController@stationery')->name('stationery');
 //esewa routes
 
 
-
-Route::get('/buy/failed','EsewaController@failed')->name('buy.failed');
 //esewa routes
 
 

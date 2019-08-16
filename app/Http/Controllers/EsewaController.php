@@ -6,16 +6,18 @@ use Illuminate\Http\Request;
 use App\Book;
 use App\Esewa;
 use App\MyBook;
+use Auth;
 
 class EsewaController extends Controller
 {
 
    public function verifyEsewa(Request $request){
 
-   		$refId=$request->get('refId');
+   	  	$refId=$request->get('refId');
    		$productId=$request->get('oid');
+   		$amount=$request->get('amt');
    		//retriving the actual price of the product to verify the transaction
-   		$ActualPrice= Book::where('id',$oid)->value('price');
+   		$ActualPrice= Book::where('id',$productId)->value('price');
 
    			if($ActualPrice){	
 		   		$user_id=Auth::user()->id;
@@ -25,10 +27,9 @@ class EsewaController extends Controller
 		            $Esewa->user_id= $user_id;
 		            $Esewa->amt=$amount;
 		            $Esewa->refId=$refId;
-		            $Esewa->oid=$oid;
+		            $Esewa->oid=$productId;
 		            $Esewa->status=0;//will set to 1 if the transaction verified
 		            $Esewa->save();
-
 
 		            if($Esewa){
 
@@ -50,70 +51,59 @@ class EsewaController extends Controller
 						    $response = curl_exec($curl);
 						    curl_close($curl);
 
-						    if($response){
-						    	//parsing xml from the response 
-						         $parResponse = simplexml_load_string($response);
-						         $response_code=$parResponse['response_code'];
-						         if($response_code=='Success'){
+						   $insertID=$Esewa->id;//picking the inserted data id for updating row later on after verification process
+						  
+						    $verification_response  = strtoupper( trim( strip_tags( $response ) ) ) ;
 
-						         	//fininf the row of previously inserted data for update
-						         	$EsewaUpdate=Esewa::find($insertID);
-					                $EsewaUpdate->status=1;
-					                $EsewaUpdate->save();
+						    	if('SUCCESS' == $verification_response){
+							    // echo '<h2><strong>SUCCESS:</strong> Transaction is successful !!!</h2>';
 
-					                	if($EsewaUpdate){
+								 // find the row of previously inserted data for update
+						  		 $EsewaUpdate=Esewa::find($insertID);
+					             $EsewaUpdate->status=1;
+					             $EsewaUpdate->save();
 
-					                	    $MyBook=new MyBook;
-					                        $MyBook->user_id=$user_id;
-					                        $MyBook->book_id=$productId;
-					                        $MyBook->trans_idx='esewaTransc';
-					                        $MyBook->trans_amount=$ActualPrice;
-					                        $MyBook->save();
-					                        	if($MyBook){
-					                        		//redirect to customer book panel after successfull verification
-					                        		return redirect('/customer/profile');
-					                        	}
-					                        	else{
-					                        		print_r("MyBook Injection Failed. Contact Administator")
-					                        	}
+					             if($EsewaUpdate){
 
-					                	}
-					                	else{
-					                		print_r("Updating transaction Failed after success verification");
-					                	}
-						         }
-						         else{
-						         	print_r("verification failed");
-						         }
+					             	$actualPid = explode("Z", $productId);//spliting the actual product id 
 
-						    }
+					                $MyBook=new MyBook;
+									$MyBook->user_id=$user_id;
+									$MyBook->book_id=$actualPid[0];
+									$MyBook->trans_idx=$refId;
+									$MyBook->trans_amount=$ActualPrice;
+									$MyBook->save();
+											if($MyBook){
+												return redirect('customer/profile');
+											}
+											else{
+													print_r("Error While Adding Book.Contact Makalu Publication for more information.");
+											}
+					                 }
 
-						    else{
-						    	print_r("Couldn't get response from server");
-						    }
+					                 else{
+					                 	print_r("Error While Updating Status of Book.Contact Makalu Publication for more information.");
+					                 }
 
+					         }
 
-			        }
-			        else{
-			        	print_r("Opps!! Something got stuck in my neck.")
-			        }
+					         else{
+					         	print_r("Couldn't verify the Transaction.Contact Makalu Publication for more information.");//end of verification for success
+					         }
 
+		            }
 
+		            else{
+		            	print_r("Error Saving Transaction Data. Contact Makalu Publication for more information.");//end of esewa
+		            }
 
+		        }
 
-
-
-   			}
+		      else{
+		      	print_r("Something Went Wrong!!.Contact Makalu Publication for more information.");//end of actual price
+		      }
    		
-   			else{
-
-   				 return abort(404);
-   			}
-   		
-   	// 	$amt=$request->get('amt');
-
-
-   	}
+   		}
 
    public function failed(){
 

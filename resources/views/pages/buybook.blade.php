@@ -2,17 +2,18 @@
 @section('PageContent')
 <div class="container">
 	<div class="row">
-		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 20px">
+		<div class="col-md-12" style="margin-top: 100px; margin-bottom: 100px">
 
     @if(empty($nackH1))
-			<h2>You are about to buy</h2>
+			
 			<div class="row">
 				<div class="col-md-3">
-					<img src="../storage/Book_image/{{$book->image}}">
+					<img src="../storage/Book_image/{{$book->image}}" class="buy-book-img">
 				</div>
 				<div class="col-md-6">
-					<h3> {{$book->title}}</h3>
-					<p>Rs.{{$book->price}} </p>
+                    <h2>You are about to buy</h2>
+					<h3 style="font-weight: bold;"> {{$book->title}}</h3>
+					<p style="font-size: 18px">Rs.{{$book->price}} </p>
 					<p>Author/s: {{$book->author}}</p>
 
                     <div class="khalti-block">
@@ -23,15 +24,17 @@
                 </div>
                    <div class="esewa-block">
                      <form action="{{ env('ESEWA_URL') }}" method="POST">
-                        <input value="{{$book->price -9}}" name="tAmt" type="hidden">
-                        <input value="{{$book->price -9}}" name="amt" type="hidden">
+
+                        @csrf
+                        <input value="{{$book->price}}" name="tAmt" type="hidden">
+                        <input value="{{$book->price}}" name="amt" type="hidden">
                         <input value="0" name="txAmt" type="hidden">
                         <input value="0" name="psc" type="hidden">
                         <input value="0" name="pdc" type="hidden">
                         <input value="{{ env('ESEWA_MERCHANT') }}" name="scd" type="hidden">
-                        <input value="laravelmakalu1" name="pid" type="hidden">
-                        <input value="{{ env('APP_URL') }}/buy/verify" type="hidden" name="su">
-                        <input value="{{ env('APP_URL') }}/buy/failed" type="hidden" name="fu">
+                        <input value="{{$pidTimeStamp}}" name="pid" type="hidden">
+                        <input value="{{ env('APP_URL') }}/verifyEsewa" type="hidden" name="su">
+                        <input value="{{ env('APP_URL') }}/failedEsewa" type="hidden" name="fu">
                         <input value="Buy with Esewa" type="submit" class="btn btn-success">
                     </form>
 

@@ -96,6 +96,13 @@ class PagesController extends Controller
             if (isset(Auth::user()->id)) {
              $user_id=Auth::user()->id;
              $book_id=$getId;
+
+             //z is assigned to difference product id and timestamp in future.
+             //concatenate product id with time stamp to make new instance of transaction each time page load 
+             $pidTimeStamp=$book_id.'Z'.time();
+             
+           
+
              $isBookBought=MyBook::where('user_id',$user_id)->where('book_id',$book_id)->get();
             if($isBookBought->first()){
                 $nackH1="Hurray!!!";
@@ -104,7 +111,7 @@ class PagesController extends Controller
                     return view('pages.buybook')->with(['nackH1'=>$nackH1,'nackP'=>$nackP]);
               }
               else{
-                   return view('pages.buybook')->with(['book'=>$book,'url'=>$url]);
+                   return view('pages.buybook')->with(['book'=>$book,'url'=>$url,'pidTimeStamp'=>$pidTimeStamp]);
               }
             }
            
