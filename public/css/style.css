@@ -4292,3 +4292,16 @@ td.mobile{
     padding: 10px;
     box-shadow: 1px 1px 1px 1px;
 }
+
+
+
+.payment-partners{
+
+}
+.payment-partners ul {
+list-style: none;
+}
+.payment-partners ul li {
+float: left;
+padding-right: 10px;
+}

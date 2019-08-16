@@ -323,7 +323,12 @@
           <div class="aa-footer-bottom-area">
             <p>© Copyright 2019 Makalu Publication House</p>
             <div class="aa-footer-payment">
-                <span>We accept Khalti</span>
+                <div class="payment-partners">
+                  <ul>
+                    <li><img src="{{URL::asset('img/esewa-big.png')}}" class="esewa-small-img"></li>
+                    <li><img src="{{URL::asset('img/khalti-big.png')}}" class="khalti-small-img"></li>
+                  </ul>
+                </div>
             </div>
           </div>
         </div>
