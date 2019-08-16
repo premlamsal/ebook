@@ -18,12 +18,12 @@
 
                     <div class="khalti-block">
 					<!-- Place this where you need payment button -->
-				    <button id="payment-button" style="background-color: #773292;cursor: pointer;color: #fff;border: none;padding: 5px 10px;border-radius: 2px;">Buy with Khalti</button>
+				    <button id="payment-button" style="background-color: #773292;cursor: pointer;color: #fff;border: none;padding: 5px 10px;border-radius: 2px;" class="paybtn">Buy with <img src="{{URL::asset('img/khalti-big-white.png')}}"></button>
 				    <!-- Place this where you need payment button -->
                     <!-- esewa api block -->
                 </div>
                    <div class="esewa-block">
-                     <form action="{{ env('ESEWA_URL') }}" method="POST">
+                     <form action="{{ env('ESEWA_URL') }}" method="POST" id="esewa-form">
 
                         @csrf
                         <input value="{{$book->price}}" name="tAmt" type="hidden">
@@ -35,7 +35,7 @@
                         <input value="{{$pidTimeStamp}}" name="pid" type="hidden">
                         <input value="{{ env('APP_URL') }}/verifyEsewa" type="hidden" name="su">
                         <input value="{{ env('APP_URL') }}/failedEsewa" type="hidden" name="fu">
-                        <input value="Buy with Esewa" type="submit" class="btn btn-success">
+                        <button id="esewaBtn" class="btn btn-success paybtn">Buy with<img src="{{URL::asset('img/esewa-big-white.png')}}"></button>
                     </form>
 
                     <!-- esewa api block ends -->
@@ -123,5 +123,12 @@
         }
 
    </script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $("#esewaBtn").click(function(){        
+                $("#esewa-form").submit(); // Submit the form
+            });
+        });
+</script>
    @endif
 @endsection
