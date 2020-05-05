@@ -156,5 +156,14 @@
     <script src="{{URL::asset('js/viewbook.js')}}"></script> 
     <!-- <script src="{{URL::asset('js/disabled.js')}}"></script>  -->
 
+    <script type="text/javascript">
+    	$(document).ready(function()
+			{ 
+			  $(document).bind("contextmenu",function(e){
+				return false;
+			    }); 
+			})
+    </script>
+
   </body>
 </html>
