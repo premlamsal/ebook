@@ -8,7 +8,7 @@ use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use URL;
-use Storage;
+use Illuminate\Support\Str;
 
 class CustomerController extends Controller
 {
@@ -96,9 +96,10 @@ class CustomerController extends Controller
                     if ($bookFile) {
                         // $bookFile  = $bookFile->book_file;
                         $publicURL = url('/');
-                        $filePath  = '/getBookFile/'.$book_id;
 
-                        // $random=Str::random(60);//generates random sting of length 60
+                        $random=Str::random(60);//generates random sting of length 60
+                        $filePath  = '/getBookFile/'.$book_id.'/'.$random;
+
                         return view('customer.readBook')->with('filePath', $filePath);
 
                     } else {

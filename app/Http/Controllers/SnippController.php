@@ -149,7 +149,7 @@ class SnippController extends Controller
 
     // }
 
-    public function checkStorage($book_id)
+    public function checkStorage($book_id,$token)
     {
         if (isset(Auth::user()->id)) {
             if ($book_id) {

@@ -282,7 +282,8 @@ Route::get('stationery','PagesController@stationery')->name('stationery');
 // //esewa routes
 
 //checks the permission and give the file contents to user.
-Route::get('/getBookFile/{book_name}','SnippController@checkStorage')->name('checkStorage');
+//token string is fake to elimiate some illegal attempt to application
+Route::get('/getBookFile/{book_name}/{token}','SnippController@checkStorage')->name('checkStorage');
 
 
 Route::get('/create-storage-link', function () {
