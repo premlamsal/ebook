@@ -285,4 +285,9 @@ Route::get('stationery','PagesController@stationery')->name('stationery');
 Route::get('/getBookFile/{book_name}','SnippController@checkStorage')->name('checkStorage');
 
 
+Route::get('/create-storage-link', function () {
+    Artisan::call('storage:link');
+});
+
+
 
