@@ -149,13 +149,12 @@
 
     
     <plank title="{{$filePath}}"></plank>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
     <script src="{{URL::asset('js/viewbook.js')}}"></script> 
     <!-- <script src="{{URL::asset('js/disabled.js')}}"></script>  -->
-
-
 
   </body>
 </html>

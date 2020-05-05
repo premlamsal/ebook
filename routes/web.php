@@ -279,7 +279,10 @@ Route::get('stationery','PagesController@stationery')->name('stationery');
 //esewa routes
 
 
-//esewa routes
+// //esewa routes
+
+//checks the permission and give the file contents to user.
+Route::get('/getBookFile/{book_name}','SnippController@checkStorage')->name('checkStorage');
 
 
 
