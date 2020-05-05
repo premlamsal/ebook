@@ -48,7 +48,8 @@ class BookController extends Controller
                 $filename=pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 //$extension=$request->file('bookfile')->getClientOriginalExtension();
                 $BookfileNameToStore=$filename.'_'.time(); //.'.'.$extension;
-                $Bookpath=$request->file('bookfile')->storeAs('public/Book_pdf',$BookfileNameToStore);
+
+                $Bookpath=$request->file('bookfile')->storeAs('book',$BookfileNameToStore);
             }
             else{
                 $BookfileNameToStore='nofile.pdf';
@@ -121,7 +122,7 @@ class BookController extends Controller
                 $filename=pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $extension=$request->file('bookfile')->getClientOriginalExtension();
                 $BookfileNameToStore=$filename.'_'.time();//.'.'.$extension;
-                $Bookpath=$request->file('bookfile')->storeAs('public/Book_pdf',$BookfileNameToStore);
+                $Bookpath=$request->file('bookfile')->storeAs('book',$BookfileNameToStore);
             }
             // else{
             //     $BookfileNameToStore=NULL;
