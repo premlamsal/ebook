@@ -80,21 +80,21 @@
                         {
 
                                
-                                notify({
-                                    type: "success", //alert | success | error | warning | info
-                                    title: "Hurray!!",
-                          position: {
-                                        x: "right", //right | left | center
-                                        y: "top" //top | bottom | center
-                                    },
-                                    icon: '<img src="/images/paper_plane.png" />',
-                                    autoHide: true, //true | false
-                                    delay: 2500, //number ms
-                                    message: "You have successfully bought this Book."
-                                });
-                            // console.log(data);
+                          //       notify({
+                          //           type: "success", //alert | success | error | warning | info
+                          //           title: "Hurray!!",
+                          // position: {
+                          //               x: "right", //right | left | center
+                          //               y: "top" //top | bottom | center
+                          //           },
+                          //           icon: '<img src="/images/paper_plane.png" />',
+                          //           autoHide: true, //true | false
+                          //           delay: 2500, //number ms
+                          //           message: "You have successfully bought this Book."
+                          //       });
+                            console.log(data);
                             //redirect to customer profile
-                             window.location = "/customer/profile";
+                             // window.location = "/customer/profile";
                              
                         },
                         error: function(data) 

@@ -66,34 +66,38 @@ class KhaltiController extends Controller
                     $khaltiUpdate=Khalti::find($insertID);
                     $khaltiUpdate->status=1;
                     $khaltiUpdate->verified_token=$token['idx'];
-                    $khaltiUpdate->save();
+                    
 
-                        if($khaltiUpdate){
+                        if($khaltiUpdate->save()){
                         //inserting into the mybook table for the purchased entry for book
                         $MyBook=new MyBook;
                         $MyBook->user_id=$user_id;
                         $MyBook->book_id=$product_identity;
                         $MyBook->trans_idx=$token['idx'];
                         $MyBook->trans_amount=$amount;
-                        $MyBook->save();
+                        
+                        if($MyBook->save()){
+                            return response()->json("You have successfuly bought book", 200);
+                        }
+
                         }
                         else{
-                            $message="Data Insertion Failed. Contact to the Authorized Person";
+                             return response()->json("You have successfuly bought book", 503);
                         }       
 
                 }
                 else{
-                    $message="Verification Failed!! Contact to the Authorized Person";
+                     return response()->json("Verification Failed!! Contact to the Authorized Person", 503);
+                   
                 }
 
             }
         else{
-            $message="Something Happened";
+            
+            return response()->json("Some error occured", 500);
+        
         }
           
-         return response([
-                'message' =>$message,
-            ]);
      
     }
   
