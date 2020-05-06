@@ -35,9 +35,6 @@ class CreateBooksTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->Text('tags');
             $table->unsignedInteger('views')->nullable();
-
-            $table->softDeletes();
-
             $table->timestamps();
             
         });
