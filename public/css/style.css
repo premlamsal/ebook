@@ -1468,7 +1468,7 @@ img {
 
 #aa-testimonial {
   background-attachment: fixed;
-  background-image: url("../img/testimonial-bg-1.jpg");
+  background-image: url("../img/hd-wallpaper-44.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: inline;
@@ -1800,7 +1800,7 @@ img {
   width: 100%;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
   bottom: 0;
   left: 0;
   position: absolute;
@@ -2155,6 +2155,7 @@ img {
   background-color: #f8f8f8;
   padding: 10px;
   text-align: center;
+  box-shadow: 2px 0px 10px -1px;
 }
 #aa-product-details .aa-product-details-area .aa-product-details-content .aa-product-view-content {
   padding-bottom: 10px;
@@ -4282,7 +4283,6 @@ td.phone{
 td.mobile{
   width: 15%;
 }
-
 .esewa-block{
   margin-top: 10px;
 }
@@ -4292,8 +4292,6 @@ td.mobile{
     padding: 10px;
     box-shadow: 1px 1px 1px 1px;
 }
-
-
 
 .payment-partners{
 
@@ -4309,3 +4307,4 @@ button.paybtn {
     height: 57px;
     width: 186px;
 }
+
