@@ -429,7 +429,7 @@
                               <div class="aa-product-view-content">
                                 <h3 class="popup_title">Loading..Book Name</h3>
                                 <div class="aa-price-block">
-                                  <span class="aa-product-view-price popup_price">Loading..Book Pricec</span>
+                                  <span class="aa-product-view-price popup_price">Loading..Book Price</span>
                                   <p class="aa-product-avilability">Available<!-- : <span>In stock</span></p> -->
                                 </div>
                                 <p class="popup_abstract"></p>
