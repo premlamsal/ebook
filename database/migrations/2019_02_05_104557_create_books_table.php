@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->Text('abstract');
-            $table->string('isbn');
+            $table->string('isbn')->nullable();
             $table->integer('page_no');
             $table->string('category');
             $table->string('sub_category');
