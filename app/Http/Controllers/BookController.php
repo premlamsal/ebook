@@ -14,7 +14,7 @@ class BookController extends Controller
         $this->validate($request, [
             'title'       => 'required',
             'abstract'    => 'required',
-            'isbn'        => 'required',
+            // 'isbn'        => 'required',
             'page_no'     => 'required',
             'tagline'     => 'required',
             'category'    => 'required',
