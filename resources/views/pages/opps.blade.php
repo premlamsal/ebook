@@ -12,9 +12,9 @@
            <div class="aa-contact-address">
             <!-- start opps code -->
             <div class="content">
-             <h3>You must login to access this page.</h3>
+             <h3>{{$error}}</h3>
               
-                 <a class="aa-browse-btn" href="/login">Login</a>
+                 <!-- <a class="aa-browse-btn" href="/login">Login</a> -->
                  <!-- <a class="aa-browse-btn" href="/register">Register</a> -->
               </div>
              <!-- end opps code -->

@@ -25,7 +25,7 @@ Route::get('/orderBook/{id}', ['as'=> 'order', 'uses'=>'PagesController@orderBoo
 
 Route::post('/registerCustomer', ['as'=> 'registerCustomer', 'uses'=>'AccountController@registerCustomer'] );
 
-Route::get('/opps', ['as'=> 'opps', 'uses'=>'PagesController@opps'] );
+Route::get('/opps/{error}', ['as'=> 'opps', 'uses'=>'PagesController@opps'] );
 
 
 Route::get('verifyEsewa','EsewaController@verifyEsewa')->name('verifyEsewa');

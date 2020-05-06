@@ -53,9 +53,9 @@ class PagesController extends Controller
 
       return view('pages.policy');
     }
-    public function opps(){
+    public function opps($error){
 
-      return view('pages.opps');
+      return view('pages.opps')->with('error',$error);
     }
     public function order($id){
 
