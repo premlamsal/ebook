@@ -379,9 +379,7 @@
                           <div class="aa-blog-info">
                             {{-- Blog title dynamic --}}
                             <h3 class="aa-blog-title"><a href="blog/{{$item->id}}">{{$item->blog_title}}</a></h3>
-                            {{-- Blog Body --}}
-                              <p>{!! str_limit($item->blog_body, 250) !!}</p>
-                            {{-- <p>{{$item->blog_body}}</p>  --}}
+                              
                             <a href="blog/{{$item->id}}" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>
                           </div>
                         </div>

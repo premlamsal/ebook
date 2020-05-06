@@ -1168,6 +1168,8 @@ img {
 .aa-product-catg li figure {
   position: relative;
   height: 300px;
+  border: 2px solid #eee;
+  box-shadow: 2px 3px 9px -1px;
 }
 .aa-product-catg li figure .aa-product-img {
   background-color: #f9f9fb;
@@ -1589,10 +1591,11 @@ img {
 .aa-latest-blog-single {
   display: block;
   width: 100%;
+  height: 27em;
 }
 .aa-latest-blog-single .aa-blog-img {
-  width: 100%;
-  height: 250px;
+  width: 89%;
+  height: 345px;
   position: relative;
   overflow: hidden;
 }
@@ -1652,6 +1655,8 @@ img {
   color: #222;
   font-size: 18px;
   font-weight: bold;
+  height: 50px;
+  overflow: hidden;
 }
 .aa-latest-blog-single .aa-blog-info .aa-blog-title a {
   color: #222;
