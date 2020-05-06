@@ -168,23 +168,23 @@ class SnippController extends Controller
                         return $contents;
                     } else {
                         // user has purchased book but reading book data failed.
-                        echo "Error retriving book data. Failed code #8001";
+                        abort(403, 'Unauthorized action. Failed code #8001');
                     }
 
                 } else {
                     //user haven't purchased book 
                     //so, flashing the error and protecting that file
-                    echo "we couldn't found that. Faile code #8002";
+                   abort(403, 'Unauthorized action. Failed code #8002');
                 }
 
             } else {
                 // book id not set
-                echo "Access denied. Failed code #8003";
+                abort(403, 'Unauthorized action. Failed code #8003');
             }
 
         } else {
             //user is not logged in to applciation.
-            echo "Access denied. Failed code #8004";
+            abort(403, 'Unauthorized action. Failed code #8004');
         }
 
     }
