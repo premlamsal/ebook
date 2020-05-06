@@ -17,7 +17,11 @@ class EsewaController extends Controller
    		$productId=$request->get('oid');
    		$amount=$request->get('amt');
    		//retriving the actual price of the product to verify the transaction
-   		$ActualPrice= Book::where('id',$productId)->value('price');
+
+   		$actualPid=explode("-", $productId);
+   		$actualPid=$actualPid[0];
+
+   		$ActualPrice= Book::where('id',$actualPid)->value('price');
 
    			if($ActualPrice){	
 		   		$user_id=Auth::user()->id;
@@ -65,11 +69,10 @@ class EsewaController extends Controller
 
 					             if($EsewaUpdate){
 
-					             	$actualPid = explode("Z", $productId);//spliting the actual product id 
 
 					                $MyBook=new MyBook;
 									$MyBook->user_id=$user_id;
-									$MyBook->book_id=$actualPid[0];
+									$MyBook->book_id=$actualPid;
 									$MyBook->trans_idx=$refId;
 									$MyBook->trans_amount=$ActualPrice;
 									$MyBook->save();
@@ -86,9 +89,14 @@ class EsewaController extends Controller
 					                 }
 
 					         }
+					         elseif ('FAILED' == $verification_response) {
 
-					         else{
-					         	print_r("Couldn't verify the Transaction.Contact Makalu Publication for more information.");//end of verification for success
+					         		print_r("failed while verification");//end of verification for success
+					         }
+
+					         else{  
+					         print_r("No response from the verification server i.e ESEWA server might be offline or blocked the request");
+					         
 					         }
 
 		            }

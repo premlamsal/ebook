@@ -105,10 +105,8 @@ class PagesController extends Controller
 
              //z is assigned to difference product id and timestamp in future.
              //concatenate product id with time stamp to make new instance of transaction each time page load 
-             $pidTimeStamp=$book_id.'Z'.time();
-             
+             $pidTimeStamp=$book_id.'-'.time();
            
-
              $isBookBought=MyBook::where('user_id',$user_id)->where('book_id',$book_id)->get();
             if($isBookBought->first()){
                 $nackH1="Hurray!!!";
