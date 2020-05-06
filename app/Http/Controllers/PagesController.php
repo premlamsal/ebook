@@ -22,22 +22,28 @@ use App\Order;
 class PagesController extends Controller
 {
     public function home(){
+{
+
 
       //sliders
       $sliders=Slider::all();
       //testimonial
       $testimonials=Testimonial::all();
-    	//popular book retrival
-    	$popularBooks=Book::orderBy('views', 'desc')->limit(8)->get();
-    	//lastet book retrival
-    	$latestBooks=Book::orderBy('id', 'desc')->limit(8)->get();
-    	//more books retrival
-    	$moreBooks=Book::inRandomOrder()->get();
-    	//blog retrival
+      //popular book retrival
+      $popularBooks=Book::orderBy('views', 'desc')->limit(8)->get();
+      //lastet book retrival
+      $latestBooks=Book::orderBy('id', 'desc')->limit(8)->get();
+      //more books retrival
+      $moreBooks=Book::inRandomOrder()->get();
+      //blog retrival
         $blogs= Blog::orderBy('created_at','desc')->limit(3)->get();
         //writer retrieve
         $writer=Writer::all();
         return view('pages.index')->with(['blogs'=>$blogs,'popularBooks'=>$popularBooks,'latestBooks'=>$latestBooks,'moreBooks'=>$moreBooks,'sliders'=>$sliders,'testimonials'=>$testimonials,'writer'=>$writer]);
+
+
+}
+
     }
     public function faq(){
 
