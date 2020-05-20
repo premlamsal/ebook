@@ -87,16 +87,26 @@ class BookController extends Controller
             'page_no'     => 'required',
             'tagline'     => 'required',
             'category'    => 'required',
-            'subcategory' => 'required',
+            // 'subcategory' => 'required',
             'price'       => 'required',
             'author'      => 'required',
             'publication' => 'required',
-            'image'       => 'required|image|max:2048',
-            'bookfile'    => 'required',
+            'image'       => 'image|max:2048',
+            // 'bookfile'    => 'required',
             'edition'     => 'required',
             'tags'        => 'required',
 
         ]);
+
+        $catid = $request->input('category');
+        $cat   = DB::table('categories')->where(['id' => $catid])->value('category_name');
+        //cat_name
+        $subcatid = $request->input('subcategory');
+        $subcat   = DB::table('sub_categories')->where(['id' => $subcatid])->value('subcategory_name');
+        $user_id  = 1;
+
+        $editBook = Book::find($id);
+
         //image handling
         if ($request->hasFile('image')) {
             $filenameWithExt = $request->file('image')->getClientOriginalName();
@@ -104,6 +114,9 @@ class BookController extends Controller
             $extension       = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             $path            = $request->file('image')->storeAs('public/Book_image', $fileNameToStore);
+
+            $editBook->image = $fileNameToStore;
+
         }
         // else{
         //     $fileNameToStore=NULL;
@@ -115,20 +128,14 @@ class BookController extends Controller
             $extension           = $request->file('bookfile')->getClientOriginalExtension();
             $BookfileNameToStore = $filename . '_' . time(); //.'.'.$extension;
             $Bookpath            = $request->file('bookfile')->storeAs('book', $BookfileNameToStore);
+
+            $editBook->book_file = $BookfileNameToStore;
         }
         // else{
         //     $BookfileNameToStore=NULL;
         // }
         //cat_name
 
-        $catid = $request->input('category');
-        $cat   = DB::table('categories')->where(['id' => $catid])->value('category_name');
-        //cat_name
-        $subcatid = $request->input('subcategory');
-        $subcat   = DB::table('sub_categories')->where(['id' => $subcatid])->value('subcategory_name');
-        $user_id  = 1;
-
-        $editBook                 = Book::find($id);
         $editBook->title          = $request->input('title');
         $editBook->abstract       = $request->input('abstract');
         $editBook->isbn           = $request->input('isbn');
@@ -140,11 +147,10 @@ class BookController extends Controller
         $editBook->price          = $request->input('price');
         $editBook->author         = $request->input('author');
         $editBook->publication_id = $request->input('publication');
-        $editBook->image          = $fileNameToStore;
-        $editBook->book_file      = $BookfileNameToStore;
-        $editBook->edition        = $request->input('edition');
-        $editBook->user_id        = $user_id;
-        $editBook->tags           = $request->input('tags');
+
+        $editBook->edition = $request->input('edition');
+        $editBook->user_id = $user_id;
+        $editBook->tags    = $request->input('tags');
 
         $editBook->save();
         return redirect('admin/viewBook')->with('sucsess', 'Book Updated');
