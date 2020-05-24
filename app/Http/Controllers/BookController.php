@@ -16,7 +16,7 @@ class BookController extends Controller
             'abstract'    => 'required',
             // 'isbn'        => 'required',
             'page_no'     => 'required',
-            'tagline'     => 'required',
+            // 'tagline'     => 'required',
             'category'    => 'required',
             'subcategory' => 'required',
             'price'       => 'required',
@@ -25,7 +25,7 @@ class BookController extends Controller
             'image'       => 'required|image|max:2048',
             'bookfile'    => 'required',
             'edition'     => 'required',
-            'tags'        => 'required',
+            // 'tags'        => 'required',
         ]);
         //image handling
         if ($request->hasFile('image')) {
@@ -85,7 +85,7 @@ class BookController extends Controller
             'abstract'    => 'required',
             // 'isbn'        => 'required',
             'page_no'     => 'required',
-            'tagline'     => 'required',
+            // 'tagline'     => 'required',
             'category'    => 'required',
             // 'subcategory' => 'required',
             'price'       => 'required',
@@ -94,7 +94,7 @@ class BookController extends Controller
             'image'       => 'image|max:2048',
             // 'bookfile'    => 'required',
             'edition'     => 'required',
-            'tags'        => 'required',
+            // 'tags'        => 'required',
 
         ]);
 
